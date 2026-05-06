@@ -1,1 +1,1364 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NOTESHUBINDIA - Psychology Made Simple. Student-friendly IGNOU Psychology notes, CBT basics, PDFs, PYQs, and exam-focused study material." />
+  <meta name="theme-color" content="#0b1f3a" />
+  <title>NOTESHUBINDIA | Psychology Made Simple</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --surface:#ffffff;
+      --surface-2:#f0f4fb;
+      --text:#0f172a;
+      --muted:#64748b;
+      --primary:#0b1f3a;
+      --primary-2:#123a68;
+      --accent:#6ea8ff;
+      --accent-soft:#e8f1ff;
+      --border:rgba(15,23,42,.10);
+      --shadow:0 18px 50px rgba(2,8,23,.08);
+      --shadow-sm:0 10px 30px rgba(2,8,23,.06);
+      --radius:22px;
+      --radius-sm:16px;
+      --max:1180px;
+      --container:calc(100% - 32px);
+      --success:#0f9d58;
+      --warning:#d97706;
+    }*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:
+    radial-gradient(circle at top right, rgba(110,168,255,.12), transparent 30%),
+    radial-gradient(circle at left center, rgba(18,58,104,.08), transparent 25%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+}
 
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+button,input{font:inherit}
+
+.container{width:min(var(--max), var(--container)); margin:0 auto}
+.section{padding:84px 0}
+.section-header{margin-bottom:28px}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 14px;
+  background:rgba(11,31,58,.06);
+  color:var(--primary);
+  border:1px solid rgba(11,31,58,.08);
+  border-radius:999px;
+  font-size:.85rem;
+  font-weight:700;
+  letter-spacing:.02em;
+  margin-bottom:14px;
+}
+.eyebrow::before{
+  content:'';
+  width:8px; height:8px; border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 0 6px rgba(110,168,255,.16);
+}
+h1,h2,h3,h4,p{margin:0}
+h1{font-size:clamp(2.4rem, 5vw, 4.9rem); line-height:1.03; letter-spacing:-.04em}
+h2{font-size:clamp(1.65rem, 3vw, 2.55rem); line-height:1.1; letter-spacing:-.03em}
+h3{font-size:1.18rem; line-height:1.2}
+p{color:var(--muted)}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 20px;
+  border-radius:14px;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:.25s ease;
+  font-weight:700;
+  letter-spacing:-.01em;
+  position:relative;
+  overflow:hidden;
+}
+.btn::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,.24), transparent);
+  transform:translateX(-120%);
+  transition:transform .7s ease;
+}
+.btn:hover::after{transform:translateX(120%)}
+.btn-primary{
+  background:linear-gradient(135deg, var(--primary), var(--primary-2));
+  color:#fff;
+  box-shadow:0 14px 28px rgba(11,31,58,.18);
+}
+.btn-primary:hover{transform:translateY(-2px); box-shadow:0 18px 40px rgba(11,31,58,.22)}
+.btn-secondary{
+  background:var(--surface);
+  color:var(--primary);
+  border-color:var(--border);
+  box-shadow:var(--shadow-sm);
+}
+.btn-secondary:hover{transform:translateY(-2px); border-color:rgba(11,31,58,.18)}
+.btn-small{padding:11px 16px; border-radius:12px; font-size:.95rem}
+.chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 12px;
+  border-radius:999px;
+  background:var(--accent-soft);
+  color:var(--primary);
+  font-size:.8rem;
+  font-weight:700;
+}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:7px 10px;
+  border-radius:999px;
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.02em;
+}
+.badge.free{background:#ecfdf3; color:#0f9d58}
+.badge.premium{background:#fff7ed; color:#c2410c}
+.badge.popular{background:#eef2ff; color:#4338ca}
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  backdrop-filter:blur(16px);
+  background:rgba(245,247,251,.78);
+  border-bottom:1px solid rgba(15,23,42,.06);
+}
+.nav-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  min-height:76px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:800;
+  letter-spacing:-.03em;
+  color:var(--primary);
+  white-space:nowrap;
+}
+.brand-mark{
+  width:42px; height:42px;
+  border-radius:14px;
+  background:linear-gradient(135deg, var(--primary), #173e72);
+  color:#fff;
+  display:grid;
+  place-items:center;
+  box-shadow:0 12px 28px rgba(11,31,58,.18);
+  font-size:1rem;
+}
+.brand small{display:block; font-weight:600; color:var(--muted); letter-spacing:0; margin-top:1px}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.nav-links a{
+  padding:11px 14px;
+  border-radius:12px;
+  color:#1f2937;
+  font-weight:600;
+  font-size:.95rem;
+  transition:.2s ease;
+}
+.nav-links a:hover,.nav-links a.active{
+  background:rgba(11,31,58,.06);
+  color:var(--primary);
+}
+
+.nav-actions{display:flex; align-items:center; gap:10px}
+.search-inline{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:var(--surface);
+  border:1px solid rgba(15,23,42,.08);
+  border-radius:14px;
+  padding:10px 14px;
+  box-shadow:var(--shadow-sm);
+  min-width:min(320px, 35vw);
+}
+.search-inline svg{flex:none; opacity:.65}
+.search-inline input{
+  border:0;
+  outline:0;
+  width:100%;
+  background:transparent;
+  color:var(--text);
+}
+.search-inline input::placeholder{color:#94a3b8}
+
+.menu-btn{
+  display:none;
+  width:46px; height:46px;
+  border:1px solid rgba(15,23,42,.08);
+  border-radius:14px;
+  background:var(--surface);
+  box-shadow:var(--shadow-sm);
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+.menu-lines{
+  width:20px; height:14px; position:relative;
+}
+.menu-lines span{
+  position:absolute; left:0; right:0; height:2px; border-radius:999px; background:var(--primary);
+  transition:.25s ease;
+}
+.menu-lines span:nth-child(1){top:0}
+.menu-lines span:nth-child(2){top:6px}
+.menu-lines span:nth-child(3){top:12px}
+
+.mobile-panel{
+  display:none;
+  padding:0 0 18px;
+}
+.mobile-panel.open{display:block}
+.mobile-search{display:none; margin:0 0 14px}
+.mobile-links{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.mobile-links a{
+  background:var(--surface);
+  border:1px solid rgba(15,23,42,.08);
+  border-radius:14px;
+  padding:12px 14px;
+  font-weight:700;
+  color:var(--primary);
+  box-shadow:var(--shadow-sm);
+}
+
+.hero{
+  padding:42px 0 20px;
+}
+.hero-shell{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:28px;
+  align-items:center;
+  padding:34px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.82), rgba(255,255,255,.94)),
+    radial-gradient(circle at top right, rgba(110,168,255,.10), transparent 35%);
+  border:1px solid rgba(15,23,42,.06);
+  border-radius:32px;
+  box-shadow:var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
+.hero-shell::before{
+  content:'';
+  position:absolute;
+  inset:auto -120px -120px auto;
+  width:300px; height:300px;
+  background:radial-gradient(circle, rgba(110,168,255,.22), transparent 68%);
+  pointer-events:none;
+}
+.hero-copy p{font-size:1.03rem; max-width:60ch; margin-top:16px}
+.hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:26px}
+.hero-stats{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+.stat{
+  min-width:154px;
+  padding:16px 18px;
+  border-radius:18px;
+  background:rgba(255,255,255,.8);
+  border:1px solid rgba(15,23,42,.06);
+  box-shadow:var(--shadow-sm);
+}
+.stat strong{display:block; font-size:1.2rem; color:var(--primary)}
+.stat span{color:var(--muted); font-size:.92rem}
+
+.hero-visual{
+  position:relative;
+  min-height:460px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.visual-card{
+  width:min(100%, 460px);
+  background:linear-gradient(180deg, #ffffff, #f6f9ff);
+  border:1px solid rgba(15,23,42,.06);
+  border-radius:30px;
+  box-shadow:var(--shadow);
+  padding:22px;
+  position:relative;
+  overflow:hidden;
+}
+.visual-card::before,
+.visual-card::after{
+  content:'';
+  position:absolute;
+  border-radius:50%;
+  background:rgba(110,168,255,.16);
+  pointer-events:none;
+}
+.visual-card::before{width:180px; height:180px; top:-60px; right:-40px}
+.visual-card::after{width:130px; height:130px; bottom:-55px; left:-25px}
+.brain-figure{
+  width:100%;
+  aspect-ratio:1 / .95;
+  border-radius:24px;
+  background:
+    linear-gradient(180deg, rgba(11,31,58,.04), rgba(11,31,58,.02)),
+    linear-gradient(135deg, #f7fbff, #eef5ff);
+  border:1px solid rgba(15,23,42,.06);
+  display:grid;
+  place-items:center;
+  position:relative;
+  overflow:hidden;
+}
+.brain-figure svg{
+  width:min(74%, 320px);
+  height:auto;
+  filter:drop-shadow(0 24px 30px rgba(11,31,58,.14));
+  animation:float 6s ease-in-out infinite;
+}
+.figure-caption{
+  position:absolute;
+  left:20px; right:20px; bottom:18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+}
+.mini-note{
+  background:rgba(255,255,255,.84);
+  border:1px solid rgba(15,23,42,.08);
+  border-radius:16px;
+  padding:12px 14px;
+  box-shadow:var(--shadow-sm);
+  max-width:220px;
+}
+.mini-note strong{display:block; color:var(--primary); font-size:.95rem}
+.mini-note span{font-size:.85rem; color:var(--muted)}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(14px)}
+  to{opacity:1; transform:translateY(0)}
+}
+
+.grid-5, .grid-3, .grid-2{
+  display:grid;
+  gap:18px;
+}
+.grid-5{grid-template-columns:repeat(5, minmax(0, 1fr))}
+.grid-3{grid-template-columns:repeat(3, minmax(0, 1fr))}
+.grid-2{grid-template-columns:repeat(2, minmax(0, 1fr))}
+
+.card{
+  background:var(--surface);
+  border:1px solid rgba(15,23,42,.06);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-sm);
+  transition:.25s ease;
+  overflow:hidden;
+}
+.card:hover{transform:translateY(-4px); box-shadow:var(--shadow)}
+.card-pad{padding:22px}
+
+.subject-card .icon{
+  width:52px; height:52px;
+  border-radius:16px;
+  display:grid;
+  place-items:center;
+  background:var(--accent-soft);
+  color:var(--primary);
+  margin-bottom:16px;
+  font-size:1.3rem;
+}
+.subject-card p{margin-top:10px; font-size:.96rem}
+.subject-card .btn{margin-top:18px; width:100%}
+
+.toolbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
+.toolbar .search-inline{min-width:min(430px, 100%)}
+
+.content-grid{
+  display:grid;
+  grid-template-columns:repeat(12, 1fr);
+  gap:18px;
+}
+.span-4{grid-column:span 4}
+.span-6{grid-column:span 6}
+.span-8{grid-column:span 8}
+.span-12{grid-column:span 12}
+
+.pdf-card, .note-card, .download-card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+.meta-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:14px;
+  flex-wrap:wrap;
+}
+.download-card .thumb{
+  height:150px;
+  border-radius:18px;
+  background:
+    linear-gradient(135deg, rgba(11,31,58,.96), rgba(18,58,104,.92));
+  position:relative;
+  overflow:hidden;
+  margin-bottom:18px;
+  display:flex;
+  align-items:flex-end;
+  padding:18px;
+  color:#fff;
+}
+.download-card .thumb::before,
+.download-card .thumb::after{
+  content:'';
+  position:absolute;
+  border-radius:50%;
+  background:rgba(255,255,255,.1);
+}
+.download-card .thumb::before{width:150px; height:150px; top:-60px; right:-30px}
+.download-card .thumb::after{width:110px; height:110px; bottom:-45px; left:-10px}
+.thumb h3{position:relative; z-index:1; color:#fff; font-size:1.18rem}
+.download-card p{margin:10px 0 18px}
+
+.card-actions{display:flex; gap:10px; margin-top:auto; flex-wrap:wrap}
+.card-actions .btn{flex:1}
+
+.pricing-card{
+  padding:26px;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  min-height:100%;
+}
+.price{
+  font-size:2.2rem;
+  font-weight:800;
+  color:var(--primary);
+  letter-spacing:-.04em;
+}
+.price small{font-size:.9rem; color:var(--muted); font-weight:600}
+.pricing-card ul, .feature-list{
+  margin:0;
+  padding:0;
+  list-style:none;
+  display:grid;
+  gap:10px;
+}
+.pricing-card li, .feature-list li{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  color:#334155;
+  font-size:.96rem;
+}
+.pricing-card li::before, .feature-list li::before{
+  content:'✓';
+  flex:none;
+  width:22px; height:22px;
+  border-radius:50%;
+  background:#eef2ff;
+  color:#4338ca;
+  display:grid;
+  place-items:center;
+  font-size:.8rem;
+  font-weight:800;
+  margin-top:2px;
+}
+.featured{
+  border:1px solid rgba(67,56,202,.22);
+  box-shadow:0 16px 40px rgba(67,56,202,.10);
+  transform:translateY(-4px);
+}
+
+.quote{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  padding:24px;
+}
+.quote p{color:#334155}
+.quote .person{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top:auto;
+}
+.avatar{
+  width:48px; height:48px; border-radius:16px;
+  background:linear-gradient(135deg, #dbeafe, #eff6ff);
+  display:grid; place-items:center;
+  font-weight:800; color:var(--primary);
+  border:1px solid rgba(15,23,42,.06);
+}
+.person strong{display:block; color:var(--primary)}
+.person span{font-size:.9rem}
+
+.cta-band{
+  background:linear-gradient(135deg, var(--primary), var(--primary-2));
+  color:#fff;
+  border-radius:32px;
+  padding:34px;
+  box-shadow:var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
+.cta-band p{color:rgba(255,255,255,.78)}
+.cta-band .search-inline{
+  margin-top:18px;
+  background:rgba(255,255,255,.96);
+  max-width:520px;
+}
+.cta-band .search-inline input{color:#0f172a}
+
+footer{
+  padding:42px 0 28px;
+  border-top:1px solid rgba(15,23,42,.08);
+  margin-top:20px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.3fr .7fr .7fr .9fr;
+  gap:18px;
+}
+.footer-grid h4{margin-bottom:14px; color:var(--primary)}
+.footer-grid a{display:block; color:var(--muted); padding:6px 0}
+.footer-grid a:hover{color:var(--primary)}
+.socials{display:flex; gap:10px; flex-wrap:wrap}
+.socials a{
+  width:40px; height:40px; border-radius:14px;
+  background:var(--surface);
+  border:1px solid rgba(15,23,42,.08);
+  display:grid; place-items:center;
+  box-shadow:var(--shadow-sm);
+}
+.copyright{
+  padding-top:20px;
+  margin-top:20px;
+  border-top:1px solid rgba(15,23,42,.08);
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+  color:var(--muted);
+  font-size:.94rem;
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(11,18,32,.42);
+  backdrop-filter:blur(8px);
+  display:none;
+  z-index:2000;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+}
+.overlay.show{display:flex}
+.modal{
+  width:min(100%, 560px);
+  background:var(--surface);
+  border-radius:28px;
+  border:1px solid rgba(15,23,42,.10);
+  box-shadow:0 30px 70px rgba(2,8,23,.22);
+  overflow:hidden;
+  animation:fadeUp .28s ease;
+}
+.modal-head{
+  padding:24px 24px 0;
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:flex-start;
+}
+.close-btn{
+  width:42px; height:42px;
+  border-radius:14px;
+  border:1px solid rgba(15,23,42,.08);
+  background:#fff;
+  cursor:pointer;
+  font-size:1.2rem;
+  color:var(--primary);
+}
+.modal-body{padding:18px 24px 24px}
+.form-grid{display:grid; gap:14px}
+.field{
+  display:grid;
+  gap:8px;
+}
+.field label{font-size:.92rem; font-weight:700; color:var(--primary)}
+.field input{
+  width:100%;
+  padding:14px 15px;
+  border-radius:14px;
+  border:1px solid rgba(15,23,42,.12);
+  outline:none;
+  background:#fff;
+  transition:.2s ease;
+}
+.field input:focus{border-color:rgba(110,168,255,.85); box-shadow:0 0 0 4px rgba(110,168,255,.14)}
+.helper{font-size:.9rem; color:var(--muted)}
+.toast-wrap{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:3000;
+  display:grid;
+  gap:10px;
+  pointer-events:none;
+}
+.toast{
+  pointer-events:auto;
+  background:rgba(255,255,255,.96);
+  border:1px solid rgba(15,23,42,.08);
+  box-shadow:var(--shadow);
+  border-radius:18px;
+  padding:14px 16px;
+  min-width:280px;
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  animation:fadeUp .28s ease;
+}
+.toast .dot{
+  width:11px; height:11px; border-radius:50%; margin-top:7px; background:var(--success);
+  box-shadow:0 0 0 6px rgba(15,157,88,.12);
+  flex:none;
+}
+.toast strong{display:block; color:var(--primary)}
+.toast span{font-size:.92rem; color:var(--muted)}
+
+.muted-box{
+  background:var(--surface);
+  border:1px solid rgba(15,23,42,.06);
+  border-radius:24px;
+  padding:22px;
+  box-shadow:var(--shadow-sm);
+}
+
+.section-split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.download-list{
+  display:grid;
+  gap:14px;
+}
+.download-item{
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  align-items:center;
+  padding:16px 18px;
+  border-radius:18px;
+  background:var(--surface);
+  border:1px solid rgba(15,23,42,.06);
+  box-shadow:var(--shadow-sm);
+}
+.download-item strong{display:block; color:var(--primary)}
+.download-item span{font-size:.92rem; color:var(--muted)}
+
+.hidden{display:none !important}
+
+@media (max-width: 1100px){
+  .grid-5{grid-template-columns:repeat(2, minmax(0, 1fr))}
+  .content-grid{grid-template-columns:repeat(6, 1fr)}
+  .span-4,.span-6,.span-8{grid-column:span 6}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .hero-shell{grid-template-columns:1fr}
+  .hero-visual{min-height:380px}
+}
+
+@media (max-width: 820px){
+  .nav-links,.nav-actions .search-inline{display:none}
+  .menu-btn{display:inline-flex}
+  .mobile-search{display:flex}
+  .mobile-panel{display:none}
+  .section{padding:68px 0}
+  .grid-3,.grid-2,.section-split{grid-template-columns:1fr}
+  .content-grid{grid-template-columns:1fr}
+  .span-4,.span-6,.span-8{grid-column:span 1}
+  .footer-grid{grid-template-columns:1fr}
+  .hero-shell{padding:22px}
+  .hero-visual{min-height:320px}
+  .figure-caption{position:static; margin-top:14px; padding:0}
+  .visual-card{padding:16px}
+  .download-item{flex-direction:column; align-items:flex-start}
+  .toolbar{flex-direction:column; align-items:stretch}
+}
+
+@media (max-width: 560px){
+  .container{width:min(var(--max), calc(100% - 20px))}
+  .nav-wrap{min-height:70px}
+  h1{font-size:2.1rem}
+  .hero-copy p{font-size:.98rem}
+  .hero-actions .btn{width:100%}
+  .hero-stats{grid-template-columns:1fr; display:grid}
+  .stat{min-width:unset}
+  .mobile-links{grid-template-columns:1fr}
+  .modal-head,.modal-body{padding-left:18px; padding-right:18px}
+  .pricing-card,.quote,.card-pad{padding:18px}
+  .cta-band{padding:24px}
+}
+
+  </style>
+</head>
+<body>
+  <div id="loader" style="position:fixed;inset:0;background:#f5f7fb;z-index:5000;display:grid;place-items:center;transition:.35s ease;">
+    <div style="display:grid;place-items:center;gap:12px;">
+      <div style="width:58px;height:58px;border-radius:20px;background:linear-gradient(135deg,#0b1f3a,#123a68);display:grid;place-items:center;box-shadow:0 16px 34px rgba(11,31,58,.18);animation:float 1.8s ease-in-out infinite;color:#fff;font-weight:800;">N</div>
+      <div style="font-weight:800;color:#0b1f3a;letter-spacing:-.02em">NOTESHUBINDIA</div>
+    </div>
+  </div>  <header class="topbar">
+    <div class="container">
+      <div class="nav-wrap">
+        <a class="brand" href="#home" aria-label="NOTESHUBINDIA home">
+          <span class="brand-mark">N</span>
+          <span>
+            NOTESHUBINDIA
+            <small>Psychology Made Simple</small>
+          </span>
+        </a><nav class="nav-links" aria-label="Primary navigation">
+      <a href="#home" class="active">Home</a>
+      <a href="#bpcc101">BPCC 101</a>
+      <a href="#bpcc107">BPCC 107</a>
+      <a href="#cbt">CBT</a>
+      <a href="#pdfs">PDFs</a>
+      <a href="#pyqs">PYQs</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="search-inline" role="search" aria-label="Search notes">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 21l-4.35-4.35m1.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="searchInput" type="search" placeholder="Search notes, PDFs, PYQs..." />
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <div class="menu-lines"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-panel" id="mobilePanel">
+    <div class="search-inline mobile-search" role="search" aria-label="Search notes mobile">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 21l-4.35-4.35m1.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input id="searchInputMobile" type="search" placeholder="Search notes, PDFs, PYQs..." />
+    </div>
+    <div class="mobile-links">
+      <a href="#home">Home</a>
+      <a href="#bpcc101">BPCC 101</a>
+      <a href="#bpcc107">BPCC 107</a>
+      <a href="#cbt">CBT</a>
+      <a href="#pdfs">PDFs</a>
+      <a href="#pyqs">PYQs</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</div>
+
+  </header>  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-shell">
+          <div class="hero-copy">
+            <span class="eyebrow">Trusted study notes for psychology students</span>
+            <h1>Psychology Notes That Actually Make Sense.</h1>
+            <p>
+              NOTESHUBINDIA helps IGNOU and B.A. Psychology students learn faster with simple explanations,
+              exam-focused notes, downloadable PDFs, PYQs, and quick revision resources.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#subjects">Explore Notes</a>
+              <a class="btn btn-secondary" href="#pdfs">Download PDFs</a>
+            </div>
+            <div class="hero-stats" aria-label="Platform highlights">
+              <div class="stat"><strong>Simple Language</strong><span>For quick understanding</span></div>
+              <div class="stat"><strong>Exam-Oriented</strong><span>Built for scoring well</span></div>
+              <div class="stat"><strong>Mobile-Friendly</strong><span>Study anywhere, anytime</span></div>
+            </div>
+          </div><div class="hero-visual" aria-hidden="true">
+        <div class="visual-card">
+          <div class="brain-figure">
+            <svg viewBox="0 0 420 390" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M146 84c-28 6-52 30-57 59-6 34 11 52 17 74 8 27-3 39 2 63 7 31 35 58 68 61 20 2 35-3 48-11 18 13 38 19 60 17 34-4 63-29 71-62 6-25-4-44 4-68 8-24 23-33 23-61 0-36-28-67-64-71-19-2-39 3-53 14-13-12-31-18-49-17-6-10-17-14-30-18-11-3-25-4-40-3Z" fill="#DCEAFF" stroke="#0B1F3A" stroke-width="6"/>
+              <path d="M128 143c19-15 45-20 67-11M145 193c11-9 29-11 44-5M128 248c16-11 35-14 53-7M243 128c14-13 35-18 56-14M256 190c13-8 28-8 42-3M244 252c16-9 33-10 48-4" stroke="#0B1F3A" stroke-width="6" stroke-linecap="round"/>
+              <path d="M209 82v230" stroke="#0B1F3A" stroke-width="6" stroke-linecap="round"/>
+              <circle cx="210" cy="316" r="18" fill="#6EA8FF" stroke="#0B1F3A" stroke-width="6"/>
+            </svg>
+          </div>
+          <div class="figure-caption">
+            <div class="mini-note">
+              <strong>Psychology = understanding people</strong>
+              <span>Clear notes, real examples, less confusion.</span>
+            </div>
+            <span class="chip">IGNOU • B.A. Psychology • CBT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="subjects">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Featured subjects</span>
+      <h2>Core topics students keep coming back to.</h2>
+      <p>Short, sharp, exam-friendly explanations with a clean structure for fast revision.</p>
+    </div>
+
+    <div class="grid-5 notes-area">
+      <article class="card subject-card note-item" data-title="Perception">
+        <div class="card-pad">
+          <div class="icon">👁️</div>
+          <h3>Perception</h3>
+          <p>Learn how we interpret sensory information, illusions, and everyday perception errors.</p>
+          <a class="btn btn-secondary btn-small" href="#perception">Read Notes</a>
+        </div>
+      </article>
+      <article class="card subject-card note-item" data-title="Social Psychology">
+        <div class="card-pad">
+          <div class="icon">👥</div>
+          <h3>Social Psychology</h3>
+          <p>Understand attitudes, conformity, group behavior, prejudice, and social influence.</p>
+          <a class="btn btn-secondary btn-small" href="#social">Read Notes</a>
+        </div>
+      </article>
+      <article class="card subject-card note-item" data-title="CBT Basics">
+        <div class="card-pad">
+          <div class="icon">🧠</div>
+          <h3>CBT Basics</h3>
+          <p>A simple introduction to thoughts, feelings, behaviors, and basic therapy logic.</p>
+          <a class="btn btn-secondary btn-small" href="#cbt">Read Notes</a>
+        </div>
+      </article>
+      <article class="card subject-card note-item" data-title="Learning Memory">
+        <div class="card-pad">
+          <div class="icon">📘</div>
+          <h3>Learning & Memory</h3>
+          <p>Clean explanations of memory systems, forgetting, learning theories, and recall.</p>
+          <a class="btn btn-secondary btn-small" href="#memory">Read Notes</a>
+        </div>
+      </article>
+      <article class="card subject-card note-item" data-title="Research Methods">
+        <div class="card-pad">
+          <div class="icon">📊</div>
+          <h3>Research Methods</h3>
+          <p>Methods, variables, experiments, ethics, and how to answer questions in exams.</p>
+          <a class="btn btn-secondary btn-small" href="#research">Read Notes</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="latest">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Latest notes</span>
+      <h2>New study material added for fast revision.</h2>
+      <p>Use the search bar to find specific topics instantly.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card note-item" data-title="Perception illusions">
+        <div class="card-pad">
+          <div class="meta-row">
+            <span class="badge popular">Latest</span>
+            <span class="chip">BPCC 101</span>
+          </div>
+          <h3>Perception: Illusions Explained</h3>
+          <p>Visual illusions, depth cues, and how the brain misreads reality in simple words.</p>
+        </div>
+      </article>
+      <article class="card note-item" data-title="CBT core concepts">
+        <div class="card-pad">
+          <div class="meta-row">
+            <span class="badge popular">Updated</span>
+            <span class="chip">CBT</span>
+          </div>
+          <h3>CBT: Core Concepts</h3>
+          <p>Automatic thoughts, cognitive distortions, and the basic change process.</p>
+        </div>
+      </article>
+      <article class="card note-item" data-title="Social psychology revision">
+        <div class="card-pad">
+          <div class="meta-row">
+            <span class="badge popular">New</span>
+            <span class="chip">PYQ Ready</span>
+          </div>
+          <h3>Social Psychology Quick Revision</h3>
+          <p>One-page style summaries made for last-minute exam prep and recall.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pdfs">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">PDF downloads</span>
+      <h2>Download study PDFs with a clean request flow.</h2>
+      <p>Free PDFs are available instantly. Premium PDFs are unlocked for paid study bundles.</p>
+    </div>
+
+    <div class="toolbar">
+      <div>
+        <h3 style="margin-bottom:4px">Downloadable resources</h3>
+        <p>Search PDFs, notes, and PYQs from the same page.</p>
+      </div>
+      <div class="search-inline" role="search" aria-label="Search PDF resources">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 21l-4.35-4.35m1.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="resourceSearch" type="search" placeholder="Search PDF title..." />
+      </div>
+    </div>
+
+    <div class="grid-3 download-grid">
+      <article class="card download-card resource-item" data-title="Perception complete notes pdf">
+        <div class="card-pad">
+          <div class="meta-row">
+            <span class="badge free">Free PDF</span>
+            <span class="chip">PDF</span>
+          </div>
+          <div class="thumb">
+            <h3>Perception Complete Notes</h3>
+          </div>
+          <p>Minor-to-major explanation with examples, illusions, and exam points.</p>
+          <div class="card-actions">
+            <button class="btn btn-primary btn-small download-btn" data-resource="Perception Complete Notes">Download PDF</button>
+            <a class="btn btn-secondary btn-small" href="#latest">Preview</a>
+          </div>
+        </div>
+      </article>
+      <article class="card download-card resource-item" data-title="cbt basics pdf for psychology">
+        <div class="card-pad">
+          <div class="meta-row">
+            <span class="badge free">Free PDF</span>
+            <span class="chip">PDF</span>
+          </div>
+          <div class="thumb">
+            <h3>CBT Basics Handbook</h3>
+          </div>
+          <p>Step-by-step CBT ideas, examples, and simple case-based explanations.</p>
+          <div class="card-actions">
+            <button class="btn btn-primary btn-small download-btn" data-resource="CBT Basics Handbook">Download PDF</button>
+            <a class="btn btn-secondary btn-small" href="#cbt">Preview</a>
+          </div>
+        </div>
+      </article>
+      <article class="card download-card resource-item" data-title="social psychology pdf notes">
+        <div class="card-pad">
+          <div class="meta-row">
+            <span class="badge premium">Premium PDF</span>
+            <span class="chip">PDF</span>
+          </div>
+          <div class="thumb">
+            <h3>Social Psychology Master Notes</h3>
+          </div>
+          <p>Premium exam bundle with key definitions, theories, and answer-ready format.</p>
+          <div class="card-actions">
+            <button class="btn btn-primary btn-small download-btn" data-resource="Social Psychology Master Notes">Download PDF</button>
+            <a class="btn btn-secondary btn-small" href="#premium">View Plan</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="premium">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Premium notes</span>
+      <h2>Advanced bundles for serious exam preparation.</h2>
+      <p>Built for students who want cleaner notes, more coverage, and faster revision.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card pricing-card">
+        <div class="meta-row"><span class="badge premium">Best Value</span><span class="chip">Starter</span></div>
+        <h3>Exam Bundle</h3>
+        <div class="price">₹199 <small>/ one-time</small></div>
+        <ul>
+          <li>BPCC 101 and BPCC 107 essentials</li>
+          <li>Short notes with examples</li>
+          <li>Quick revision pages</li>
+        </ul>
+        <button class="btn btn-primary buy-btn" data-plan="Exam Bundle">Buy Now</button>
+      </article>
+      <article class="card pricing-card featured">
+        <div class="meta-row"><span class="badge premium">Recommended</span><span class="chip">Pro</span></div>
+        <h3>Handbook Pack</h3>
+        <div class="price">₹399 <small>/ one-time</small></div>
+        <ul>
+          <li>Advanced handbooks</li>
+          <li>PYQ collections with answers</li>
+          <li>Mobile-friendly PDFs</li>
+          <li>Priority updates</li>
+        </ul>
+        <button class="btn btn-primary buy-btn" data-plan="Handbook Pack">Buy Now</button>
+      </article>
+      <article class="card pricing-card">
+        <div class="meta-row"><span class="badge premium">Complete</span><span class="chip">Elite</span></div>
+        <h3>Full Psychology Vault</h3>
+        <div class="price">₹799 <small>/ one-time</small></div>
+        <ul>
+          <li>Complete study library</li>
+          <li>All premium PDFs</li>
+          <li>PYQ + revision bundles</li>
+          <li>Best for final exam prep</li>
+        </ul>
+        <button class="btn btn-primary buy-btn" data-plan="Full Psychology Vault">Buy Now</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="bpcc101">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Why students use this</span>
+      <h2>Clear notes, less noise, better revision.</h2>
+    </div>
+    <div class="section-split">
+      <div class="muted-box">
+        <ul class="feature-list">
+          <li>Easy explanations that avoid confusing textbook language.</li>
+          <li>Real-life examples that make concepts stick.</li>
+          <li>Exam-oriented notes built around what students actually need.</li>
+          <li>Simple language for quick reading and faster recall.</li>
+          <li>Quick revision format for last-minute prep.</li>
+          <li>Mobile-friendly PDFs that are easy to save and read.</li>
+        </ul>
+      </div>
+      <div class="muted-box" id="about">
+        <span class="chip" style="margin-bottom:12px">About NOTESHUBINDIA</span>
+        <h3 style="margin-bottom:10px">A practical psychology study platform.</h3>
+        <p>
+          This site is designed for students who need straightforward psychology notes without
+          extra clutter. The focus is on understanding, remembering, and writing better answers in exams.
+        </p>
+        <div style="margin-top:18px; display:grid; gap:12px;">
+          <div class="download-item">
+            <div><strong>IGNOU Psychology</strong><span>Focused study support for semester exams</span></div>
+            <span class="badge free">Core</span>
+          </div>
+          <div class="download-item">
+            <div><strong>PYQ Library</strong><span>Past questions organized by topic</span></div>
+            <span class="badge popular">Useful</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pyqs">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Most downloaded PDFs</span>
+      <h2>Resources students download the most.</h2>
+    </div>
+    <div class="download-list">
+      <div class="download-item resource-item" data-title="bpcc 101 pyq collection">
+        <div><strong>BPCC 101 PYQ Collection</strong><span>Previous year questions with topic sorting</span></div>
+        <button class="btn btn-secondary btn-small download-btn" data-resource="BPCC 101 PYQ Collection">Download</button>
+      </div>
+      <div class="download-item resource-item" data-title="bpcc 107 revision notes">
+        <div><strong>BPCC 107 Revision Notes</strong><span>Fast revision pages for semester exam prep</span></div>
+        <button class="btn btn-secondary btn-small download-btn" data-resource="BPCC 107 Revision Notes">Download</button>
+      </div>
+      <div class="download-item resource-item" data-title="cbt practice handbook">
+        <div><strong>CBT Practice Handbook</strong><span>Basic concepts, examples, and answer structure</span></div>
+        <button class="btn btn-secondary btn-small download-btn" data-resource="CBT Practice Handbook">Download</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Student feedback</span>
+      <h2>Realistic reviews from students using the notes.</h2>
+    </div>
+    <div class="grid-3">
+      <article class="card quote">
+        <p>“The notes are straight to the point. I stopped wasting time on long textbook paragraphs.”</p>
+        <div class="person"><div class="avatar">AR</div><div><strong>Aditi</strong><span>B.A. Psychology Student</span></div></div>
+      </article>
+      <article class="card quote">
+        <p>“CBT explanations finally made sense. The examples are simple enough to revise quickly.”</p>
+        <div class="person"><div class="avatar">KM</div><div><strong>Karan</strong><span>IGNOU Learner</span></div></div>
+      </article>
+      <article class="card quote">
+        <p>“The PDF layout is clean and easy on mobile. That matters when you study on the phone.”</p>
+        <div class="person"><div class="avatar">SP</div><div><strong>Simran</strong><span>Exam Preparation</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="cta-band">
+      <span class="eyebrow" style="background:rgba(255,255,255,.12); color:#fff; border-color:rgba(255,255,255,.14)">Stay updated</span>
+      <h2>Get new psychology notes and PDF updates by email.</h2>
+      <p>One clean email list for new notes, fresh PYQs, and premium bundle launches.</p>
+      <div class="search-inline" style="border:0; margin-top:20px;">
+        <input id="newsletterEmail" type="email" placeholder="Enter your email address" />
+        <button class="btn btn-primary" id="newsletterBtn">Join Newsletter</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="#home" style="margin-bottom:14px; display:inline-flex;">
+            <span class="brand-mark">N</span>
+            <span>NOTESHUBINDIA<small>Psychology Made Simple</small></span>
+          </a>
+          <p>Student-friendly psychology notes, PDFs, PYQs, and revision tools for exam preparation.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <a href="#subjects">Featured Subjects</a>
+          <a href="#pdfs">Download PDFs</a>
+          <a href="#premium">Premium Notes</a>
+          <a href="#pyqs">Most Downloaded PDFs</a>
+        </div>
+        <div>
+          <h4>Pages</h4>
+          <a href="#bpcc101">BPCC 101</a>
+          <a href="#bpcc107">BPCC 107</a>
+          <a href="#cbt">CBT</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div>
+          <h4>Social</h4>
+          <div class="socials" aria-label="Social media placeholders">
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="YouTube">▶</a>
+            <a href="#" aria-label="Telegram">✦</a>
+            <a href="#" aria-label="Facebook">f</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <span>© <span id="year"></span> NOTESHUBINDIA. All rights reserved.</span>
+        <span>Psychology Made Simple</span>
+      </div>
+    </div>
+  </footer>  <div class="overlay" id="downloadModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <div>
+          <span class="badge free" id="modalBadge">Free PDF</span>
+          <h3 id="modalTitle" style="margin-top:10px">Get your PDF</h3>
+          <p id="modalDesc" style="margin-top:6px">Enter your details and we’ll simulate email delivery.</p>
+        </div>
+        <button class="close-btn" id="closeModal" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <form class="form-grid" id="downloadForm">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your full name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@example.com" required />
+          </div>
+          <div class="helper" id="modalHelper">Your PDF will be prepared for email delivery after submission.</div>
+          <button class="btn btn-primary" type="submit" id="submitDownload">Send PDF to Email</button>
+        </form>
+      </div>
+    </div>
+  </div>  <div class="toast-wrap" id="toastWrap" aria-live="polite" aria-atomic="true"></div>  <script>
+    const loader = document.getElementById('loader');
+    window.addEventListener('load', () => {
+      loader.style.opacity = '0';
+      setTimeout(() => loader.remove(), 380);
+    });
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobilePanel = document.getElementById('mobilePanel');
+    menuBtn.addEventListener('click', () => {
+      const open = mobilePanel.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    mobilePanel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobilePanel.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+
+    const year = document.getElementById('year');
+    year.textContent = new Date().getFullYear();
+
+    const toastWrap = document.getElementById('toastWrap');
+    function toast(title, message){
+      const node = document.createElement('div');
+      node.className = 'toast';
+      node.innerHTML = `
+        <span class="dot"></span>
+        <div>
+          <strong>${title}</strong>
+          <span>${message}</span>
+        </div>
+      `;
+      toastWrap.appendChild(node);
+      setTimeout(() => node.style.opacity = '0', 2800);
+      setTimeout(() => node.remove(), 3300);
+    }
+
+    const modal = document.getElementById('downloadModal');
+    const closeModal = document.getElementById('closeModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalBadge = document.getElementById('modalBadge');
+    const modalHelper = document.getElementById('modalHelper');
+    const downloadForm = document.getElementById('downloadForm');
+    const submitDownload = document.getElementById('submitDownload');
+    let currentResource = '';
+
+    function openModal(resource){
+      currentResource = resource;
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden', 'false');
+      modalTitle.textContent = `${resource}`;
+      modalDesc.textContent = 'Enter your name and email, then the PDF delivery will be simulated immediately.';
+      modalBadge.textContent = resource.toLowerCase().includes('premium') || resource.toLowerCase().includes('master') || resource.toLowerCase().includes('vault') ? 'Premium PDF' : 'Free PDF';
+      modalHelper.textContent = `Requesting: ${resource}. This demo simulates delivery to your inbox.`;
+      document.getElementById('name').focus();
+    }
+    function hideModal(){
+      modal.classList.remove('show');
+      modal.setAttribute('aria-hidden', 'true');
+      downloadForm.reset();
+      submitDownload.textContent = 'Send PDF to Email';
+    }
+
+    document.querySelectorAll('.download-btn').forEach(btn => {
+      btn.addEventListener('click', () => openModal(btn.dataset.resource));
+    });
+    closeModal.addEventListener('click', hideModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) hideModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideModal(); });
+
+    downloadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      submitDownload.disabled = true;
+      submitDownload.textContent = 'Preparing PDF...';
+      setTimeout(() => {
+        submitDownload.disabled = false;
+        toast('PDF delivery simulated', `Hi ${name}, ${currentResource} has been sent to ${email}.`);
+        hideModal();
+      }, 900);
+    });
+
+    const newsletterBtn = document.getElementById('newsletterBtn');
+    newsletterBtn.addEventListener('click', () => {
+      const email = document.getElementById('newsletterEmail').value.trim();
+      if (!email || !email.includes('@')) {
+        toast('Enter a valid email', 'Newsletter signup needs a proper email address.');
+        return;
+      }
+      toast('Subscribed', `${email} joined the psychology updates list.`);
+      document.getElementById('newsletterEmail').value = '';
+    });
+
+    const searchInputs = ['searchInput','searchInputMobile','resourceSearch'];
+    const filterable = document.querySelectorAll('.note-item, .resource-item');
+    function applyFilter(value){
+      const q = value.trim().toLowerCase();
+      filterable.forEach(el => {
+        const text = (el.dataset.title || el.textContent).toLowerCase();
+        el.classList.toggle('hidden', q && !text.includes(q));
+      });
+    }
+    searchInputs.forEach(id => {
+      const input = document.getElementById(id);
+      input.addEventListener('input', (e) => {
+        const v = e.target.value;
+        searchInputs.forEach(otherId => {
+          const other = document.getElementById(otherId);
+          if (other !== e.target) other.value = v;
+        });
+        applyFilter(v);
+      });
+    });
+
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = ['home','subjects','latest','pdfs','premium','pyqs','about','contact'].map(id => document.getElementById(id)).filter(Boolean);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(a => a.classList.remove('active'));
+          const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-40% 0px -50% 0px', threshold: 0.05 });
+    sections.forEach(section => observer.observe(section));
+
+    const buyButtons = document.querySelectorAll('.buy-btn');
+    buyButtons.forEach(btn => btn.addEventListener('click', () => {
+      toast('Checkout demo', `${btn.dataset.plan} selected. Connect payment flow here.`);
+    }));
+  </script></body>
+  </html>
