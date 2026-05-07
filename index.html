@@ -25,7 +25,6 @@
     --card:#101c2d;
     --primary:#5b8cff;
     --secondary:#7c4dff;
-    --text:#ffffff;
     --light:#a7b4c7;
     --shadow:0 10px 30px rgba(0,0,0,0.35);
 }
@@ -127,6 +126,10 @@ body{
     outline:none;
 }
 
+.search-box input::placeholder{
+    color:#b8c4d6;
+}
+
 /* HERO */
 
 .hero{
@@ -139,8 +142,6 @@ body{
     background:linear-gradient(135deg,#101c2d,#14233a);
     border-radius:35px;
     padding:70px 50px;
-    position:relative;
-    overflow:hidden;
     box-shadow:var(--shadow);
 }
 
@@ -154,35 +155,6 @@ body{
     max-width:700px;
     color:var(--light);
     font-size:1.1rem;
-    margin-bottom:35px;
-}
-
-.hero-buttons{
-    display:flex;
-    gap:18px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    text-decoration:none;
-    padding:16px 28px;
-    border-radius:16px;
-    font-weight:600;
-    transition:0.3s;
-}
-
-.btn-primary{
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-    color:white;
-}
-
-.btn-secondary{
-    background:rgba(255,255,255,0.08);
-    color:white;
-}
-
-.btn:hover{
-    transform:translateY(-4px);
 }
 
 /* NOTES */
@@ -235,6 +207,7 @@ body{
 .card p{
     color:var(--light);
     margin-bottom:28px;
+    line-height:1.7;
 }
 
 .card a{
@@ -242,8 +215,9 @@ body{
     display:inline-block;
     padding:12px 20px;
     border-radius:12px;
-    background:rgba(255,255,255,0.08);
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
     color:white;
+    font-weight:600;
 }
 
 /* ADS */
@@ -265,6 +239,12 @@ footer{
     text-align:center;
     padding:60px 20px;
     border-top:1px solid rgba(255,255,255,0.06);
+}
+
+footer p{
+    max-width:650px;
+    margin:auto;
+    color:var(--light);
 }
 
 .copy{
@@ -343,58 +323,27 @@ Modern psychology dashboard for IGNOU and B.A. students.
 Browse organized notes, topic PDFs, revisions and psychology study material in one place.
 </p>
 
-<div class="hero-buttons">
-
-<a href="#notes" class="btn btn-primary">
-Explore Notes
-</a>
-
-<a href="#" class="btn btn-secondary">
-Latest Uploads
-</a>
-
-</div>
-
 </div>
 
 </section>
 
 <!-- NOTES -->
 
-<section class="dashboard" id="notes">
+<section class="dashboard">
 
 <h2 class="section-title">
 Psychology Subjects
 </h2>
 
-<div class="cards">
+<div class="cards" id="cardsContainer">
 
-<div class="card" data-title="bpcc 101 short notes">
-<div class="icon">📘</div>
-<h2>BPCC 101 Short Notes</h2>
-<p>Easy psychology notes for quick revision and exam preparation.</p>
-<a href="bpcc.html">Open Notes</a>
-</div>
-
-<div class="card" data-title="thinking language">
-<div class="icon">🧠</div>
-<h2>Thinking & Language</h2>
-<p>Learn cognition, concepts, language and problem-solving processes.</p>
-<a href="think.html">Open Notes</a>
-</div>
-
-<div class="card" data-title="cbt basics">
-<div class="icon">📖</div>
-<h2>CBT Basics</h2>
-<p>Cognitive Behavioral Therapy fundamentals and mental frameworks.</p>
-<a href="cbt.html">Open Notes</a>
-</div>
+<!-- AUTO GENERATED -->
 
 </div>
 
 </section>
 
-<!-- ADSTERA -->
+<!-- ADS -->
 
 <div class="ad-box">
 
@@ -419,21 +368,101 @@ beautiful and simple learning resources.
 
 </footer>
 
-<!-- SEARCH -->
-
 <script>
 
-const searchInput = document.getElementById('searchInput');
+/* =========================================
+ADD SUBJECTS ONLY HERE
+========================================= */
 
-const cards = document.querySelectorAll('.card');
+const subjects = [
+
+{
+name: "BPCC 101",
+file: "bpcc.html",
+icon: "📘"
+},
+
+{
+name: "Thinking & Learning",
+file: "think.html",
+icon: "🧠"
+},
+
+{
+name: "CBT Basics",
+file: "cbt.html",
+icon: "📖"
+},
+
+{
+name: "Perception",
+file: "perc.html",
+icon: "👁️"
+}
+
+/* ADD MORE BELOW
+
+{
+name: "Social Psychology",
+file: "social.html",
+icon: "👥"
+}
+
+*/
+
+];
+
+
+/* =========================================
+AUTO CREATE CARDS
+========================================= */
+
+const cardsContainer = document.getElementById('cardsContainer');
+
+subjects.forEach(subject => {
+
+cardsContainer.innerHTML += `
+
+<div class="card" data-title="${subject.name.toLowerCase()}">
+
+<div class="icon">
+${subject.icon}
+</div>
+
+<h2>
+${subject.name}
+</h2>
+
+<p>
+Simple psychology notes for revision, assignments and exam preparation.
+</p>
+
+<a href="${subject.file}">
+Open Notes
+</a>
+
+</div>
+
+`;
+
+});
+
+
+/* =========================================
+SEARCH
+========================================= */
+
+const searchInput = document.getElementById('searchInput');
 
 searchInput.addEventListener('keyup', () => {
 
 let value = searchInput.value.toLowerCase();
 
+const cards = document.querySelectorAll('.card');
+
 cards.forEach(card => {
 
-let title = card.dataset.title.toLowerCase();
+let title = card.dataset.title;
 
 if(title.includes(value)){
 
@@ -450,7 +479,9 @@ card.style.display = "none";
 });
 
 
-/* LOAD ADSTERA ADS LAZY */
+/* =========================================
+LOAD ADS
+========================================= */
 
 window.addEventListener('load',()=>{
 
@@ -461,7 +492,6 @@ window.addEventListener('load',()=>{
     },2000);
 
 });
-
 
 function loadAds(){
 
@@ -474,7 +504,6 @@ function loadAds(){
     script1.src = "https://pl29365361.profitablecpmratenetwork.com/71311088c3fe35ba595e4abb4f234f6a/invoke.js";
 
     document.body.appendChild(script1);
-
 
     const container = document.createElement('div');
 
