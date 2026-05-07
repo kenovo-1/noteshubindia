@@ -132,10 +132,6 @@ body{
     color:#b5c2d4;
 }
 
-.search-box input:focus{
-    background:rgba(255,255,255,0.12);
-}
-
 /* HERO */
 
 .hero{
@@ -194,7 +190,6 @@ body{
 .btn-primary{
     background:linear-gradient(135deg,var(--primary),var(--secondary));
     color:white;
-    box-shadow:0 10px 25px rgba(91,140,255,0.35);
 }
 
 .btn-secondary{
@@ -282,11 +277,7 @@ body{
     color:white;
 }
 
-.card a:hover{
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-}
-
-/* ADSENSE */
+/* ADS */
 
 .adsense-box{
     max-width:1200px;
@@ -295,6 +286,18 @@ body{
     background:#101c2d;
     border-radius:24px;
     overflow:hidden;
+    min-height:280px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+#adloading{
+    color:#a7b4c7;
+    margin-bottom:15px;
+    font-size:0.95rem;
 }
 
 /* FOOTER */
@@ -458,16 +461,14 @@ Browse organized notes, topic PDFs, revisions and psychology study material in o
 
 <div class="adsense-box">
 
+<p id="adloading">Loading Ads...</p>
+
 <ins class="adsbygoogle"
-     style="display:block"
+     style="display:block; width:100%;"
      data-ad-client="ca-pub-6433910494668507"
      data-ad-slot="9987633862"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
-
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
 </div>
 
@@ -512,6 +513,20 @@ card.style.display = "none";
 });
 
 });
+
+/* ADSENSE */
+
+(adsbygoogle = window.adsbygoogle || []).push({});
+
+setTimeout(() => {
+
+const loading = document.getElementById("adloading");
+
+if(loading){
+    loading.style.display = "none";
+}
+
+}, 4000);
 
 </script>
 
