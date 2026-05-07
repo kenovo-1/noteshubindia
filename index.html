@@ -7,7 +7,8 @@
 
 <title>NOTESHUBINDIA</title>
 
-<!-- ADSENSE -->
+<!-- GOOGLE ADSENSE -->
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6433910494668507"
 crossorigin="anonymous"></script>
 
@@ -132,6 +133,10 @@ body{
     color:#b5c2d4;
 }
 
+.search-box input:focus{
+    background:rgba(255,255,255,0.12);
+}
+
 /* HERO */
 
 .hero{
@@ -190,6 +195,7 @@ body{
 .btn-primary{
     background:linear-gradient(135deg,var(--primary),var(--secondary));
     color:white;
+    box-shadow:0 10px 25px rgba(91,140,255,0.35);
 }
 
 .btn-secondary{
@@ -201,7 +207,7 @@ body{
     transform:translateY(-4px);
 }
 
-/* DASHBOARD */
+/* NOTES */
 
 .dashboard{
     max-width:1300px;
@@ -275,29 +281,24 @@ body{
     border-radius:12px;
     background:rgba(255,255,255,0.08);
     color:white;
+    transition:0.3s;
+}
+
+.card a:hover{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
 }
 
 /* ADS */
 
 .adsense-box{
     max-width:1200px;
-    margin:40px auto;
-    padding:20px;
+    margin:50px auto;
+    padding:25px;
+    min-height:320px;
     background:#101c2d;
     border-radius:24px;
     overflow:hidden;
-    min-height:280px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-}
-
-#adloading{
-    color:#a7b4c7;
-    margin-bottom:15px;
-    font-size:0.95rem;
+    box-shadow:var(--shadow);
 }
 
 /* FOOTER */
@@ -328,34 +329,34 @@ footer p{
 
 @media(max-width:900px){
 
-    .hero h1{
-        font-size:3rem;
-    }
+.hero h1{
+    font-size:3rem;
+}
 
 }
 
 @media(max-width:600px){
 
-    .nav-container{
-        flex-direction:column;
-        align-items:flex-start;
-    }
+.nav-container{
+    flex-direction:column;
+    align-items:flex-start;
+}
 
-    .search-box{
-        width:100%;
-    }
+.search-box{
+    width:100%;
+}
 
-    .hero{
-        padding-top:50px;
-    }
+.hero{
+    padding-top:50px;
+}
 
-    .hero-box{
-        padding:45px 28px;
-    }
+.hero-box{
+    padding:45px 28px;
+}
 
-    .hero h1{
-        font-size:2.2rem;
-    }
+.hero h1{
+    font-size:2.2rem;
+}
 
 }
 
@@ -461,14 +462,11 @@ Browse organized notes, topic PDFs, revisions and psychology study material in o
 
 <div class="adsense-box">
 
-<p id="adloading">Loading Ads...</p>
-
 <ins class="adsbygoogle"
-     style="display:block; width:100%;"
+     style="display:block"
+     data-ad-format="autorelaxed"
      data-ad-client="ca-pub-6433910494668507"
-     data-ad-slot="9987633862"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
+     data-ad-slot="3725477844"></ins>
 
 </div>
 
@@ -514,20 +512,12 @@ card.style.display = "none";
 
 });
 
-/* ADSENSE */
+</script>
 
+<!-- ADSENSE INIT -->
+
+<script>
 (adsbygoogle = window.adsbygoogle || []).push({});
-
-setTimeout(() => {
-
-const loading = document.getElementById("adloading");
-
-if(loading){
-    loading.style.display = "none";
-}
-
-}, 4000);
-
 </script>
 
 </body>
