@@ -4,9 +4,9 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta name="monetag" content="d8c29e0fd7f1992813c0e2285b5cc16a">
 
-<!-- GOOGLE VERIFICATION -->
 <meta name="google-site-verification" content="WVCMal7_HouNmIDpYiWwjsuSxFrszSTburKwngURDKU">
 
 <!-- SEO -->
@@ -15,7 +15,7 @@
 
 <meta name="description" content="NOTESHUBINDIA provides psychology notes for IGNOU and B.A. students including CBT, Perception, Thinking & Learning, BPCC 101 and Social Psychology notes.">
 
-<meta name="keywords" content="Psychology Notes, IGNOU Psychology Notes, BPCC 101 Notes, CBT Notes, Perception Notes, Thinking and Learning Notes, Social Psychology Notes, BA Psychology Notes">
+<meta name="keywords" content="Psychology Notes, IGNOU Psychology Notes, BPCC 101 Notes, CBT Notes, Perception Notes, Thinking and Learning Notes, Social Psychology Notes">
 
 <meta name="author" content="NOTESHUBINDIA">
 
@@ -61,7 +61,7 @@
   "@type":"WebSite",
   "name":"NOTESHUBINDIA",
   "url":"https://noteshubindia.run.place",
-  "description":"Psychology notes for IGNOU and B.A. students including CBT, BPCC 101, Perception, Thinking & Learning and Social Psychology.",
+  "description":"Psychology notes for IGNOU and B.A. students.",
   "publisher":{
     "@type":"Organization",
     "name":"NOTESHUBINDIA"
@@ -69,10 +69,7 @@
 }
 </script>
 
-<!-- GOOGLE FONTS -->
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <style>
@@ -80,266 +77,241 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 :root{
-    --bg:#07111f;
-    --card:#101c2d;
-    --primary:#5b8cff;
-    --secondary:#7c4dff;
-    --light:#a7b4c7;
-    --shadow:0 10px 30px rgba(0,0,0,0.35);
+--bg:#07111f;
+--card:#101c2d;
+--primary:#5b8cff;
+--secondary:#7c4dff;
+--light:#a7b4c7;
+--shadow:0 10px 30px rgba(0,0,0,0.35);
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(180deg,#07111f,#0b1728,#101c2d);
-    color:white;
-    overflow-x:hidden;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(180deg,#07111f,#0b1728,#101c2d);
+color:white;
+overflow-x:hidden;
 }
 
 /* BACKGROUND */
 
 .bg-glow{
-    position:fixed;
-    width:500px;
-    height:500px;
-    background:radial-gradient(circle,rgba(91,140,255,0.18),transparent 70%);
-    top:-150px;
-    right:-150px;
-    border-radius:50%;
-    z-index:-1;
-    animation:float 8s ease-in-out infinite;
+position:fixed;
+width:500px;
+height:500px;
+background:radial-gradient(circle,rgba(91,140,255,0.18),transparent 70%);
+top:-150px;
+right:-150px;
+border-radius:50%;
+z-index:-1;
+animation:float 8s ease-in-out infinite;
 }
 
 .bg-glow2{
-    position:fixed;
-    width:450px;
-    height:450px;
-    background:radial-gradient(circle,rgba(124,77,255,0.15),transparent 70%);
-    bottom:-150px;
-    left:-150px;
-    border-radius:50%;
-    z-index:-1;
-    animation:float2 10s ease-in-out infinite;
+position:fixed;
+width:450px;
+height:450px;
+background:radial-gradient(circle,rgba(124,77,255,0.15),transparent 70%);
+bottom:-150px;
+left:-150px;
+border-radius:50%;
+z-index:-1;
+animation:float2 10s ease-in-out infinite;
 }
 
 @keyframes float{
-    0%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(30px);
-    }
-    100%{
-        transform:translateY(0);
-    }
+0%{transform:translateY(0);}
+50%{transform:translateY(30px);}
+100%{transform:translateY(0);}
 }
 
 @keyframes float2{
-    0%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-30px);
-    }
-    100%{
-        transform:translateY(0);
-    }
+0%{transform:translateY(0);}
+50%{transform:translateY(-30px);}
+100%{transform:translateY(0);}
 }
 
 /* NAVBAR */
 
 .navbar{
-    position:sticky;
-    top:0;
-    z-index:999;
-    backdrop-filter:blur(14px);
-    background:rgba(7,17,31,0.75);
-    border-bottom:1px solid rgba(255,255,255,0.06);
+position:sticky;
+top:0;
+z-index:999;
+backdrop-filter:blur(14px);
+background:rgba(7,17,31,0.75);
+border-bottom:1px solid rgba(255,255,255,0.06);
 }
 
 .nav-container{
-    max-width:1300px;
-    margin:auto;
-    padding:18px 20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
+max-width:1300px;
+margin:auto;
+padding:18px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
 }
 
 .logo{
-    font-size:1.8rem;
-    font-weight:800;
+font-size:1.8rem;
+font-weight:800;
 }
 
 .logo span{
-    display:block;
-    font-size:0.8rem;
-    color:var(--light);
-    font-weight:400;
+display:block;
+font-size:0.8rem;
+color:var(--light);
+font-weight:400;
 }
 
 .search-box{
-    width:420px;
-    max-width:100%;
+width:420px;
+max-width:100%;
 }
 
 .search-box input{
-    width:100%;
-    padding:14px 18px;
-    border:none;
-    border-radius:16px;
-    background:rgba(255,255,255,0.08);
-    color:white;
-    outline:none;
-    font-size:0.95rem;
+width:100%;
+padding:14px 18px;
+border:none;
+border-radius:16px;
+background:rgba(255,255,255,0.08);
+color:white;
+outline:none;
+font-size:0.95rem;
 }
 
 .search-box input::placeholder{
-    color:#b8c4d6;
+color:#b8c4d6;
 }
 
 /* HERO */
 
 .hero{
-    max-width:1300px;
-    margin:auto;
-    padding:90px 20px 60px;
+max-width:1300px;
+margin:auto;
+padding:90px 20px 60px;
 }
 
 .hero-box{
-    background:linear-gradient(135deg,#101c2d,#14233a);
-    border-radius:35px;
-    padding:70px 50px;
-    box-shadow:var(--shadow);
+background:linear-gradient(135deg,#101c2d,#14233a);
+border-radius:35px;
+padding:70px 50px;
+box-shadow:var(--shadow);
 }
 
 .hero h1{
-    font-size:4rem;
-    line-height:1.1;
-    margin-bottom:25px;
+font-size:4rem;
+line-height:1.1;
+margin-bottom:25px;
 }
 
 .hero p{
-    max-width:700px;
-    color:var(--light);
-    font-size:1.1rem;
-    line-height:1.8;
+max-width:700px;
+color:var(--light);
+font-size:1.1rem;
+line-height:1.8;
 }
 
 /* DASHBOARD */
 
 .dashboard{
-    max-width:1300px;
-    margin:auto;
-    padding:20px 20px 70px;
+max-width:1300px;
+margin:auto;
+padding:20px 20px 70px;
 }
 
 .section-title{
-    font-size:2rem;
-    margin-bottom:30px;
+font-size:2rem;
+margin-bottom:30px;
 }
 
 .cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
 .card{
-    background:linear-gradient(145deg,#101c2d,#132238);
-    border-radius:28px;
-    padding:30px;
-    transition:0.4s ease;
-    box-shadow:var(--shadow);
+background:linear-gradient(145deg,#101c2d,#132238);
+border-radius:28px;
+padding:30px;
+transition:0.4s ease;
+box-shadow:var(--shadow);
 }
 
 .card:hover{
-    transform:translateY(-10px);
+transform:translateY(-10px);
 }
 
 .icon{
-    width:70px;
-    height:70px;
-    border-radius:20px;
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:1.8rem;
-    margin-bottom:25px;
+width:70px;
+height:70px;
+border-radius:20px;
+background:linear-gradient(135deg,var(--primary),var(--secondary));
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:1.8rem;
+margin-bottom:25px;
 }
 
 .card h2{
-    margin-bottom:14px;
-    font-size:1.4rem;
+margin-bottom:14px;
+font-size:1.4rem;
 }
 
 .card p{
-    color:var(--light);
-    margin-bottom:28px;
-    line-height:1.7;
+color:var(--light);
+margin-bottom:28px;
+line-height:1.7;
 }
 
 .card a{
-    text-decoration:none;
-    display:inline-block;
-    padding:12px 20px;
-    border-radius:12px;
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-    color:white;
-    font-weight:600;
-    transition:0.3s;
+text-decoration:none;
+display:inline-block;
+padding:12px 20px;
+border-radius:12px;
+background:linear-gradient(135deg,var(--primary),var(--secondary));
+color:white;
+font-weight:600;
+transition:0.3s;
 }
 
 .card a:hover{
-    transform:translateY(-3px);
-}
-
-/* ADS */
-
-.ad-box{
-    max-width:1200px;
-    margin:50px auto;
-    padding:25px;
-    min-height:280px;
-    background:#101c2d;
-    border-radius:24px;
-    overflow:hidden;
-    box-shadow:var(--shadow);
+transform:translateY(-3px);
 }
 
 /* FOOTER */
 
 footer{
-    text-align:center;
-    padding:60px 20px;
-    border-top:1px solid rgba(255,255,255,0.06);
+text-align:center;
+padding:60px 20px;
+border-top:1px solid rgba(255,255,255,0.06);
 }
 
 footer h2{
-    margin-bottom:15px;
+margin-bottom:15px;
 }
 
 footer p{
-    max-width:650px;
-    margin:auto;
-    color:var(--light);
-    line-height:1.7;
+max-width:650px;
+margin:auto;
+color:var(--light);
+line-height:1.7;
 }
 
 .copy{
-    margin-top:20px;
-    color:var(--light);
+margin-top:20px;
+color:var(--light);
 }
 
 /* MOBILE */
@@ -347,7 +319,7 @@ footer p{
 @media(max-width:900px){
 
 .hero h1{
-    font-size:3rem;
+font-size:3rem;
 }
 
 }
@@ -355,24 +327,24 @@ footer p{
 @media(max-width:600px){
 
 .nav-container{
-    flex-direction:column;
-    align-items:flex-start;
+flex-direction:column;
+align-items:flex-start;
 }
 
 .search-box{
-    width:100%;
+width:100%;
 }
 
 .hero{
-    padding-top:60px;
+padding-top:60px;
 }
 
 .hero h1{
-    font-size:2.2rem;
+font-size:2.2rem;
 }
 
 .hero-box{
-    padding:45px 28px;
+padding:45px 28px;
 }
 
 }
@@ -438,19 +410,9 @@ Psychology Subjects
 
 <div class="cards" id="cardsContainer">
 
-<!-- AUTO GENERATED -->
-
 </div>
 
 </section>
-
-<!-- ADS -->
-
-<div class="ad-box">
-
-<div id="ad-container"></div>
-
-</div>
 
 <!-- FOOTER -->
 
@@ -471,9 +433,7 @@ beautiful and simple learning resources.
 
 <script>
 
-/* =========================================
-ADD SUBJECTS HERE
-========================================= */
+/* SUBJECTS */
 
 const subjects = [
 
@@ -514,10 +474,7 @@ desc: "BPCC 107 Social Psychology notes for IGNOU and B.A. students."
 
 ];
 
-
-/* =========================================
-AUTO CREATE CARDS
-========================================= */
+/* AUTO CREATE CARDS */
 
 const cardsContainer = document.getElementById('cardsContainer');
 
@@ -549,10 +506,7 @@ Open Notes
 
 });
 
-
-/* =========================================
-SEARCH SYSTEM
-========================================= */
+/* SEARCH */
 
 const searchInput = document.getElementById('searchInput');
 
@@ -580,42 +534,21 @@ card.style.display = "none";
 
 });
 
+</script>
 
-/* =========================================
-LOAD ADS
-========================================= */
+<!-- MONETAG VIGNETTE -->
 
-window.addEventListener('load',()=>{
-
-setTimeout(()=>{
-
-loadAds();
-
-},2000);
-
-});
-
-
-function loadAds(){
-
-const script1 = document.createElement('script');
-
-script1.async = true;
-
-script1.setAttribute('data-cfasync','false');
-
-script1.src = "https://pl29365361.profitablecpmratenetwork.com/71311088c3fe35ba595e4abb4f234f6a/invoke.js";
-
-document.body.appendChild(script1);
-
-const container = document.createElement('div');
-
-container.id = "container-71311088c3fe35ba595e4abb4f234f6a";
-
-document.getElementById('ad-container').appendChild(container);
-
-}
-
+<script>
+(function(s){
+s.dataset.zone='10976968',
+s.src='https://n6wxm.com/vignette.min.js'
+})
+(
+[document.documentElement, document.body]
+.filter(Boolean)
+.pop()
+.appendChild(document.createElement('script'))
+)
 </script>
 
 </body>
