@@ -10,9 +10,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
@@ -249,32 +246,6 @@ body{
     margin-bottom:20px;
 }
 
-/* SOCIAL */
-
-.social-bar{
-    position:fixed;
-    right:15px;
-    top:50%;
-    transform:translateY(-50%);
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-    z-index:999;
-}
-
-.social-bar a{
-    width:52px;
-    height:52px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:linear-gradient(135deg,#5b8cff,#7c4dff);
-    text-decoration:none;
-    color:white;
-    font-size:1.2rem;
-}
-
 /* FOOTER */
 
 .footer{
@@ -297,14 +268,6 @@ body{
 
 .progress-container{
     width:260px;
-}
-
-.social-bar{
-    bottom:15px;
-    top:auto;
-    right:50%;
-    transform:translateX(50%);
-    flex-direction:row;
 }
 
 }
@@ -401,7 +364,7 @@ BPCC 101 Introduction to Psychology is one of the foundational subjects for psyc
 </p>
 
 <p>
-The course introduces core psychological concepts including perception, learning, memory, thinking, language, motivation and emotion. 0
+The course introduces core psychological concepts including perception, learning, memory, thinking, language, motivation and emotion.
 </p>
 
 <p>
@@ -424,24 +387,26 @@ Download Full Notes
 
 </section>
 
-<!-- SOCIAL -->
-
-<div class="social-bar">
-
-<a href="#"><i class="fab fa-facebook-f"></i></a>
-<a href="#"><i class="fab fa-instagram"></i></a>
-<a href="#"><i class="fab fa-youtube"></i></a>
-<a href="#"><i class="fab fa-telegram-plane"></i></a>
-
-</div>
-
 <!-- BOTTOM AD -->
 
 <section class="bottom-ads">
 
 <div class="ad-box">
 
-<div id="bottomAd"></div>
+<div id="bottomAd">
+
+<div style="
+text-align:center;
+padding:40px 20px;
+color:#9fb0c7;
+font-size:0.95rem;
+">
+
+More psychology notes coming soon...
+
+</div>
+
+</div>
 
 </div>
 
@@ -511,27 +476,6 @@ function loadTopAd(){
 }
 
 
-/* BOTTOM AD */
-
-function loadBottomAd(){
-
-    if(window.bottomAdLoaded) return;
-
-    window.bottomAdLoaded = true;
-
-    const script = document.createElement('script');
-
-    script.async = true;
-
-    script.type = "text/javascript";
-
-    script.src = "https://pl29365362.profitablecpmratenetwork.com/3f/12/34/3f1234eec0677a4a6c5638f857ffd790.js";
-
-    document.getElementById('bottomAd').appendChild(script);
-
-}
-
-
 /* INIT ADS */
 
 function initializeAds(){
@@ -542,16 +486,9 @@ function initializeAds(){
 
     }, 1500);
 
-    setTimeout(() => {
-
-        loadBottomAd();
-
-    }, 4000);
-
 }
 
 </script>
 
 </body>
 </html>
-```1
