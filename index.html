@@ -25,18 +25,19 @@ content="Free psychology notes for IGNOU and B.A. Psychology students including 
 <meta property="og:description" content="Psychology Notes Made Simple">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://noteshubindia.run.place">
-<meta property="og:image" content="https://noteshubindia.run.place/image.jpg">
+<meta property="og:image" content="https://noteshubindia.run.place/favicon.png">
 
 <!-- TWITTER -->
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="NOTESHUBINDIA">
 <meta name="twitter:description" content="Psychology Notes Made Simple">
-<meta name="twitter:image" content="https://noteshubindia.run.place/image.jpg">
+<meta name="twitter:image" content="https://noteshubindia.run.place/favicon.png">
 
 <!-- FAVICON -->
 
 <link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 
 <!-- GOOGLE FONT -->
 
@@ -120,9 +121,22 @@ align-items:center;
 gap:20px;
 }
 
+/* LOGO */
+
 .logo{
-font-size:1.8rem;
+display:flex;
+align-items:center;
+gap:14px;
+font-size:1.7rem;
 font-weight:800;
+}
+
+.logo img{
+width:52px;
+height:52px;
+border-radius:14px;
+object-fit:cover;
+box-shadow:0 5px 15px rgba(0,0,0,0.25);
 }
 
 .logo span{
@@ -132,6 +146,8 @@ color:#9fb0c7;
 font-weight:400;
 margin-top:3px;
 }
+
+/* SEARCH */
 
 .search-box{
 width:420px;
@@ -158,7 +174,7 @@ color:#b8c4d6;
 .hero{
 max-width:1300px;
 margin:auto;
-padding:90px 20px 40px;
+padding:90px 20px 50px;
 }
 
 .hero-box{
@@ -197,37 +213,6 @@ font-size:1.1rem;
 line-height:1.9;
 position:relative;
 z-index:2;
-}
-
-/* AD SECTION */
-
-.ad-section{
-max-width:1300px;
-margin:auto;
-padding:0 20px 40px;
-}
-
-.ad-box{
-background:#101c2d;
-border-radius:28px;
-padding:25px;
-border:1px solid var(--border);
-box-shadow:var(--shadow);
-overflow:hidden;
-
-min-height:280px;
-
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-}
-
-.sponsored{
-text-align:center;
-color:#9fb0c7;
-font-size:0.9rem;
-margin-bottom:18px;
 }
 
 /* SUBJECTS */
@@ -357,6 +342,15 @@ font-size:2.2rem;
 padding:45px 28px;
 }
 
+.logo{
+font-size:1.4rem;
+}
+
+.logo img{
+width:45px;
+height:45px;
+}
+
 }
 
 </style>
@@ -375,8 +369,14 @@ padding:45px 28px;
 <div class="nav-container">
 
 <div class="logo">
+
+<img src="favicon.png" alt="NOTESHUBINDIA Logo">
+
+<div>
 NOTESHUBINDIA
 <span>Psychology Made Simple</span>
+</div>
+
 </div>
 
 <div class="search-box">
@@ -407,28 +407,6 @@ Psychology Notes Made Beautiful & Easy
 Modern psychology dashboard for IGNOU and B.A. students.
 Browse organized notes, topic PDFs, revisions and psychology study material in one place.
 </p>
-
-</div>
-
-</section>
-
-<!-- AD SECTION -->
-
-<section class="ad-section">
-
-<div class="ad-box">
-
-<div class="sponsored">
-Sponsored
-</div>
-
-<!-- MONETAG BANNER -->
-
-<div id="container-8c8a7195b2e7ef1f6f2d4b4f6ec9a5b"></div>
-
-<script async="async" data-cfasync="false"
-src="https://pl26328690.profitableratecpm.com/8c8a7195b2e7ef1f6f2d4b4f6ec9a5b/invoke.js">
-</script>
 
 </div>
 
@@ -516,7 +494,8 @@ subjects.forEach(subject => {
 
 cardsContainer.innerHTML += `
 
-<div class="card" data-search="${subject.name.toLowerCase()} ${subject.desc.toLowerCase()}">
+<div class="card"
+data-search="${subject.name.toLowerCase()} ${subject.desc.toLowerCase()}">
 
 <div class="icon">
 ${subject.icon}
