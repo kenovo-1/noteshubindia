@@ -1,28 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NOTESHUBINDIA - Psychology Made Simple</title>
+<title>NOTESHUBINDIA</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-:root{
-    --primary:#0f172a;
-    --secondary:#1e293b;
-    --light:#f8fafc;
-    --gray:#e2e8f0;
-    --text:#334155;
-    --white:#ffffff;
-    --shadow:0 2px 10px rgba(15,23,42,0.08);
-    --radius:16px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 *{
     margin:0;
@@ -30,15 +19,64 @@
     box-sizing:border-box;
 }
 
+:root{
+    --bg:#07111f;
+    --card:#101c2d;
+    --primary:#5b8cff;
+    --secondary:#7c4dff;
+    --text:#ffffff;
+    --light:#a7b4c7;
+    --border:rgba(255,255,255,0.08);
+    --shadow:0 10px 30px rgba(0,0,0,0.35);
+}
+
 html{
     scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Inter',sans-serif;
-    background:var(--light);
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(180deg,#07111f,#0b1728,#101c2d);
     color:var(--text);
-    line-height:1.6;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND GLOW */
+
+.bg-glow{
+    position:fixed;
+    width:600px;
+    height:600px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(91,140,255,0.18),transparent 70%);
+    top:-200px;
+    right:-200px;
+    z-index:-1;
+    animation:float 8s ease-in-out infinite;
+}
+
+.bg-glow2{
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(124,77,255,0.15),transparent 70%);
+    bottom:-200px;
+    left:-200px;
+    z-index:-1;
+    animation:float2 10s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(30px);}
+    100%{transform:translateY(0px);}
+}
+
+@keyframes float2{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-30px);}
+    100%{transform:translateY(0px);}
 }
 
 /* NAVBAR */
@@ -47,14 +85,15 @@ body{
     position:sticky;
     top:0;
     z-index:1000;
-    background:var(--white);
-    border-bottom:1px solid var(--gray);
-    padding:14px 20px;
+    backdrop-filter:blur(14px);
+    background:rgba(7,17,31,0.7);
+    border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
 .nav-container{
     max-width:1300px;
     margin:auto;
+    padding:18px 20px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -62,319 +101,279 @@ body{
 }
 
 .logo{
-    font-size:1.3rem;
-    font-weight:700;
-    color:var(--primary);
+    font-size:1.8rem;
+    font-weight:800;
+    letter-spacing:1px;
 }
 
 .logo span{
     display:block;
-    font-size:0.75rem;
-    font-weight:500;
-    color:#64748b;
+    font-size:0.8rem;
+    color:var(--light);
+    font-weight:400;
 }
 
 .search-box{
-    flex:1;
-    max-width:450px;
-    position:relative;
+    width:420px;
+    max-width:100%;
 }
 
 .search-box input{
     width:100%;
-    padding:12px 16px;
-    border:1px solid var(--gray);
-    border-radius:12px;
+    padding:14px 18px;
+    border:none;
+    border-radius:14px;
+    background:rgba(255,255,255,0.08);
+    color:white;
     outline:none;
-    background:#f8fafc;
     font-size:0.95rem;
+    transition:0.3s;
 }
 
 .search-box input:focus{
-    border-color:#94a3b8;
-}
-
-.menu-btn{
-    font-size:1.4rem;
-    cursor:pointer;
-    display:none;
-    color:var(--primary);
+    background:rgba(255,255,255,0.12);
+    transform:scale(1.02);
 }
 
 /* HERO */
 
 .hero{
-    padding:70px 20px 50px;
-}
-
-.hero-container{
     max-width:1300px;
     margin:auto;
-    background:var(--white);
-    border-radius:24px;
-    padding:50px 35px;
+    padding:90px 20px 60px;
+}
+
+.hero-box{
+    background:linear-gradient(135deg,#101c2d,#14233a);
+    border:1px solid var(--border);
+    border-radius:35px;
+    padding:70px 50px;
+    position:relative;
+    overflow:hidden;
     box-shadow:var(--shadow);
 }
 
+.hero-box::before{
+    content:'';
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:radial-gradient(circle,rgba(91,140,255,0.25),transparent 70%);
+    right:-80px;
+    top:-80px;
+}
+
 .hero h1{
-    font-size:2.5rem;
-    color:var(--primary);
-    margin-bottom:14px;
+    font-size:4rem;
+    line-height:1.1;
+    margin-bottom:25px;
+    max-width:850px;
+    animation:fadeUp 1s ease;
 }
 
 .hero p{
     max-width:700px;
-    color:#475569;
-    margin-bottom:28px;
-    font-size:1rem;
+    color:var(--light);
+    font-size:1.1rem;
+    margin-bottom:35px;
+    animation:fadeUp 1.3s ease;
 }
 
 .hero-buttons{
     display:flex;
-    gap:15px;
+    gap:18px;
     flex-wrap:wrap;
 }
 
 .btn{
     text-decoration:none;
-    padding:12px 22px;
-    border-radius:12px;
+    padding:16px 28px;
+    border-radius:16px;
     font-weight:600;
-    transition:0.2s ease;
+    transition:0.3s;
+    position:relative;
+    overflow:hidden;
 }
 
 .btn-primary{
-    background:var(--primary);
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
     color:white;
-}
-
-.btn-primary:hover{
-    background:#1e293b;
+    box-shadow:0 10px 25px rgba(91,140,255,0.35);
 }
 
 .btn-secondary{
-    background:#e2e8f0;
-    color:var(--primary);
+    background:rgba(255,255,255,0.08);
+    color:white;
+    border:1px solid rgba(255,255,255,0.08);
 }
 
-.btn-secondary:hover{
-    background:#cbd5e1;
-}
-
-/* MAIN LAYOUT */
-
-.main-layout{
-    max-width:1300px;
-    margin:auto;
-    padding:0 20px 50px;
-    display:grid;
-    grid-template-columns:280px 1fr;
-    gap:25px;
-}
-
-/* SIDEBAR */
-
-.sidebar{
-    background:var(--white);
-    border-radius:20px;
-    padding:25px;
-    height:fit-content;
-    box-shadow:var(--shadow);
-    position:sticky;
-    top:90px;
-}
-
-.sidebar-section{
-    margin-bottom:28px;
-}
-
-.sidebar-section h3{
-    font-size:1rem;
-    margin-bottom:14px;
-    color:var(--primary);
-}
-
-.sidebar-section ul{
-    list-style:none;
-}
-
-.sidebar-section ul li{
-    margin-bottom:10px;
-}
-
-.sidebar-section ul li a{
-    text-decoration:none;
-    color:#475569;
-    font-size:0.95rem;
-}
-
-.sidebar-section ul li a:hover{
-    color:var(--primary);
+.btn:hover{
+    transform:translateY(-4px) scale(1.03);
 }
 
 /* DASHBOARD */
 
 .dashboard{
+    max-width:1300px;
+    margin:auto;
+    padding:10px 20px 80px;
+}
+
+.section-title{
+    font-size:2rem;
+    margin-bottom:30px;
+}
+
+.cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:22px;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
 }
 
 .card{
-    background:var(--white);
-    border-radius:20px;
-    padding:25px;
+    background:linear-gradient(145deg,#101c2d,#132238);
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:28px;
+    padding:30px;
+    transition:0.4s ease;
+    position:relative;
+    overflow:hidden;
     box-shadow:var(--shadow);
-    transition:0.2s ease;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
+    animation:fadeUp 1s ease;
+}
+
+.card::before{
+    content:'';
+    position:absolute;
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    background:rgba(91,140,255,0.08);
+    top:-60px;
+    right:-60px;
 }
 
 .card:hover{
-    transform:translateY(-3px);
+    transform:translateY(-10px);
+    border-color:rgba(91,140,255,0.4);
 }
 
-.card-icon{
-    width:55px;
-    height:55px;
-    border-radius:14px;
-    background:#e2e8f0;
+.icon{
+    width:70px;
+    height:70px;
+    border-radius:20px;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:1.4rem;
-    margin-bottom:18px;
+    font-size:1.8rem;
+    margin-bottom:25px;
+    box-shadow:0 10px 20px rgba(91,140,255,0.25);
 }
 
 .card h2{
-    font-size:1.15rem;
-    margin-bottom:10px;
-    color:var(--primary);
+    font-size:1.4rem;
+    margin-bottom:14px;
 }
 
 .card p{
-    font-size:0.95rem;
-    color:#64748b;
-    margin-bottom:22px;
+    color:var(--light);
+    font-size:0.96rem;
+    margin-bottom:28px;
 }
 
 .card a{
     text-decoration:none;
-    display:inline-block;
-    background:var(--primary);
     color:white;
-    padding:10px 18px;
-    border-radius:10px;
-    font-size:0.9rem;
-    font-weight:600;
-    transition:0.2s ease;
+    background:rgba(255,255,255,0.08);
+    padding:12px 18px;
+    border-radius:12px;
+    display:inline-block;
+    transition:0.3s;
 }
 
 .card a:hover{
-    background:#1e293b;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
 }
 
 /* FOOTER */
 
 footer{
-    margin-top:40px;
-    background:var(--white);
-    border-top:1px solid var(--gray);
-    padding:40px 20px;
-}
-
-.footer-container{
-    max-width:1300px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    gap:30px;
-    flex-wrap:wrap;
-}
-
-.footer-brand h2{
-    color:var(--primary);
-    margin-bottom:10px;
-}
-
-.footer-brand p{
-    color:#64748b;
-    max-width:300px;
-}
-
-.footer-links h4{
-    margin-bottom:12px;
-    color:var(--primary);
-}
-
-.footer-links ul{
-    list-style:none;
-}
-
-.footer-links li{
-    margin-bottom:8px;
-}
-
-.footer-links a{
-    text-decoration:none;
-    color:#475569;
-}
-
-.footer-links a:hover{
-    color:var(--primary);
-}
-
-.copyright{
+    border-top:1px solid rgba(255,255,255,0.06);
+    padding:50px 20px;
     text-align:center;
-    padding-top:25px;
-    color:#64748b;
+    color:var(--light);
+}
+
+footer h2{
+    margin-bottom:12px;
+    color:white;
+}
+
+footer p{
+    max-width:600px;
+    margin:auto;
+    margin-bottom:20px;
+}
+
+.copy{
+    margin-top:20px;
     font-size:0.9rem;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 /* MOBILE */
 
 @media(max-width:900px){
 
-    .main-layout{
-        grid-template-columns:1fr;
-    }
-
-    .sidebar{
-        position:relative;
-        top:0;
-    }
-
-    .search-box{
-        display:none;
-    }
-
-    .menu-btn{
-        display:block;
-    }
-
     .hero h1{
-        font-size:2rem;
+        font-size:3rem;
     }
 
 }
 
 @media(max-width:600px){
 
+    .nav-container{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .search-box{
+        width:100%;
+    }
+
     .hero{
-        padding-top:40px;
+        padding-top:50px;
     }
 
-    .hero-container{
-        padding:35px 25px;
-    }
-
-    .dashboard{
-        grid-template-columns:1fr;
+    .hero-box{
+        padding:45px 28px;
+        border-radius:28px;
     }
 
     .hero h1{
-        font-size:1.7rem;
+        font-size:2.2rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .section-title{
+        font-size:1.6rem;
     }
 
 }
@@ -383,6 +382,9 @@ footer{
 </head>
 
 <body>
+
+<div class="bg-glow"></div>
+<div class="bg-glow2"></div>
 
 <!-- NAVBAR -->
 
@@ -395,11 +397,7 @@ footer{
         </div>
 
         <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Search notes, topics, PDFs..." />
-        </div>
-
-        <div class="menu-btn">
-            ☰
+            <input type="text" id="searchInput" placeholder="Search psychology notes...">
         </div>
 
     </div>
@@ -408,188 +406,120 @@ footer{
 <!-- HERO -->
 
 <section class="hero">
-    <div class="hero-container">
 
-        <h1>Simple Psychology Notes for IGNOU & B.A. Students</h1>
+    <div class="hero-box">
+
+        <h1>
+            Psychology Notes Made Beautiful & Easy
+        </h1>
 
         <p>
-            Organized psychology study material, topic-wise notes, and downloadable PDFs
-            designed for quick learning and easy revision.
+            Modern psychology dashboard for IGNOU and B.A. students.
+            Browse organized notes, quick revisions, topic PDFs, and study materials in one clean place.
         </p>
 
         <div class="hero-buttons">
-            <a href="#dashboard" class="btn btn-primary">Explore Notes</a>
-            <a href="#" class="btn btn-secondary">Latest PDFs</a>
+            <a href="#notes" class="btn btn-primary">Explore Notes</a>
+            <a href="#" class="btn btn-secondary">Latest Uploads</a>
         </div>
 
     </div>
+
 </section>
 
-<!-- MAIN CONTENT -->
+<!-- DASHBOARD -->
 
-<div class="main-layout">
+<section class="dashboard" id="notes">
 
-    <!-- SIDEBAR -->
+    <h2 class="section-title">Psychology Subjects</h2>
 
-    <aside class="sidebar">
-
-        <div class="sidebar-section">
-            <h3>Subjects</h3>
-            <ul>
-                <li><a href="bpcc101.html">BPCC 101</a></li>
-                <li><a href="thinking-language.html">Thinking & Language</a></li>
-                <li><a href="cbt.html">CBT Basics</a></li>
-                <li><a href="perception.html">Perception</a></li>
-                <li><a href="social-psychology.html">Social Psychology</a></li>
-            </ul>
-        </div>
-
-        <div class="sidebar-section">
-            <h3>Latest Uploads</h3>
-            <ul>
-                <li><a href="#">Short Notes PDF</a></li>
-                <li><a href="#">Thinking Guide</a></li>
-                <li><a href="#">CBT Overview</a></li>
-            </ul>
-        </div>
-
-        <div class="sidebar-section">
-            <h3>Most Downloaded</h3>
-            <ul>
-                <li><a href="#">Perception Notes</a></li>
-                <li><a href="#">Social Psychology</a></li>
-            </ul>
-        </div>
-
-        <div class="sidebar-section">
-            <h3>Important Topics</h3>
-            <ul>
-                <li><a href="#">Creative Thinking</a></li>
-                <li><a href="#">Memory & Cognition</a></li>
-                <li><a href="#">Learning Theory</a></li>
-            </ul>
-        </div>
-
-    </aside>
-
-    <!-- DASHBOARD -->
-
-    <section class="dashboard" id="dashboard">
+    <div class="cards">
 
         <div class="card" data-title="bpcc 101 short notes">
-            <div>
-                <div class="card-icon">📘</div>
-                <h2>BPCC 101 Short Notes</h2>
-                <p>
-                    Easy-to-read psychology short notes for quick revision and exam preparation.
-                </p>
-            </div>
-
+            <div class="icon">📘</div>
+            <h2>BPCC 101 Short Notes</h2>
+            <p>
+                Easy psychology notes for revision, concepts, and exam preparation.
+            </p>
             <a href="bpcc.html">Open Notes</a>
         </div>
 
-        <div class="card" data-title="thinking language psychology">
-            <div>
-                <div class="card-icon">🧠</div>
-                <h2>Thinking & Language</h2>
-                <p>
-                    Concepts, theories, and cognitive processes related to thinking and language.
-                </p>
-            </div>
-
+        <div class="card" data-title="thinking language">
+            <div class="icon">🧠</div>
+            <h2>Thinking & Language</h2>
+            <p>
+                Learn cognition, concepts, problem solving, language and thinking processes.
+            </p>
             <a href="think.html">Open Notes</a>
         </div>
 
-        <div class="card" data-title="cbt basics psychology">
-            <div>
-                <div class="card-icon">📖</div>
-                <h2>CBT Basics</h2>
-                <p>
-                    Introduction to Cognitive Behavioral Therapy and core therapeutic concepts.
-                </p>
-            </div>
-
+        <div class="card" data-title="cbt basics">
+            <div class="icon">📖</div>
+            <h2>CBT Basics</h2>
+            <p>
+                Core understanding of cognitive behavioral therapy and mental frameworks.
+            </p>
             <a href="cbt.html">Open Notes</a>
         </div>
 
-        <div class="card" data-title="perception psychology">
-            <div>
-                <div class="card-icon">👁️</div>
-                <h2>Perception</h2>
-                <p>
-                    Study notes covering sensory interpretation and perceptual processes.
-                </p>
-            </div>
-
+        <div class="card" data-title="perception">
+            <div class="icon">👁️</div>
+            <h2>Perception</h2>
+            <p>
+                Study sensory systems, interpretation, visual perception and cognition.
+            </p>
             <a href="per.html">Open Notes</a>
         </div>
 
         <div class="card" data-title="social psychology">
-            <div>
-                <div class="card-icon">👥</div>
-                <h2>Social Psychology</h2>
-                <p>
-                    Learn about human behavior, social interaction, attitudes, and group dynamics.
-                </p>
-            </div>
-
+            <div class="icon">👥</div>
+            <h2>Social Psychology</h2>
+            <p>
+                Human interaction, social behavior, attitudes and group psychology.
+            </p>
             <a href="soci.html">Open Notes</a>
         </div>
 
-    </section>
+    </div>
 
-</div>
+</section>
 
 <!-- FOOTER -->
 
 <footer>
 
-    <div class="footer-container">
+    <h2>NOTESHUBINDIA</h2>
 
-        <div class="footer-brand">
-            <h2>NOTESHUBINDIA</h2>
-            <p>
-                Psychology Made Simple — organized study material for students who want clean and practical learning resources.
-            </p>
-        </div>
+    <p>
+        A clean digital psychology library designed for students who want
+        simple, organized and modern learning resources.
+    </p>
 
-        <div class="footer-links">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Notes</a></li>
-                <li><a href="#">PDF Library</a></li>
-                <li><a href="#">Important Topics</a></li>
-            </ul>
-        </div>
-
-    </div>
-
-    <div class="copyright">
-        © 2026 NOTESHUBINDIA. All Rights Reserved.
+    <div class="copy">
+        © 2026 NOTESHUBINDIA • Psychology Made Simple
     </div>
 
 </footer>
 
-<!-- SEARCH SCRIPT -->
+<!-- SEARCH -->
 
 <script>
 
 const searchInput = document.getElementById('searchInput');
 const cards = document.querySelectorAll('.card');
 
-searchInput.addEventListener('keyup', function(){
+searchInput.addEventListener('keyup', () => {
 
-    const searchValue = searchInput.value.toLowerCase();
+    let value = searchInput.value.toLowerCase();
 
     cards.forEach(card => {
 
-        const title = card.dataset.title.toLowerCase();
+        let title = card.dataset.title.toLowerCase();
 
-        if(title.includes(searchValue)){
-            card.style.display = 'flex';
+        if(title.includes(value)){
+            card.style.display = "block";
         } else {
-            card.style.display = 'none';
+            card.style.display = "none";
         }
 
     });
