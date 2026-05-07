@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>CBT Basics - NOTESHUBINDIA</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 
@@ -16,6 +21,10 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -42,6 +51,8 @@ body{
     font-size:2rem;
     margin-bottom:30px;
     font-weight:700;
+    text-align:center;
+    padding:0 20px;
 }
 
 .progress-container{
@@ -58,7 +69,7 @@ body{
     height:100%;
     border-radius:50px;
     background:linear-gradient(90deg,#5b8cff,#7c4dff);
-    animation:load 4s linear forwards;
+    animation:load 2s linear forwards;
 }
 
 .hamster{
@@ -66,41 +77,86 @@ body{
     top:-22px;
     left:0;
     font-size:2rem;
-    animation:run 4s linear forwards;
+    animation:run 2s linear forwards;
 }
 
 .bubble{
     position:absolute;
     border-radius:50%;
-    background:rgba(255,255,255,0.08);
+    background:rgba(255,255,255,0.06);
     animation:float 8s infinite linear;
 }
 
-.b1{width:60px;height:60px;left:10%;top:20%;}
-.b2{width:90px;height:90px;right:15%;top:40%;}
-.b3{width:120px;height:120px;left:40%;bottom:10%;}
+.b1{
+    width:60px;
+    height:60px;
+    left:10%;
+    top:20%;
+}
+
+.b2{
+    width:90px;
+    height:90px;
+    right:15%;
+    top:40%;
+}
+
+.b3{
+    width:120px;
+    height:120px;
+    left:40%;
+    bottom:10%;
+}
 
 @keyframes load{
-    from{width:0%;}
-    to{width:100%;}
+    from{
+        width:0%;
+    }
+    to{
+        width:100%;
+    }
 }
 
 @keyframes run{
-    from{left:0%;}
-    to{left:88%;}
+    from{
+        left:0%;
+    }
+    to{
+        left:88%;
+    }
 }
 
 @keyframes float{
-    0%{transform:translateY(0px);}
-    50%{transform:translateY(-30px);}
-    100%{transform:translateY(0px);}
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-30px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
 }
 
-/* MAIN PAGE */
+/* MAIN */
 
 .main-content{
     display:none;
+    animation:fadeIn 0.6s ease;
 }
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* NAVBAR */
 
 .navbar{
     position:sticky;
@@ -132,6 +188,8 @@ body{
     font-weight:400;
 }
 
+/* HERO */
+
 .hero{
     max-width:1200px;
     margin:auto;
@@ -161,6 +219,8 @@ body{
 .hero h1{
     font-size:3.5rem;
     margin-bottom:20px;
+    position:relative;
+    z-index:2;
 }
 
 .hero p{
@@ -168,6 +228,8 @@ body{
     color:#b7c5d8;
     line-height:1.8;
     margin-bottom:35px;
+    position:relative;
+    z-index:2;
 }
 
 .download-btn{
@@ -180,16 +242,21 @@ body{
     font-weight:600;
     box-shadow:0 10px 25px rgba(91,140,255,0.35);
     transition:0.3s;
+    position:relative;
+    z-index:2;
 }
 
 .download-btn:hover{
     transform:translateY(-5px) scale(1.03);
 }
 
-.top-ad{
+/* ADS */
+
+.top-ad,
+.bottom-ads{
     max-width:1200px;
-    margin:20px auto;
-    padding:0 20px;
+    margin:auto;
+    padding:20px;
 }
 
 .ad-box{
@@ -198,7 +265,10 @@ body{
     padding:20px;
     overflow:hidden;
     border:1px solid rgba(255,255,255,0.06);
+    min-height:120px;
 }
+
+/* CONTENT */
 
 .content-section{
     max-width:1200px;
@@ -223,6 +293,8 @@ body{
     line-height:1.9;
     margin-bottom:20px;
 }
+
+/* SOCIAL */
 
 .social-bar{
     position:fixed;
@@ -254,17 +326,15 @@ body{
     transform:scale(1.12);
 }
 
-.bottom-ads{
-    max-width:1200px;
-    margin:auto;
-    padding:50px 20px;
-}
+/* FOOTER */
 
 .footer{
     text-align:center;
     padding:50px 20px;
     color:#a8b6c8;
 }
+
+/* MOBILE */
 
 @media(max-width:768px){
 
@@ -276,19 +346,24 @@ body{
     padding:40px 25px;
 }
 
+.progress-container{
+    width:260px;
+}
+
 .social-bar{
     bottom:15px;
     top:auto;
-    transform:none;
-    flex-direction:row;
     right:50%;
     transform:translateX(50%);
+    flex-direction:row;
 }
 
 }
 
 </style>
+
 </head>
+
 <body>
 
 <!-- LOADER -->
@@ -299,16 +374,21 @@ body{
 <div class="bubble b2"></div>
 <div class="bubble b3"></div>
 
-<div class="loader-title">Loading CBT Notes...</div>
+<div class="loader-title">
+Loading CBT Notes...
+</div>
 
 <div class="progress-container">
-    <div class="hamster">🐹</div>
-    <div class="progress-bar"></div>
-</div>
+
+<div class="hamster">🐹</div>
+
+<div class="progress-bar"></div>
 
 </div>
 
-<!-- MAIN CONTENT -->
+</div>
+
+<!-- MAIN -->
 
 <div class="main-content" id="mainContent">
 
@@ -330,10 +410,13 @@ NOTESHUBINDIA
 <!-- TOP AD -->
 
 <section class="top-ad">
+
 <div class="ad-box">
-<script async="async" data-cfasync="false" src="https://pl29365361.profitablecpmratenetwork.com/71311088c3fe35ba595e4abb4f234f6a/invoke.js"></script>
-<div id="container-71311088c3fe35ba595e4abb4f234f6a"></div>
+
+<div id="topAd"></div>
+
 </div>
+
 </section>
 
 <!-- HERO -->
@@ -348,8 +431,12 @@ NOTESHUBINDIA
 Download Cognitive Behavioral Therapy notes PDF for psychology students. Clean and simple study material for IGNOU and B.A. psychology learners.
 </p>
 
-<a class="download-btn" href="https://drive.google.com/file/d/1h7NLOD05ZjxMHIzz023UjjdehoCjeuFR/view?usp=drivesdk" target="_blank">
+<a class="download-btn"
+href="https://drive.google.com/file/d/1h7NLOD05ZjxMHIzz023UjjdehoCjeuFR/view?usp=drivesdk"
+target="_blank">
+
 Download CBT PDF
+
 </a>
 
 </div>
@@ -377,9 +464,15 @@ These notes are useful for psychology students preparing for exams, assignments,
 </p>
 
 <div style="margin-top:40px;text-align:center;">
-<a class="download-btn" href="https://drive.google.com/file/d/1h7NLOD05ZjxMHIzz023UjjdehoCjeuFR/view?usp=drivesdk" target="_blank">
+
+<a class="download-btn"
+href="https://drive.google.com/file/d/1h7NLOD05ZjxMHIzz023UjjdehoCjeuFR/view?usp=drivesdk"
+target="_blank">
+
 Download Full Notes
+
 </a>
+
 </div>
 
 </div>
@@ -390,10 +483,21 @@ Download Full Notes
 
 <div class="social-bar">
 
-<a href="#">📘</a>
-<a href="#">📸</a>
-<a href="#">▶️</a>
-<a href="#">💬</a>
+<a href="#">
+<i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-youtube"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-telegram-plane"></i>
+</a>
 
 </div>
 
@@ -402,7 +506,9 @@ Download Full Notes
 <section class="bottom-ads">
 
 <div class="ad-box">
-<script src="https://pl29365362.profitablecpmratenetwork.com/3f/12/34/3f1234eec0677a4a6c5638f857ffd790.js"></script>
+
+<div id="bottomAd"></div>
+
 </div>
 
 </section>
@@ -427,24 +533,97 @@ Modern psychology notes website for IGNOU & B.A. students.
 
 <script>
 
-/* LOADER */
+/* PAGE LOAD */
 
 window.addEventListener('load', () => {
 
-setTimeout(() => {
+    setTimeout(() => {
 
-    document.getElementById('loader').style.display = 'none';
-    document.getElementById('mainContent').style.display = 'block';
+        document.getElementById('loader').style.display = 'none';
 
-}, 4200);
+        document.getElementById('mainContent').style.display = 'block';
+
+        initializeAds();
+
+    }, 1800);
 
 });
 
-/* AUTO REFRESH EVERY 5 MIN */
 
-setTimeout(() => {
-    location.reload();
-}, 300000);
+/* TOP AD */
+
+function loadTopAd(){
+
+    const container = document.createElement('div');
+
+    container.id = "container-71311088c3fe35ba595e4abb4f234f6a";
+
+    document.getElementById('topAd').appendChild(container);
+
+    const script = document.createElement('script');
+
+    script.async = true;
+
+    script.setAttribute('data-cfasync','false');
+
+    script.src = "https://pl29365361.profitablecpmratenetwork.com/71311088c3fe35ba595e4abb4f234f6a/invoke.js";
+
+    document.body.appendChild(script);
+
+}
+
+
+/* BOTTOM AD */
+
+function loadBottomAd(){
+
+    const script = document.createElement('script');
+
+    script.async = true;
+
+    script.src = "https://pl29365362.profitablecpmratenetwork.com/3f/12/34/3f1234eec0677a4a6c5638f857ffd790.js";
+
+    document.body.appendChild(script);
+
+}
+
+
+/* INIT ADS */
+
+function initializeAds(){
+
+    // Delay top ad
+
+    setTimeout(() => {
+
+        loadTopAd();
+
+    }, 1500);
+
+
+    // Lazy load bottom ad
+
+    const bottomSection = document.querySelector('.bottom-ads');
+
+    const observer = new IntersectionObserver((entries)=>{
+
+        entries.forEach(entry=>{
+
+            if(entry.isIntersecting){
+
+                loadBottomAd();
+
+                observer.disconnect();
+
+            }
+
+        });
+
+    });
+
+    observer.observe(bottomSection);
+
+}
 
 </script>
 
