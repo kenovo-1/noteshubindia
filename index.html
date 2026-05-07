@@ -5,9 +5,66 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NOTESHUBINDIA</title>
+<!-- SEO -->
+
+<title>NOTESHUBINDIA - Psychology Notes for IGNOU & B.A. Students</title>
+
+<meta name="description" content="NOTESHUBINDIA provides psychology notes for IGNOU and B.A. students including CBT, Perception, Thinking & Learning, BPCC 101 and Social Psychology notes.">
+
+<meta name="keywords" content="Psychology Notes, IGNOU Psychology Notes, BPCC 101, CBT Notes, Perception Notes, Thinking and Learning Notes, Social Psychology Notes, BA Psychology">
+
+<meta name="author" content="NOTESHUBINDIA">
+
+<meta name="robots" content="index, follow">
+
+<meta name="theme-color" content="#07111f">
+
+<meta name="language" content="English">
+
+<meta name="revisit-after" content="2 days">
+
+<meta name="distribution" content="global">
+
+<meta name="rating" content="general">
+
+<meta name="googlebot" content="index, follow">
+
+<meta name="bingbot" content="index, follow">
+
+<!-- OPEN GRAPH -->
+
+<meta property="og:title" content="NOTESHUBINDIA - Psychology Notes">
+
+<meta property="og:description" content="Modern psychology notes website for IGNOU and B.A. Psychology students.">
+
+<meta property="og:type" content="website">
+
+<meta property="og:image" content="image.jpg">
+
+<meta property="og:url" content="https://noteshubindia.run.place">
+
+<link rel="canonical" href="https://noteshubindia.run.place">
+
+<!-- TWITTER -->
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title" content="NOTESHUBINDIA">
+
+<meta name="twitter:description" content="Organized psychology notes for IGNOU and B.A. students.">
+
+<meta name="twitter:image" content="image.jpg">
+
+<!-- FAVICON -->
+
+<link rel="icon" type="image/jpeg" href="image.jpg">
+
+<link rel="apple-touch-icon" href="image.jpg">
+
+<!-- GOOGLE FONTS -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <style>
@@ -67,15 +124,27 @@ body{
 }
 
 @keyframes float{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(30px);}
-    100%{transform:translateY(0);}
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(30px);
+    }
+    100%{
+        transform:translateY(0);
+    }
 }
 
 @keyframes float2{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-30px);}
-    100%{transform:translateY(0);}
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-30px);
+    }
+    100%{
+        transform:translateY(0);
+    }
 }
 
 /* NAVBAR */
@@ -124,6 +193,7 @@ body{
     background:rgba(255,255,255,0.08);
     color:white;
     outline:none;
+    font-size:0.95rem;
 }
 
 .search-box input::placeholder{
@@ -155,9 +225,10 @@ body{
     max-width:700px;
     color:var(--light);
     font-size:1.1rem;
+    line-height:1.8;
 }
 
-/* NOTES */
+/* DASHBOARD */
 
 .dashboard{
     max-width:1300px;
@@ -202,6 +273,7 @@ body{
 
 .card h2{
     margin-bottom:14px;
+    font-size:1.4rem;
 }
 
 .card p{
@@ -218,6 +290,11 @@ body{
     background:linear-gradient(135deg,var(--primary),var(--secondary));
     color:white;
     font-weight:600;
+    transition:0.3s;
+}
+
+.card a:hover{
+    transform:translateY(-3px);
 }
 
 /* ADS */
@@ -241,10 +318,15 @@ footer{
     border-top:1px solid rgba(255,255,255,0.06);
 }
 
+footer h2{
+    margin-bottom:15px;
+}
+
 footer p{
     max-width:650px;
     margin:auto;
     color:var(--light);
+    line-height:1.7;
 }
 
 .copy{
@@ -273,6 +355,10 @@ footer p{
     width:100%;
 }
 
+.hero{
+    padding-top:60px;
+}
+
 .hero h1{
     font-size:2.2rem;
 }
@@ -284,6 +370,7 @@ footer p{
 }
 
 </style>
+
 </head>
 
 <body>
@@ -303,7 +390,11 @@ NOTESHUBINDIA
 </div>
 
 <div class="search-box">
-<input type="text" id="searchInput" placeholder="Search psychology notes...">
+
+<input type="text"
+id="searchInput"
+placeholder="Search psychology notes...">
+
 </div>
 
 </div>
@@ -316,7 +407,9 @@ NOTESHUBINDIA
 
 <div class="hero-box">
 
-<h1>Psychology Notes Made Beautiful & Easy</h1>
+<h1>
+Psychology Notes Made Beautiful & Easy
+</h1>
 
 <p>
 Modern psychology dashboard for IGNOU and B.A. students.
@@ -371,7 +464,7 @@ beautiful and simple learning resources.
 <script>
 
 /* =========================================
-ADD SUBJECTS ONLY HERE
+ADD SUBJECTS HERE
 ========================================= */
 
 const subjects = [
@@ -445,7 +538,7 @@ Open Notes
 
 
 /* =========================================
-SEARCH
+SEARCH SYSTEM
 ========================================= */
 
 const searchInput = document.getElementById('searchInput');
@@ -481,31 +574,32 @@ LOAD ADS
 
 window.addEventListener('load',()=>{
 
-    setTimeout(()=>{
+setTimeout(()=>{
 
-        loadAds();
+loadAds();
 
-    },2000);
+},2000);
 
 });
 
+
 function loadAds(){
 
-    const script1 = document.createElement('script');
+const script1 = document.createElement('script');
 
-    script1.async = true;
+script1.async = true;
 
-    script1.setAttribute('data-cfasync','false');
+script1.setAttribute('data-cfasync','false');
 
-    script1.src = "https://pl29365361.profitablecpmratenetwork.com/71311088c3fe35ba595e4abb4f234f6a/invoke.js";
+script1.src = "https://pl29365361.profitablecpmratenetwork.com/71311088c3fe35ba595e4abb4f234f6a/invoke.js";
 
-    document.body.appendChild(script1);
+document.body.appendChild(script1);
 
-    const container = document.createElement('div');
+const container = document.createElement('div');
 
-    container.id = "container-71311088c3fe35ba595e4abb4f234f6a";
+container.id = "container-71311088c3fe35ba595e4abb4f234f6a";
 
-    document.getElementById('ad-container').appendChild(container);
+document.getElementById('ad-container').appendChild(container);
 
 }
 
