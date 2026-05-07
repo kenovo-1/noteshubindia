@@ -1,11 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>NOTESHUBINDIA</title>
+
+<!-- ADSENSE -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6433910494668507"
+crossorigin="anonymous"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +31,6 @@
     --secondary:#7c4dff;
     --text:#ffffff;
     --light:#a7b4c7;
-    --border:rgba(255,255,255,0.08);
     --shadow:0 10px 30px rgba(0,0,0,0.35);
 }
 
@@ -123,7 +126,6 @@ body{
     color:white;
     outline:none;
     font-size:0.95rem;
-    transition:0.3s;
 }
 
 .search-box input::placeholder{
@@ -132,7 +134,6 @@ body{
 
 .search-box input:focus{
     background:rgba(255,255,255,0.12);
-    transform:scale(1.02);
 }
 
 /* HERO */
@@ -145,7 +146,6 @@ body{
 
 .hero-box{
     background:linear-gradient(135deg,#101c2d,#14233a);
-    border:1px solid rgba(255,255,255,0.06);
     border-radius:35px;
     padding:70px 50px;
     position:relative;
@@ -168,7 +168,6 @@ body{
     line-height:1.1;
     margin-bottom:25px;
     max-width:850px;
-    animation:fadeUp 1s ease;
 }
 
 .hero p{
@@ -176,7 +175,6 @@ body{
     color:var(--light);
     font-size:1.1rem;
     margin-bottom:35px;
-    animation:fadeUp 1.3s ease;
 }
 
 .hero-buttons{
@@ -201,12 +199,11 @@ body{
 
 .btn-secondary{
     background:rgba(255,255,255,0.08);
-    border:1px solid rgba(255,255,255,0.06);
     color:white;
 }
 
 .btn:hover{
-    transform:translateY(-4px) scale(1.03);
+    transform:translateY(-4px);
 }
 
 /* DASHBOARD */
@@ -230,7 +227,6 @@ body{
 
 .card{
     background:linear-gradient(145deg,#101c2d,#132238);
-    border:1px solid rgba(255,255,255,0.06);
     border-radius:28px;
     padding:30px;
     transition:0.4s ease;
@@ -252,7 +248,6 @@ body{
 
 .card:hover{
     transform:translateY(-10px);
-    border-color:rgba(91,140,255,0.35);
 }
 
 .icon{
@@ -265,7 +260,6 @@ body{
     justify-content:center;
     font-size:1.8rem;
     margin-bottom:25px;
-    box-shadow:0 10px 25px rgba(91,140,255,0.25);
 }
 
 .card h2{
@@ -286,45 +280,21 @@ body{
     border-radius:12px;
     background:rgba(255,255,255,0.08);
     color:white;
-    transition:0.3s;
 }
 
 .card a:hover{
     background:linear-gradient(135deg,var(--primary),var(--secondary));
 }
 
-/* ADS */
+/* ADSENSE */
 
-.ads-section{
-    max-width:1300px;
-    margin:auto;
-    padding:20px 20px 70px;
-}
-
-.ads-title{
-    font-size:1.8rem;
-    margin-bottom:25px;
-}
-
-.ads-container{
-    display:flex;
-    gap:25px;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-
-.ad-box{
-    width:300px;
-    min-height:250px;
+.adsense-box{
+    max-width:1200px;
+    margin:40px auto;
+    padding:20px;
     background:#101c2d;
     border-radius:24px;
     overflow:hidden;
-    border:1px solid rgba(255,255,255,0.06);
-    box-shadow:var(--shadow);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:10px;
 }
 
 /* FOOTER */
@@ -349,19 +319,6 @@ footer p{
     margin-top:20px;
     color:var(--light);
     font-size:0.9rem;
-}
-
-/* ANIMATION */
-
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
 }
 
 /* MOBILE */
@@ -397,10 +354,6 @@ footer p{
         font-size:2.2rem;
     }
 
-    .hero p{
-        font-size:1rem;
-    }
-
 }
 
 </style>
@@ -415,18 +368,18 @@ footer p{
 
 <nav class="navbar">
 
-    <div class="nav-container">
+<div class="nav-container">
 
-        <div class="logo">
-            NOTESHUBINDIA
-            <span>Psychology Made Simple</span>
-        </div>
+<div class="logo">
+NOTESHUBINDIA
+<span>Psychology Made Simple</span>
+</div>
 
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Search psychology notes...">
-        </div>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search psychology notes...">
+</div>
 
-    </div>
+</div>
 
 </nav>
 
@@ -434,23 +387,23 @@ footer p{
 
 <section class="hero">
 
-    <div class="hero-box">
+<div class="hero-box">
 
-        <h1>
-            Psychology Notes Made Beautiful & Easy
-        </h1>
+<h1>
+Psychology Notes Made Beautiful & Easy
+</h1>
 
-        <p>
-            Modern psychology dashboard for IGNOU and B.A. students.
-            Browse organized notes, topic PDFs, revisions and psychology study material in one place.
-        </p>
+<p>
+Modern psychology dashboard for IGNOU and B.A. students.
+Browse organized notes, topic PDFs, revisions and psychology study material in one place.
+</p>
 
-        <div class="hero-buttons">
-            <a href="#notes" class="btn btn-primary">Explore Notes</a>
-            <a href="#" class="btn btn-secondary">Latest Uploads</a>
-        </div>
+<div class="hero-buttons">
+<a href="#notes" class="btn btn-primary">Explore Notes</a>
+<a href="#" class="btn btn-secondary">Latest Uploads</a>
+</div>
 
-    </div>
+</div>
 
 </section>
 
@@ -458,139 +411,80 @@ footer p{
 
 <section class="dashboard" id="notes">
 
-    <h2 class="section-title">Psychology Subjects</h2>
+<h2 class="section-title">Psychology Subjects</h2>
 
-    <div class="cards">
+<div class="cards">
 
-        <div class="card" data-title="bpcc 101 short notes">
-            <div class="icon">📘</div>
-            <h2>BPCC 101 Short Notes</h2>
-            <p>
-                Easy psychology notes for quick revision and exam preparation.
-            </p>
-            <a href="bpcc.html">Open Notes</a>
-        </div>
+<div class="card" data-title="bpcc 101 short notes">
+<div class="icon">📘</div>
+<h2>BPCC 101 Short Notes</h2>
+<p>Easy psychology notes for quick revision and exam preparation.</p>
+<a href="bpcc.html">Open Notes</a>
+</div>
 
-        <div class="card" data-title="thinking language">
-            <div class="icon">🧠</div>
-            <h2>Thinking & Language</h2>
-            <p>
-                Learn cognition, concepts, language and problem-solving processes.
-            </p>
-            <a href="think.html">Open Notes</a>
-        </div>
+<div class="card" data-title="thinking language">
+<div class="icon">🧠</div>
+<h2>Thinking & Language</h2>
+<p>Learn cognition, concepts, language and problem-solving processes.</p>
+<a href="think.html">Open Notes</a>
+</div>
 
-        <div class="card" data-title="cbt basics">
-            <div class="icon">📖</div>
-            <h2>CBT Basics</h2>
-            <p>
-                Cognitive Behavioral Therapy fundamentals and mental frameworks.
-            </p>
-            <a href="cbt.html">Open Notes</a>
-        </div>
+<div class="card" data-title="cbt basics">
+<div class="icon">📖</div>
+<h2>CBT Basics</h2>
+<p>Cognitive Behavioral Therapy fundamentals and mental frameworks.</p>
+<a href="cbt.html">Open Notes</a>
+</div>
 
-        <div class="card" data-title="perception">
-            <div class="icon">👁️</div>
-            <h2>Perception</h2>
-            <p>
-                Study sensory systems, interpretation and perceptual processing.
-            </p>
-            <a href="per.html">Open Notes</a>
-        </div>
+<div class="card" data-title="perception">
+<div class="icon">👁️</div>
+<h2>Perception</h2>
+<p>Study sensory systems, interpretation and perceptual processing.</p>
+<a href="per.html">Open Notes</a>
+</div>
 
-        <div class="card" data-title="social psychology">
-            <div class="icon">👥</div>
-            <h2>Social Psychology</h2>
-            <p>
-                Human interaction, attitudes, social behavior and group psychology.
-            </p>
-            <a href="soci.html">Open Notes</a>
-        </div>
+<div class="card" data-title="social psychology">
+<div class="icon">👥</div>
+<h2>Social Psychology</h2>
+<p>Human interaction, attitudes, social behavior and group psychology.</p>
+<a href="soci.html">Open Notes</a>
+</div>
 
-    </div>
+</div>
 
 </section>
 
-<!-- ADS -->
+<!-- ADSENSE -->
 
-<section class="ads-section">
+<div class="adsense-box">
 
-    <h2 class="ads-title">Sponsored</h2>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6433910494668507"
+     data-ad-slot="1234567890"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
 
-    <div class="ads-container">
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
-        <!-- AD 1 -->
-
-        <div class="ad-box">
-
-            <script type="text/javascript">
-            atOptions = {
-                'key' : 'ea0d51ac1a35260f1b15f916efd71625',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-            };
-            </script>
-
-            <script type="text/javascript" src="//www.highperformanceformat.com/ea0d51ac1a35260f1b15f916efd71625/invoke.js"></script>
-
-        </div>
-
-        <!-- AD 2 -->
-
-        <div class="ad-box">
-
-            <script type="text/javascript">
-            atOptions = {
-                'key' : 'ea0d51ac1a35260f1b15f916efd71625',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-            };
-            </script>
-
-            <script type="text/javascript" src="//www.highperformanceformat.com/ea0d51ac1a35260f1b15f916efd71625/invoke.js"></script>
-
-        </div>
-
-        <!-- AD 3 -->
-
-        <div class="ad-box">
-
-            <script type="text/javascript">
-            atOptions = {
-                'key' : 'ea0d51ac1a35260f1b15f916efd71625',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-            };
-            </script>
-
-            <script type="text/javascript" src="//www.highperformanceformat.com/ea0d51ac1a35260f1b15f916efd71625/invoke.js"></script>
-
-        </div>
-
-    </div>
-
-</section>
+</div>
 
 <!-- FOOTER -->
 
 <footer>
 
-    <h2>NOTESHUBINDIA</h2>
+<h2>NOTESHUBINDIA</h2>
 
-    <p>
-        A modern psychology library for students who want organized,
-        beautiful and simple learning resources.
-    </p>
+<p>
+A modern psychology library for students who want organized,
+beautiful and simple learning resources.
+</p>
 
-    <div class="copy">
-        © 2026 NOTESHUBINDIA • Psychology Made Simple
-    </div>
+<div class="copy">
+© 2026 NOTESHUBINDIA • Psychology Made Simple
+</div>
 
 </footer>
 
@@ -603,19 +497,19 @@ const cards = document.querySelectorAll('.card');
 
 searchInput.addEventListener('keyup', () => {
 
-    let value = searchInput.value.toLowerCase();
+let value = searchInput.value.toLowerCase();
 
-    cards.forEach(card => {
+cards.forEach(card => {
 
-        let title = card.dataset.title.toLowerCase();
+let title = card.dataset.title.toLowerCase();
 
-        if(title.includes(value)){
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
-        }
+if(title.includes(value)){
+card.style.display = "block";
+}else{
+card.style.display = "none";
+}
 
-    });
+});
 
 });
 
