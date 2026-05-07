@@ -109,33 +109,19 @@ body{
 }
 
 @keyframes load{
-    from{
-        width:0%;
-    }
-    to{
-        width:100%;
-    }
+    from{width:0%;}
+    to{width:100%;}
 }
 
 @keyframes run{
-    from{
-        left:0%;
-    }
-    to{
-        left:88%;
-    }
+    from{left:0%;}
+    to{left:88%;}
 }
 
 @keyframes float{
-    0%{
-        transform:translateY(0px);
-    }
-    50%{
-        transform:translateY(-30px);
-    }
-    100%{
-        transform:translateY(0px);
-    }
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-30px);}
+    100%{transform:translateY(0px);}
 }
 
 /* MAIN */
@@ -268,6 +254,11 @@ body{
     min-height:120px;
 }
 
+#topAd,
+#bottomAd{
+    min-height:120px;
+}
+
 /* CONTENT */
 
 .content-section{
@@ -379,11 +370,8 @@ Loading CBT Notes...
 </div>
 
 <div class="progress-container">
-
 <div class="hamster">🐹</div>
-
 <div class="progress-bar"></div>
-
 </div>
 
 </div>
@@ -479,29 +467,18 @@ Download Full Notes
 
 </section>
 
-<!-- SOCIAL BAR -->
+<!-- SOCIAL -->
 
 <div class="social-bar">
 
-<a href="#">
-<i class="fab fa-facebook-f"></i>
-</a>
-
-<a href="#">
-<i class="fab fa-instagram"></i>
-</a>
-
-<a href="#">
-<i class="fab fa-youtube"></i>
-</a>
-
-<a href="#">
-<i class="fab fa-telegram-plane"></i>
-</a>
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-youtube"></i></a>
+<a href="#"><i class="fab fa-telegram-plane"></i></a>
 
 </div>
 
-<!-- BOTTOM ADS -->
+<!-- BOTTOM AD -->
 
 <section class="bottom-ads">
 
@@ -554,6 +531,10 @@ window.addEventListener('load', () => {
 
 function loadTopAd(){
 
+    if(window.topAdLoaded) return;
+
+    window.topAdLoaded = true;
+
     const container = document.createElement('div');
 
     container.id = "container-71311088c3fe35ba595e4abb4f234f6a";
@@ -568,7 +549,7 @@ function loadTopAd(){
 
     script.src = "https://pl29365361.profitablecpmratenetwork.com/71311088c3fe35ba595e4abb4f234f6a/invoke.js";
 
-    document.body.appendChild(script);
+    document.getElementById('topAd').appendChild(script);
 
 }
 
@@ -577,13 +558,19 @@ function loadTopAd(){
 
 function loadBottomAd(){
 
+    if(window.bottomAdLoaded) return;
+
+    window.bottomAdLoaded = true;
+
     const script = document.createElement('script');
 
     script.async = true;
 
+    script.type = "text/javascript";
+
     script.src = "https://pl29365362.profitablecpmratenetwork.com/3f/12/34/3f1234eec0677a4a6c5638f857ffd790.js";
 
-    document.body.appendChild(script);
+    document.getElementById('bottomAd').appendChild(script);
 
 }
 
@@ -592,7 +579,7 @@ function loadBottomAd(){
 
 function initializeAds(){
 
-    // Delay top ad
+    // TOP AD
 
     setTimeout(() => {
 
@@ -601,27 +588,13 @@ function initializeAds(){
     }, 1500);
 
 
-    // Lazy load bottom ad
+    // BOTTOM AD
 
-    const bottomSection = document.querySelector('.bottom-ads');
+    setTimeout(() => {
 
-    const observer = new IntersectionObserver((entries)=>{
+        loadBottomAd();
 
-        entries.forEach(entry=>{
-
-            if(entry.isIntersecting){
-
-                loadBottomAd();
-
-                observer.disconnect();
-
-            }
-
-        });
-
-    });
-
-    observer.observe(bottomSection);
+    }, 4000);
 
 }
 
