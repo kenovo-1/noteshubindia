@@ -1,1 +1,476 @@
-hh
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Thinking & Learning - NOTESHUBINDIA</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#07111f;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* LOADER */
+
+#loader{
+    position:fixed;
+    inset:0;
+    background:#07111f;
+    z-index:99999;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.loader-title{
+    font-size:2rem;
+    margin-bottom:30px;
+    font-weight:700;
+    text-align:center;
+    padding:0 20px;
+}
+
+.progress-container{
+    width:320px;
+    height:22px;
+    background:#16253b;
+    border-radius:50px;
+    overflow:hidden;
+    position:relative;
+}
+
+.progress-bar{
+    width:0%;
+    height:100%;
+    border-radius:50px;
+    background:linear-gradient(90deg,#5b8cff,#7c4dff);
+    animation:load 2s linear forwards;
+}
+
+.hamster{
+    position:absolute;
+    top:-22px;
+    left:0;
+    font-size:2rem;
+    animation:run 2s linear forwards;
+}
+
+@keyframes load{
+    from{width:0%;}
+    to{width:100%;}
+}
+
+@keyframes run{
+    from{left:0%;}
+    to{left:88%;}
+}
+
+/* MAIN */
+
+.main-content{
+    display:none;
+    animation:fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* NAVBAR */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:rgba(7,17,31,0.85);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,0.06);
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.7rem;
+    font-weight:800;
+}
+
+.logo span{
+    display:block;
+    font-size:0.8rem;
+    color:#9fb0c7;
+    font-weight:400;
+}
+
+/* HERO */
+
+.hero{
+    max-width:1200px;
+    margin:auto;
+    padding:80px 20px 50px;
+}
+
+.hero-box{
+    background:linear-gradient(145deg,#101c2d,#14233a);
+    border-radius:35px;
+    padding:60px 40px;
+    border:1px solid rgba(255,255,255,0.06);
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-box::before{
+    content:'';
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(91,140,255,0.2),transparent 70%);
+    right:-100px;
+    top:-100px;
+}
+
+.hero h1{
+    font-size:3.5rem;
+    margin-bottom:20px;
+    position:relative;
+    z-index:2;
+}
+
+.hero p{
+    max-width:700px;
+    color:#b7c5d8;
+    line-height:1.8;
+    margin-bottom:35px;
+    position:relative;
+    z-index:2;
+}
+
+.download-btn{
+    display:inline-block;
+    text-decoration:none;
+    padding:18px 34px;
+    border-radius:16px;
+    background:linear-gradient(135deg,#5b8cff,#7c4dff);
+    color:white;
+    font-weight:600;
+    box-shadow:0 10px 25px rgba(91,140,255,0.35);
+    transition:0.3s;
+}
+
+.download-btn:hover{
+    transform:translateY(-5px);
+}
+
+/* ADS */
+
+.top-ad,
+.bottom-ads{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
+
+.ad-box{
+    background:#101c2d;
+    border-radius:24px;
+    padding:20px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.06);
+    min-height:120px;
+}
+
+#topAd{
+    min-height:120px;
+}
+
+/* CONTENT */
+
+.content-section{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
+
+.content-card{
+    background:linear-gradient(145deg,#101c2d,#132238);
+    border-radius:30px;
+    padding:40px;
+    border:1px solid rgba(255,255,255,0.06);
+}
+
+.content-card h2{
+    font-size:2rem;
+    margin-bottom:20px;
+}
+
+.content-card p{
+    color:#c3d0e1;
+    line-height:1.9;
+    margin-bottom:20px;
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    padding:50px 20px;
+    color:#a8b6c8;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.4rem;
+}
+
+.hero-box{
+    padding:40px 25px;
+}
+
+.progress-container{
+    width:260px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- LOADER -->
+
+<div id="loader">
+
+<div class="loader-title">
+Loading Thinking & Learning Notes...
+</div>
+
+<div class="progress-container">
+
+<div class="hamster">🐹</div>
+
+<div class="progress-bar"></div>
+
+</div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main-content" id="mainContent">
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="nav-container">
+
+<div class="logo">
+NOTESHUBINDIA
+<span>Psychology Made Simple</span>
+</div>
+
+</div>
+
+</nav>
+
+<!-- TOP AD -->
+
+<section class="top-ad">
+
+<div class="ad-box">
+
+<div id="topAd"></div>
+
+</div>
+
+</section>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-box">
+
+<h1>Thinking & Learning Notes</h1>
+
+<p>
+Download Thinking & Learning psychology notes PDF for IGNOU and B.A. Psychology students. Simple and organized study material for revision and exam preparation.
+</p>
+
+<a class="download-btn"
+href="https://drive.google.com/file/d/1cg88oLq-qgvLVsobqZTwkC7fzWyuLxJw/view?usp=drivesdk"
+target="_blank">
+
+Download PDF
+
+</a>
+
+</div>
+
+</section>
+
+<!-- CONTENT -->
+
+<section class="content-section">
+
+<div class="content-card">
+
+<h2>About Thinking & Learning</h2>
+
+<p>
+Thinking and Learning are important cognitive processes in psychology. These topics explain how humans acquire knowledge, solve problems, make decisions and process information.
+</p>
+
+<p>
+The unit includes concepts like mental imagery, creativity, problem solving, language development, memory and learning behaviour.
+</p>
+
+<p>
+These notes are useful for IGNOU BPCC 101 students preparing for assignments, semester exams and concept revision.
+</p>
+
+<div style="margin-top:40px;text-align:center;">
+
+<a class="download-btn"
+href="https://drive.google.com/file/d/1cg88oLq-qgvLVsobqZTwkC7fzWyuLxJw/view?usp=drivesdk"
+target="_blank">
+
+Download Full Notes
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- BOTTOM SECTION -->
+
+<section class="bottom-ads">
+
+<div class="ad-box">
+
+<div style="
+text-align:center;
+padding:40px 20px;
+color:#9fb0c7;
+font-size:0.95rem;
+">
+
+More psychology notes coming soon...
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<h2>NOTESHUBINDIA</h2>
+
+<p>
+Modern psychology notes website for IGNOU & B.A. students.
+</p>
+
+<div style="margin-top:20px;">
+© 2026 NOTESHUBINDIA
+</div>
+
+</footer>
+
+</div>
+
+<script>
+
+/* PAGE LOAD */
+
+window.addEventListener('load', () => {
+
+    setTimeout(() => {
+
+        document.getElementById('loader').style.display = 'none';
+
+        document.getElementById('mainContent').style.display = 'block';
+
+        loadTopAd();
+
+    }, 1800);
+
+});
+
+
+/* TOP AD */
+
+function loadTopAd(){
+
+    if(window.topAdLoaded) return;
+
+    window.topAdLoaded = true;
+
+    const container = document.createElement('div');
+
+    container.id = "container-71311088c3fe35ba595e4abb4f234f6a";
+
+    document.getElementById('topAd').appendChild(container);
+
+    const script = document.createElement('script');
+
+    script.async = true;
+
+    script.setAttribute('data-cfasync','false');
+
+    script.src = "https://pl29365361.profitablecpmratenetwork.com/71311088c3fe35ba595e4abb4f234f6a/invoke.js";
+
+    document.getElementById('topAd').appendChild(script);
+
+}
+
+</script>
+
+</body>
+</html>
