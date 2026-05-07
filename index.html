@@ -8,68 +8,39 @@
 
 <!-- SEO -->
 
-<title>NOTESHUBINDIA - Psychology Notes for IGNOU & B.A. Students</title>
+<title>NOTESHUBINDIA - Psychology Notes</title>
 
-<meta name="description" content="Free psychology notes for IGNOU and B.A. Psychology students including BPCC 101, Social Psychology, Perception, CBT, Thinking and Learning notes.">
-
-<meta name="keywords" content="Psychology Notes, IGNOU Psychology Notes, BPCC 101 Notes, Social Psychology Notes, CBT Notes, Perception Notes, BA Psychology">
+<meta name="description"
+content="Free psychology notes for IGNOU and B.A. Psychology students including BPCC 101, Social Psychology, CBT, Perception and more.">
 
 <meta name="robots" content="index, follow">
 
 <meta name="theme-color" content="#07111f">
 
-<meta name="google-site-verification" content="WVCMal7_HouNmIDpYiWwjsuSxFrszSTburKwngURDKU">
-
 <link rel="canonical" href="https://noteshubindia.run.place">
 
 <!-- OPEN GRAPH -->
 
-<meta property="og:title" content="NOTESHUBINDIA - Psychology Notes">
-
-<meta property="og:description" content="Modern psychology notes website for IGNOU and B.A. students.">
-
+<meta property="og:title" content="NOTESHUBINDIA">
+<meta property="og:description" content="Psychology Notes Made Simple">
 <meta property="og:type" content="website">
-
 <meta property="og:url" content="https://noteshubindia.run.place">
-
 <meta property="og:image" content="https://noteshubindia.run.place/image.jpg">
 
 <!-- TWITTER -->
 
 <meta name="twitter:card" content="summary_large_image">
-
 <meta name="twitter:title" content="NOTESHUBINDIA">
-
 <meta name="twitter:description" content="Psychology Notes Made Simple">
-
 <meta name="twitter:image" content="https://noteshubindia.run.place/image.jpg">
 
 <!-- FAVICON -->
 
-<link rel="icon" type="image/jpeg" href="image.jpg">
-
-<link rel="apple-touch-icon" href="image.jpg">
-
-<!-- STRUCTURED DATA -->
-
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"WebSite",
-  "name":"NOTESHUBINDIA",
-  "url":"https://noteshubindia.run.place",
-  "description":"Psychology notes website for IGNOU and B.A. Psychology students.",
-  "publisher":{
-    "@type":"Organization",
-    "name":"NOTESHUBINDIA"
-  }
-}
-</script>
+<link rel="icon" type="image/png" href="favicon.png">
 
 <!-- GOOGLE FONT -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <style>
@@ -134,8 +105,8 @@ z-index:-1;
 position:sticky;
 top:0;
 z-index:999;
-background:rgba(7,17,31,0.85);
-backdrop-filter:blur(12px);
+background:rgba(7,17,31,0.9);
+backdrop-filter:blur(6px);
 border-bottom:1px solid var(--border);
 }
 
@@ -243,7 +214,13 @@ padding:25px;
 border:1px solid var(--border);
 box-shadow:var(--shadow);
 overflow:hidden;
-min-height:120px;
+
+min-height:280px;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 }
 
 .sponsored{
@@ -445,10 +422,13 @@ Browse organized notes, topic PDFs, revisions and psychology study material in o
 Sponsored
 </div>
 
-<script async="async" data-cfasync="false"
-src="//pl26328690.profitableratecpm.com/8c8a7195b2e7ef1f6f2d4b4f6ec9a5b/invoke.js"></script>
+<!-- MONETAG BANNER -->
 
 <div id="container-8c8a7195b2e7ef1f6f2d4b4f6ec9a5b"></div>
+
+<script async="async" data-cfasync="false"
+src="https://pl26328690.profitableratecpm.com/8c8a7195b2e7ef1f6f2d4b4f6ec9a5b/invoke.js">
+</script>
 
 </div>
 
@@ -536,7 +516,7 @@ subjects.forEach(subject => {
 
 cardsContainer.innerHTML += `
 
-<div class="card" data-title="${subject.name.toLowerCase()}">
+<div class="card" data-search="${subject.name.toLowerCase()} ${subject.desc.toLowerCase()}">
 
 <div class="icon">
 ${subject.icon}
@@ -572,9 +552,9 @@ const cards = document.querySelectorAll('.card');
 
 cards.forEach(card => {
 
-let title = card.dataset.title;
+let text = card.dataset.search;
 
-if(title.includes(value)){
+if(text.includes(value)){
 
 card.style.display = "block";
 
@@ -593,16 +573,19 @@ card.style.display = "none";
 <!-- MONETAG VIGNETTE -->
 
 <script>
-(function(s){
-s.dataset.zone='10976968',
-s.src='https://n6wxm.com/vignette.min.js'
-})
-(
-[document.documentElement, document.body]
-.filter(Boolean)
-.pop()
-.appendChild(document.createElement('script'))
-)
+
+(function () {
+
+var s = document.createElement('script');
+
+s.src = 'https://n6wxm.com/vignette.min.js';
+
+s.dataset.zone = '10976968';
+
+document.body.appendChild(s);
+
+})();
+
 </script>
 
 </body>
