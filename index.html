@@ -30,53 +30,49 @@
     --shadow:0 10px 30px rgba(0,0,0,0.35);
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
     font-family:'Poppins',sans-serif;
     background:linear-gradient(180deg,#07111f,#0b1728,#101c2d);
-    color:var(--text);
+    color:white;
     overflow-x:hidden;
 }
 
-/* BACKGROUND GLOW */
+/* BACKGROUND EFFECTS */
 
 .bg-glow{
     position:fixed;
-    width:600px;
-    height:600px;
-    border-radius:50%;
+    width:500px;
+    height:500px;
     background:radial-gradient(circle,rgba(91,140,255,0.18),transparent 70%);
-    top:-200px;
-    right:-200px;
+    top:-150px;
+    right:-150px;
+    border-radius:50%;
     z-index:-1;
     animation:float 8s ease-in-out infinite;
 }
 
 .bg-glow2{
     position:fixed;
-    width:500px;
-    height:500px;
-    border-radius:50%;
+    width:450px;
+    height:450px;
     background:radial-gradient(circle,rgba(124,77,255,0.15),transparent 70%);
-    bottom:-200px;
-    left:-200px;
+    bottom:-150px;
+    left:-150px;
+    border-radius:50%;
     z-index:-1;
     animation:float2 10s ease-in-out infinite;
 }
 
 @keyframes float{
-    0%{transform:translateY(0px);}
+    0%{transform:translateY(0);}
     50%{transform:translateY(30px);}
-    100%{transform:translateY(0px);}
+    100%{transform:translateY(0);}
 }
 
 @keyframes float2{
-    0%{transform:translateY(0px);}
+    0%{transform:translateY(0);}
     50%{transform:translateY(-30px);}
-    100%{transform:translateY(0px);}
+    100%{transform:translateY(0);}
 }
 
 /* NAVBAR */
@@ -84,10 +80,10 @@ body{
 .navbar{
     position:sticky;
     top:0;
-    z-index:1000;
+    z-index:999;
     backdrop-filter:blur(14px);
-    background:rgba(7,17,31,0.7);
-    border-bottom:1px solid rgba(255,255,255,0.05);
+    background:rgba(7,17,31,0.75);
+    border-bottom:1px solid rgba(255,255,255,0.06);
 }
 
 .nav-container{
@@ -95,15 +91,14 @@ body{
     margin:auto;
     padding:18px 20px;
     display:flex;
-    align-items:center;
     justify-content:space-between;
+    align-items:center;
     gap:20px;
 }
 
 .logo{
     font-size:1.8rem;
     font-weight:800;
-    letter-spacing:1px;
 }
 
 .logo span{
@@ -122,7 +117,7 @@ body{
     width:100%;
     padding:14px 18px;
     border:none;
-    border-radius:14px;
+    border-radius:16px;
     background:rgba(255,255,255,0.08);
     color:white;
     outline:none;
@@ -145,7 +140,7 @@ body{
 
 .hero-box{
     background:linear-gradient(135deg,#101c2d,#14233a);
-    border:1px solid var(--border);
+    border:1px solid rgba(255,255,255,0.06);
     border-radius:35px;
     padding:70px 50px;
     position:relative;
@@ -156,11 +151,11 @@ body{
 .hero-box::before{
     content:'';
     position:absolute;
-    width:300px;
-    height:300px;
-    background:radial-gradient(circle,rgba(91,140,255,0.25),transparent 70%);
-    right:-80px;
-    top:-80px;
+    width:350px;
+    height:350px;
+    background:radial-gradient(circle,rgba(91,140,255,0.22),transparent 70%);
+    top:-100px;
+    right:-100px;
 }
 
 .hero h1{
@@ -191,8 +186,6 @@ body{
     border-radius:16px;
     font-weight:600;
     transition:0.3s;
-    position:relative;
-    overflow:hidden;
 }
 
 .btn-primary{
@@ -203,8 +196,8 @@ body{
 
 .btn-secondary{
     background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.06);
     color:white;
-    border:1px solid rgba(255,255,255,0.08);
 }
 
 .btn:hover{
@@ -216,7 +209,7 @@ body{
 .dashboard{
     max-width:1300px;
     margin:auto;
-    padding:10px 20px 80px;
+    padding:20px 20px 70px;
 }
 
 .section-title{
@@ -239,23 +232,22 @@ body{
     position:relative;
     overflow:hidden;
     box-shadow:var(--shadow);
-    animation:fadeUp 1s ease;
 }
 
 .card::before{
     content:'';
     position:absolute;
-    width:160px;
-    height:160px;
-    border-radius:50%;
+    width:170px;
+    height:170px;
     background:rgba(91,140,255,0.08);
+    border-radius:50%;
     top:-60px;
     right:-60px;
 }
 
 .card:hover{
     transform:translateY(-10px);
-    border-color:rgba(91,140,255,0.4);
+    border-color:rgba(91,140,255,0.35);
 }
 
 .icon{
@@ -268,7 +260,7 @@ body{
     justify-content:center;
     font-size:1.8rem;
     margin-bottom:25px;
-    box-shadow:0 10px 20px rgba(91,140,255,0.25);
+    box-shadow:0 10px 25px rgba(91,140,255,0.25);
 }
 
 .card h2{
@@ -278,17 +270,17 @@ body{
 
 .card p{
     color:var(--light);
-    font-size:0.96rem;
+    font-size:0.95rem;
     margin-bottom:28px;
 }
 
 .card a{
     text-decoration:none;
-    color:white;
-    background:rgba(255,255,255,0.08);
-    padding:12px 18px;
-    border-radius:12px;
     display:inline-block;
+    padding:12px 20px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.08);
+    color:white;
     transition:0.3s;
 }
 
@@ -296,28 +288,57 @@ body{
     background:linear-gradient(135deg,var(--primary),var(--secondary));
 }
 
+/* ADS */
+
+.ads-section{
+    max-width:1300px;
+    margin:auto;
+    padding:20px 20px 70px;
+}
+
+.ads-title{
+    font-size:1.8rem;
+    margin-bottom:25px;
+}
+
+.ads-container{
+    display:flex;
+    gap:25px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.ad-box{
+    width:300px;
+    height:250px;
+    background:#101c2d;
+    border-radius:24px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.06);
+    box-shadow:var(--shadow);
+}
+
 /* FOOTER */
 
 footer{
-    border-top:1px solid rgba(255,255,255,0.06);
-    padding:50px 20px;
     text-align:center;
-    color:var(--light);
+    padding:60px 20px;
+    border-top:1px solid rgba(255,255,255,0.06);
 }
 
 footer h2{
     margin-bottom:12px;
-    color:white;
 }
 
 footer p{
-    max-width:600px;
+    max-width:650px;
     margin:auto;
-    margin-bottom:20px;
+    color:var(--light);
 }
 
 .copy{
     margin-top:20px;
+    color:var(--light);
     font-size:0.9rem;
 }
 
@@ -361,7 +382,6 @@ footer p{
 
     .hero-box{
         padding:45px 28px;
-        border-radius:28px;
     }
 
     .hero h1{
@@ -370,10 +390,6 @@ footer p{
 
     .hero p{
         font-size:1rem;
-    }
-
-    .section-title{
-        font-size:1.6rem;
     }
 
 }
@@ -389,6 +405,7 @@ footer p{
 <!-- NAVBAR -->
 
 <nav class="navbar">
+
     <div class="nav-container">
 
         <div class="logo">
@@ -401,6 +418,7 @@ footer p{
         </div>
 
     </div>
+
 </nav>
 
 <!-- HERO -->
@@ -415,7 +433,7 @@ footer p{
 
         <p>
             Modern psychology dashboard for IGNOU and B.A. students.
-            Browse organized notes, quick revisions, topic PDFs, and study materials in one clean place.
+            Browse organized notes, topic PDFs, revisions and psychology study material in one place.
         </p>
 
         <div class="hero-buttons">
@@ -427,7 +445,7 @@ footer p{
 
 </section>
 
-<!-- DASHBOARD -->
+<!-- NOTES -->
 
 <section class="dashboard" id="notes">
 
@@ -439,7 +457,7 @@ footer p{
             <div class="icon">📘</div>
             <h2>BPCC 101 Short Notes</h2>
             <p>
-                Easy psychology notes for revision, concepts, and exam preparation.
+                Easy psychology notes for quick revision and exam preparation.
             </p>
             <a href="bpcc.html">Open Notes</a>
         </div>
@@ -448,7 +466,7 @@ footer p{
             <div class="icon">🧠</div>
             <h2>Thinking & Language</h2>
             <p>
-                Learn cognition, concepts, problem solving, language and thinking processes.
+                Learn cognition, concepts, language and problem-solving processes.
             </p>
             <a href="think.html">Open Notes</a>
         </div>
@@ -457,7 +475,7 @@ footer p{
             <div class="icon">📖</div>
             <h2>CBT Basics</h2>
             <p>
-                Core understanding of cognitive behavioral therapy and mental frameworks.
+                Cognitive Behavioral Therapy fundamentals and mental frameworks.
             </p>
             <a href="cbt.html">Open Notes</a>
         </div>
@@ -466,7 +484,7 @@ footer p{
             <div class="icon">👁️</div>
             <h2>Perception</h2>
             <p>
-                Study sensory systems, interpretation, visual perception and cognition.
+                Study sensory systems, interpretation and perceptual processing.
             </p>
             <a href="per.html">Open Notes</a>
         </div>
@@ -475,10 +493,28 @@ footer p{
             <div class="icon">👥</div>
             <h2>Social Psychology</h2>
             <p>
-                Human interaction, social behavior, attitudes and group psychology.
+                Human interaction, attitudes, social behavior and group psychology.
             </p>
             <a href="soci.html">Open Notes</a>
         </div>
+
+    </div>
+
+</section>
+
+<!-- ADS -->
+
+<section class="ads-section">
+
+    <h2 class="ads-title">Sponsored</h2>
+
+    <div class="ads-container">
+
+        <div class="ad-box refresh-ad"></div>
+
+        <div class="ad-box refresh-ad"></div>
+
+        <div class="ad-box refresh-ad"></div>
 
     </div>
 
@@ -491,8 +527,8 @@ footer p{
     <h2>NOTESHUBINDIA</h2>
 
     <p>
-        A clean digital psychology library designed for students who want
-        simple, organized and modern learning resources.
+        A modern psychology library for students who want organized,
+        beautiful and simple learning resources.
     </p>
 
     <div class="copy">
@@ -525,6 +561,53 @@ searchInput.addEventListener('keyup', () => {
     });
 
 });
+
+</script>
+
+<!-- ADS SCRIPT -->
+
+<script>
+
+function loadAd(container){
+
+    container.innerHTML = "";
+
+    let adScript1 = document.createElement("script");
+
+    adScript1.innerHTML = `
+      atOptions = {
+        'key' : 'ea0d51ac1a35260f1b15f916efd71625',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+      };
+    `;
+
+    let adScript2 = document.createElement("script");
+
+    adScript2.src = "https://www.highperformanceformat.com/ea0d51ac1a35260f1b15f916efd71625/invoke.js";
+
+    container.appendChild(adScript1);
+    container.appendChild(adScript2);
+
+}
+
+const adBoxes = document.querySelectorAll(".refresh-ad");
+
+adBoxes.forEach(box => {
+    loadAd(box);
+});
+
+/* AUTO REFRESH EVERY 60 SEC */
+
+setInterval(() => {
+
+    adBoxes.forEach(box => {
+        loadAd(box);
+    });
+
+}, 60000);
 
 </script>
 
