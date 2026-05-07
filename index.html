@@ -228,7 +228,7 @@ position:relative;
 z-index:2;
 }
 
-/* TOP AD */
+/* ADS */
 
 .ad-section{
 max-width:1300px;
@@ -243,6 +243,7 @@ padding:25px;
 border:1px solid var(--border);
 box-shadow:var(--shadow);
 overflow:hidden;
+min-height:120px;
 }
 
 .sponsored{
@@ -320,14 +321,6 @@ transition:0.3s;
 
 .card a:hover{
 transform:translateY(-3px);
-}
-
-/* BOTTOM AD */
-
-.bottom-ad{
-max-width:1300px;
-margin:auto;
-padding:0 20px 60px;
 }
 
 /* FOOTER */
@@ -452,10 +445,7 @@ Browse organized notes, topic PDFs, revisions and psychology study material in o
 Sponsored
 </div>
 
-<script async="async" data-cfasync="false"
-src="//pl26328690.profitableratecpm.com/8c8a7195b2e7ef1f6f2d4b4f6ec9a5b/invoke.js"></script>
-
-<div id="container-8c8a7195b2e7ef1f6f2d4b4f6ec9a5b"></div>
+<div id="topAd"></div>
 
 </div>
 
@@ -475,7 +465,7 @@ Psychology Subjects
 
 <!-- BOTTOM AD -->
 
-<section class="bottom-ad">
+<section class="ad-section">
 
 <div class="ad-box">
 
@@ -483,10 +473,7 @@ Psychology Subjects
 Sponsored
 </div>
 
-<script async="async" data-cfasync="false"
-src="//pl26328690.profitableratecpm.com/8c8a7195b2e7ef1f6f2d4b4f6ec9a5b/invoke.js"></script>
-
-<div id="container-8c8a7195b2e7ef1f6f2d4b4f6ec9a5b"></div>
+<div id="bottomAd"></div>
 
 </div>
 
@@ -611,6 +598,42 @@ card.style.display = "none";
 }
 
 });
+
+});
+
+/* LOAD ADS */
+
+function loadBannerAd(containerId){
+
+const script = document.createElement('script');
+
+script.async = true;
+
+script.setAttribute('data-cfasync','false');
+
+script.src = "//pl26328690.profitableratecpm.com/8c8a7195b2e7ef1f6f2d4b4f6ec9a5b/invoke.js";
+
+document.body.appendChild(script);
+
+const adContainer = document.createElement('div');
+
+adContainer.id = "container-" + Math.random().toString(36).substring(2,12);
+
+document.getElementById(containerId).appendChild(adContainer);
+
+}
+
+/* LOAD ADS */
+
+window.addEventListener('load',()=>{
+
+setTimeout(()=>{
+
+loadBannerAd('topAd');
+
+loadBannerAd('bottomAd');
+
+},1500);
 
 });
 
