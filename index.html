@@ -4,9 +4,8 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- GOOGLE VERIFICATION -->
 <meta name="google-site-verification" content="WVCMal7_HouNmIDpYiWwjsuSxFrszSTburKwngURDKU">
 
 <!-- SEO -->
@@ -15,7 +14,7 @@
 
 <meta name="description" content="NOTESHUBINDIA provides psychology notes for IGNOU and B.A. students including CBT, Perception, Thinking & Learning, BPCC 101 and Social Psychology notes.">
 
-<meta name="keywords" content="Psychology Notes, IGNOU Psychology Notes, BPCC 101, CBT Notes, Perception Notes, Thinking and Learning Notes, Social Psychology Notes, BA Psychology">
+<meta name="keywords" content="Psychology Notes, IGNOU Psychology Notes, BPCC 101 Notes, CBT Notes, Perception Notes, Thinking and Learning Notes, Social Psychology Notes, BA Psychology Notes">
 
 <meta name="author" content="NOTESHUBINDIA">
 
@@ -23,17 +22,7 @@
 
 <meta name="theme-color" content="#07111f">
 
-<meta name="language" content="English">
-
-<meta name="revisit-after" content="2 days">
-
-<meta name="distribution" content="global">
-
-<meta name="rating" content="general">
-
-<meta name="googlebot" content="index, follow">
-
-<meta name="bingbot" content="index, follow">
+<link rel="canonical" href="https://noteshubindia.run.place">
 
 <!-- OPEN GRAPH -->
 
@@ -43,11 +32,9 @@
 
 <meta property="og:type" content="website">
 
-<meta property="og:image" content="file_00000000e1ec71f8a4427c9890576584.png">
-
 <meta property="og:url" content="https://noteshubindia.run.place">
 
-<link rel="canonical" href="https://noteshubindia.run.place">
+<meta property="og:image" content="https://noteshubindia.run.place/image.jpg">
 
 <!-- TWITTER -->
 
@@ -57,13 +44,29 @@
 
 <meta name="twitter:description" content="Organized psychology notes for IGNOU and B.A. students.">
 
-<meta name="twitter:image" content="image.jpg">
+<meta name="twitter:image" content="https://noteshubindia.run.place/image.jpg">
 
 <!-- FAVICON -->
 
 <link rel="icon" type="image/jpeg" href="image.jpg">
 
 <link rel="apple-touch-icon" href="image.jpg">
+
+<!-- STRUCTURED DATA -->
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"NOTESHUBINDIA",
+  "url":"https://noteshubindia.run.place",
+  "description":"Psychology notes for IGNOU and B.A. students including CBT, BPCC 101, Perception, Thinking & Learning and Social Psychology.",
+  "publisher":{
+    "@type":"Organization",
+    "name":"NOTESHUBINDIA"
+  }
+}
+</script>
 
 <!-- GOOGLE FONTS -->
 
@@ -476,31 +479,36 @@ const subjects = [
 {
 name: "BPCC 101",
 file: "bpcc.html",
-icon: "📘"
+icon: "📘",
+desc: "Introduction to Psychology notes for IGNOU BPCC 101 students."
 },
 
 {
 name: "Thinking & Learning",
 file: "think.html",
-icon: "🧠"
+icon: "🧠",
+desc: "Thinking and Learning psychology notes for revision and exams."
 },
 
 {
 name: "CBT Basics",
 file: "cbt.html",
-icon: "📖"
+icon: "📖",
+desc: "Cognitive Behavioral Therapy notes and concepts for psychology students."
 },
 
 {
 name: "Perception",
 file: "perc.html",
-icon: "👁️"
+icon: "👁️",
+desc: "Perception psychology notes covering sensation, attention and Gestalt principles."
 },
 
 {
 name: "Social Psychology",
 file: "soc.html",
-icon: "👥"
+icon: "👥",
+desc: "BPCC 107 Social Psychology notes for IGNOU and B.A. students."
 }
 
 ];
@@ -527,7 +535,7 @@ ${subject.name}
 </h2>
 
 <p>
-Simple psychology notes for revision, assignments and exam preparation.
+${subject.desc}
 </p>
 
 <a href="${subject.file}">
