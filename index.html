@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +38,7 @@ body{
     overflow-x:hidden;
 }
 
-/* BACKGROUND EFFECTS */
+/* BACKGROUND */
 
 .bg-glow{
     position:fixed;
@@ -123,6 +124,10 @@ body{
     outline:none;
     font-size:0.95rem;
     transition:0.3s;
+}
+
+.search-box input::placeholder{
+    color:#b5c2d4;
 }
 
 .search-box input:focus{
@@ -310,12 +315,16 @@ body{
 
 .ad-box{
     width:300px;
-    height:250px;
+    min-height:250px;
     background:#101c2d;
     border-radius:24px;
     overflow:hidden;
     border:1px solid rgba(255,255,255,0.06);
     box-shadow:var(--shadow);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:10px;
 }
 
 /* FOOTER */
@@ -510,11 +519,59 @@ footer p{
 
     <div class="ads-container">
 
-        <div class="ad-box refresh-ad"></div>
+        <!-- AD 1 -->
 
-        <div class="ad-box refresh-ad"></div>
+        <div class="ad-box">
 
-        <div class="ad-box refresh-ad"></div>
+            <script type="text/javascript">
+            atOptions = {
+                'key' : 'ea0d51ac1a35260f1b15f916efd71625',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+            };
+            </script>
+
+            <script type="text/javascript" src="//www.highperformanceformat.com/ea0d51ac1a35260f1b15f916efd71625/invoke.js"></script>
+
+        </div>
+
+        <!-- AD 2 -->
+
+        <div class="ad-box">
+
+            <script type="text/javascript">
+            atOptions = {
+                'key' : 'ea0d51ac1a35260f1b15f916efd71625',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+            };
+            </script>
+
+            <script type="text/javascript" src="//www.highperformanceformat.com/ea0d51ac1a35260f1b15f916efd71625/invoke.js"></script>
+
+        </div>
+
+        <!-- AD 3 -->
+
+        <div class="ad-box">
+
+            <script type="text/javascript">
+            atOptions = {
+                'key' : 'ea0d51ac1a35260f1b15f916efd71625',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+            };
+            </script>
+
+            <script type="text/javascript" src="//www.highperformanceformat.com/ea0d51ac1a35260f1b15f916efd71625/invoke.js"></script>
+
+        </div>
 
     </div>
 
@@ -561,53 +618,6 @@ searchInput.addEventListener('keyup', () => {
     });
 
 });
-
-</script>
-
-<!-- ADS SCRIPT -->
-
-<script>
-
-function loadAd(container){
-
-    container.innerHTML = "";
-
-    let adScript1 = document.createElement("script");
-
-    adScript1.innerHTML = `
-      atOptions = {
-        'key' : 'ea0d51ac1a35260f1b15f916efd71625',
-        'format' : 'iframe',
-        'height' : 250,
-        'width' : 300,
-        'params' : {}
-      };
-    `;
-
-    let adScript2 = document.createElement("script");
-
-    adScript2.src = "https://www.highperformanceformat.com/ea0d51ac1a35260f1b15f916efd71625/invoke.js";
-
-    container.appendChild(adScript1);
-    container.appendChild(adScript2);
-
-}
-
-const adBoxes = document.querySelectorAll(".refresh-ad");
-
-adBoxes.forEach(box => {
-    loadAd(box);
-});
-
-/* AUTO REFRESH EVERY 60 SEC */
-
-setInterval(() => {
-
-    adBoxes.forEach(box => {
-        loadAd(box);
-    });
-
-}, 60000);
 
 </script>
 
