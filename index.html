@@ -228,7 +228,7 @@ position:relative;
 z-index:2;
 }
 
-/* ADS */
+/* AD SECTION */
 
 .ad-section{
 max-width:1300px;
@@ -435,7 +435,7 @@ Browse organized notes, topic PDFs, revisions and psychology study material in o
 
 </section>
 
-<!-- TOP AD -->
+<!-- AD SECTION -->
 
 <section class="ad-section">
 
@@ -445,7 +445,10 @@ Browse organized notes, topic PDFs, revisions and psychology study material in o
 Sponsored
 </div>
 
-<div id="topAd"></div>
+<script async="async" data-cfasync="false"
+src="//pl26328690.profitableratecpm.com/8c8a7195b2e7ef1f6f2d4b4f6ec9a5b/invoke.js"></script>
+
+<div id="container-8c8a7195b2e7ef1f6f2d4b4f6ec9a5b"></div>
 
 </div>
 
@@ -460,22 +463,6 @@ Psychology Subjects
 </h2>
 
 <div class="cards" id="cardsContainer"></div>
-
-</section>
-
-<!-- BOTTOM AD -->
-
-<section class="ad-section">
-
-<div class="ad-box">
-
-<div class="sponsored">
-Sponsored
-</div>
-
-<div id="bottomAd"></div>
-
-</div>
 
 </section>
 
@@ -598,42 +585,6 @@ card.style.display = "none";
 }
 
 });
-
-});
-
-/* LOAD ADS */
-
-function loadBannerAd(containerId){
-
-const script = document.createElement('script');
-
-script.async = true;
-
-script.setAttribute('data-cfasync','false');
-
-script.src = "//pl26328690.profitableratecpm.com/8c8a7195b2e7ef1f6f2d4b4f6ec9a5b/invoke.js";
-
-document.body.appendChild(script);
-
-const adContainer = document.createElement('div');
-
-adContainer.id = "container-" + Math.random().toString(36).substring(2,12);
-
-document.getElementById(containerId).appendChild(adContainer);
-
-}
-
-/* LOAD ADS */
-
-window.addEventListener('load',()=>{
-
-setTimeout(()=>{
-
-loadBannerAd('topAd');
-
-loadBannerAd('bottomAd');
-
-},1500);
 
 });
 
