@@ -7,11 +7,6 @@
 
 <title>NOTESHUBINDIA</title>
 
-<!-- GOOGLE ADSENSE -->
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6433910494668507"
-crossorigin="anonymous"></script>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -33,6 +28,10 @@ crossorigin="anonymous"></script>
     --text:#ffffff;
     --light:#a7b4c7;
     --shadow:0 10px 30px rgba(0,0,0,0.35);
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -126,15 +125,6 @@ body{
     background:rgba(255,255,255,0.08);
     color:white;
     outline:none;
-    font-size:0.95rem;
-}
-
-.search-box input::placeholder{
-    color:#b5c2d4;
-}
-
-.search-box input:focus{
-    background:rgba(255,255,255,0.12);
 }
 
 /* HERO */
@@ -154,21 +144,10 @@ body{
     box-shadow:var(--shadow);
 }
 
-.hero-box::before{
-    content:'';
-    position:absolute;
-    width:350px;
-    height:350px;
-    background:radial-gradient(circle,rgba(91,140,255,0.22),transparent 70%);
-    top:-100px;
-    right:-100px;
-}
-
 .hero h1{
     font-size:4rem;
     line-height:1.1;
     margin-bottom:25px;
-    max-width:850px;
 }
 
 .hero p{
@@ -195,7 +174,6 @@ body{
 .btn-primary{
     background:linear-gradient(135deg,var(--primary),var(--secondary));
     color:white;
-    box-shadow:0 10px 25px rgba(91,140,255,0.35);
 }
 
 .btn-secondary{
@@ -231,20 +209,7 @@ body{
     border-radius:28px;
     padding:30px;
     transition:0.4s ease;
-    position:relative;
-    overflow:hidden;
     box-shadow:var(--shadow);
-}
-
-.card::before{
-    content:'';
-    position:absolute;
-    width:170px;
-    height:170px;
-    background:rgba(91,140,255,0.08);
-    border-radius:50%;
-    top:-60px;
-    right:-60px;
 }
 
 .card:hover{
@@ -264,13 +229,11 @@ body{
 }
 
 .card h2{
-    font-size:1.4rem;
     margin-bottom:14px;
 }
 
 .card p{
     color:var(--light);
-    font-size:0.95rem;
     margin-bottom:28px;
 }
 
@@ -281,20 +244,15 @@ body{
     border-radius:12px;
     background:rgba(255,255,255,0.08);
     color:white;
-    transition:0.3s;
-}
-
-.card a:hover{
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
 }
 
 /* ADS */
 
-.adsense-box{
+.ad-box{
     max-width:1200px;
     margin:50px auto;
     padding:25px;
-    min-height:320px;
+    min-height:280px;
     background:#101c2d;
     border-radius:24px;
     overflow:hidden;
@@ -309,20 +267,9 @@ footer{
     border-top:1px solid rgba(255,255,255,0.06);
 }
 
-footer h2{
-    margin-bottom:12px;
-}
-
-footer p{
-    max-width:650px;
-    margin:auto;
-    color:var(--light);
-}
-
 .copy{
     margin-top:20px;
     color:var(--light);
-    font-size:0.9rem;
 }
 
 /* MOBILE */
@@ -346,16 +293,12 @@ footer p{
     width:100%;
 }
 
-.hero{
-    padding-top:50px;
+.hero h1{
+    font-size:2.2rem;
 }
 
 .hero-box{
     padding:45px 28px;
-}
-
-.hero h1{
-    font-size:2.2rem;
 }
 
 }
@@ -393,9 +336,7 @@ NOTESHUBINDIA
 
 <div class="hero-box">
 
-<h1>
-Psychology Notes Made Beautiful & Easy
-</h1>
+<h1>Psychology Notes Made Beautiful & Easy</h1>
 
 <p>
 Modern psychology dashboard for IGNOU and B.A. students.
@@ -403,8 +344,15 @@ Browse organized notes, topic PDFs, revisions and psychology study material in o
 </p>
 
 <div class="hero-buttons">
-<a href="#notes" class="btn btn-primary">Explore Notes</a>
-<a href="#" class="btn btn-secondary">Latest Uploads</a>
+
+<a href="#notes" class="btn btn-primary">
+Explore Notes
+</a>
+
+<a href="#" class="btn btn-secondary">
+Latest Uploads
+</a>
+
 </div>
 
 </div>
@@ -415,7 +363,9 @@ Browse organized notes, topic PDFs, revisions and psychology study material in o
 
 <section class="dashboard" id="notes">
 
-<h2 class="section-title">Psychology Subjects</h2>
+<h2 class="section-title">
+Psychology Subjects
+</h2>
 
 <div class="cards">
 
@@ -440,33 +390,15 @@ Browse organized notes, topic PDFs, revisions and psychology study material in o
 <a href="cbt.html">Open Notes</a>
 </div>
 
-<div class="card" data-title="perception">
-<div class="icon">👁️</div>
-<h2>Perception</h2>
-<p>Study sensory systems, interpretation and perceptual processing.</p>
-<a href="per.html">Open Notes</a>
-</div>
-
-<div class="card" data-title="social psychology">
-<div class="icon">👥</div>
-<h2>Social Psychology</h2>
-<p>Human interaction, attitudes, social behavior and group psychology.</p>
-<a href="soci.html">Open Notes</a>
-</div>
-
 </div>
 
 </section>
 
-<!-- ADSENSE -->
+<!-- ADSTERA -->
 
-<div class="adsense-box">
+<div class="ad-box">
 
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="autorelaxed"
-     data-ad-client="ca-pub-6433910494668507"
-     data-ad-slot="3725477844"></ins>
+<div id="ad-container"></div>
 
 </div>
 
@@ -482,7 +414,7 @@ beautiful and simple learning resources.
 </p>
 
 <div class="copy">
-© 2026 NOTESHUBINDIA • Psychology Made Simple
+© 2026 NOTESHUBINDIA
 </div>
 
 </footer>
@@ -492,6 +424,7 @@ beautiful and simple learning resources.
 <script>
 
 const searchInput = document.getElementById('searchInput');
+
 const cards = document.querySelectorAll('.card');
 
 searchInput.addEventListener('keyup', () => {
@@ -503,21 +436,54 @@ cards.forEach(card => {
 let title = card.dataset.title.toLowerCase();
 
 if(title.includes(value)){
+
 card.style.display = "block";
+
 }else{
+
 card.style.display = "none";
+
 }
 
 });
 
 });
 
-</script>
 
-<!-- ADSENSE INIT -->
+/* LOAD ADSTERA ADS LAZY */
 
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
+window.addEventListener('load',()=>{
+
+    setTimeout(()=>{
+
+        loadAds();
+
+    },2000);
+
+});
+
+
+function loadAds(){
+
+    const script1 = document.createElement('script');
+
+    script1.async = true;
+
+    script1.setAttribute('data-cfasync','false');
+
+    script1.src = "https://pl29365361.profitablecpmratenetwork.com/71311088c3fe35ba595e4abb4f234f6a/invoke.js";
+
+    document.body.appendChild(script1);
+
+
+    const container = document.createElement('div');
+
+    container.id = "container-71311088c3fe35ba595e4abb4f234f6a";
+
+    document.getElementById('ad-container').appendChild(container);
+
+}
+
 </script>
 
 </body>
