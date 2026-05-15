@@ -65,7 +65,6 @@ body{
   min-height:100vh;
 }
 
-/* ── CANVAS BACKGROUND ── */
 #bg-canvas{
   position:fixed;
   inset:0;
@@ -73,7 +72,6 @@ body{
   opacity:0.45;
 }
 
-/* ── NOISE OVERLAY ── */
 body::after{
   content:'';
   position:fixed;
@@ -84,10 +82,8 @@ body::after{
   opacity:0.4;
 }
 
-/* ── EVERYTHING ABOVE BG ── */
 .wrapper{position:relative;z-index:2;}
 
-/* ── ANNOUNCEMENT BAR ── */
 .topbar{
   background:linear-gradient(90deg,#1e3a6e,#162d56,#1e3a6e);
   padding:10px 20px;
@@ -99,7 +95,6 @@ body::after{
 }
 .topbar span{color:#4a8fff;font-weight:600;}
 
-/* ── NAVBAR ── */
 .navbar{
   position:sticky;
   top:0;
@@ -159,7 +154,6 @@ body::after{
   text-transform:uppercase;
 }
 
-/* SEARCH */
 .search-wrap{
   flex:1;
   max-width:440px;
@@ -195,7 +189,6 @@ body::after{
 
 .search-wrap input::placeholder{color:var(--muted);}
 
-/* NAV BADGE */
 .nav-badge{
   display:flex;
   align-items:center;
@@ -219,7 +212,6 @@ body::after{
 
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
 
-/* ── HERO ── */
 .hero{
   max-width:1280px;
   margin:auto;
@@ -236,7 +228,6 @@ body::after{
   box-shadow:var(--shadow);
 }
 
-/* hero decorative elements */
 .hero-inner::before{
   content:'';
   position:absolute;
@@ -341,7 +332,6 @@ body::after{
   align-self:stretch;
 }
 
-/* ── SUBJECTS SECTION ── */
 .section{
   max-width:1280px;
   margin:auto;
@@ -379,7 +369,6 @@ body::after{
   color:#93b4d8;
 }
 
-/* ── CARDS ── */
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
@@ -409,7 +398,7 @@ body::after{
 .card:hover{
   transform:translateY(-8px);
   border-color:rgba(74,143,255,0.25);
-  box-shadow:0 24px 50px rgba(0,0,0,0.4),0 0 0 1px rgba(74,143,255,0.1);
+  box-shadow:0 24px 50px rgba(0,0,0,0.4),0 0 25px rgba(74,143,255,0.12);
 }
 
 .card-icon{
@@ -450,6 +439,7 @@ body::after{
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:12px;
 }
 
 .card a{
@@ -472,6 +462,10 @@ body::after{
   box-shadow:0 8px 25px rgba(74,143,255,0.4);
 }
 
+.card a:active{
+  transform:scale(0.96);
+}
+
 .card a svg{
   transition:transform 0.2s;
 }
@@ -483,6 +477,7 @@ body::after{
   display:flex;
   align-items:center;
   gap:5px;
+  white-space:nowrap;
 }
 
 @keyframes fadeUp{
@@ -490,7 +485,6 @@ body::after{
   to{opacity:1;transform:translateY(0);}
 }
 
-/* ── FOOTER ── */
 footer{
   border-top:1px solid var(--border);
   padding:60px 28px;
@@ -538,7 +532,6 @@ footer{
   font-size:0.8rem;
 }
 
-/* ── MOBILE ── */
 @media(max-width:900px){
   .hero h1{font-size:2.8rem;}
   .hero-inner{padding:50px 36px;}
@@ -554,9 +547,9 @@ footer{
   .hero-stats{gap:24px;}
   .stat-divider{display:none;}
   .section{padding-bottom:50px;}
+  .card-footer{flex-direction:column;align-items:flex-start;}
 }
 
-/* ── NO RESULTS ── */
 .no-results{
   grid-column:1/-1;
   text-align:center;
@@ -571,15 +564,12 @@ footer{
 <body>
 <div class="wrapper">
 
-<!-- CANVAS BACKGROUND -->
 <canvas id="bg-canvas"></canvas>
 
-<!-- TOPBAR -->
 <div class="topbar">
   Free study resources for <span>IGNOU</span> and <span>B.A.</span> students — updated regularly
 </div>
 
-<!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-container">
 
@@ -593,20 +583,20 @@ footer{
 
     <div class="search-wrap">
       <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
       </svg>
-      <input type="text" id="searchInput" placeholder="Search subjects...">
+      <input type="text" id="searchInput" placeholder="Search subjects..." aria-label="Search subjects">
     </div>
 
     <div class="nav-badge">
       <span class="dot"></span>
-      6 Subjects Available
+      <span id="navSubjectCount"></span>
     </div>
 
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
 
@@ -618,7 +608,7 @@ footer{
 
     <div class="hero-stats">
       <div class="stat">
-        <span class="stat-num">6</span>
+        <span class="stat-num" id="heroSubjectCount"></span>
         <span class="stat-label">Subjects</span>
       </div>
       <div class="stat-divider"></div>
@@ -636,7 +626,6 @@ footer{
   </div>
 </section>
 
-<!-- SUBJECTS -->
 <section class="section">
 
   <div class="section-header">
@@ -644,14 +633,13 @@ footer{
       <h2 class="section-title">All Subjects</h2>
       <p class="section-sub">Click any subject to open its notes</p>
     </div>
-    <div class="count-badge" id="countBadge">6 subjects</div>
+    <div class="count-badge" id="countBadge"></div>
   </div>
 
   <div class="cards" id="cardsContainer"></div>
 
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
 
@@ -671,7 +659,7 @@ footer{
   </div>
 </footer>
 
-</div><!-- end wrapper -->
+</div>
 
 <script>
 
@@ -716,7 +704,8 @@ footer{
       ctx.beginPath();
       ctx.arc(o.x,o.y,o.r,0,Math.PI*2);
       ctx.fill();
-      o.x += o.dx; o.y += o.dy;
+      o.x += o.dx;
+      o.y += o.dy;
       if(o.x < -o.r || o.x > W+o.r) o.dx *= -1;
       if(o.y < -o.r || o.y > H+o.r) o.dy *= -1;
     });
@@ -730,70 +719,130 @@ footer{
 
 /* ── SUBJECT DATA ── */
 const subjects = [
-  {name:"BPCC 101introduction to psychology",  file:"bpcc.html", icon:"📘", tag:"Psychology", desc:"Introduction to Psychology — foundational concepts for IGNOU students."},
-  {name:"BEDSV 101 Value Education ", file:"think.html", icon:"🧠", tag:"Psychology", desc:"BEDSV 101 Value Education - Complete Study Notes."},
-  {name:"BPCS 183 EMOTIONAL INTETELLIGENCE", file:"BPCS.html", icon:"📖", tag:"psychology", desc:"*BPCS-183: Emotional Intelligence* is an IGNOU BA Psychology course that teaches how to understand, manage, and use emotions to improve personal growth, relationships, and workplace success."},
-  {name:"BSOG 171",  file:"bsog.html", icon:"🏛️", tag:"Sociology", desc:"Indian Society — sociology notes for IGNOU students."},
-  {name:"BCOS 185 ENTREPRENEURSHIP", file:"BCOS.html", icon:"👁️", tag:"Psychology", desc:"BCOS-185: Entrepreneurship is an IGNOU B.Com course that teaches you how to start, plan, and run your own business with focus on business ideas, funding, MSME schemes, and real-world challenges."},
-{name:"BECS 184 DATA ANALYSIS", file:"BECS.html", icon:"👥", tag:"Psychology", desc:"*BECS-184: Data Analysis* is an IGNOU BA Economics course that covers basic statistical tools, data collection, presentation, measures of central tendency and dispersion, correlation, and index numbers for analyzing economic data."},
-{name:"Social Psychology", file:"soc.html", icon:"👥", tag:"Psychology", desc:"BPCC 107 Social Psychology — group behaviour and social influence notes."}
+  {
+    name:"BPCC 101 Introduction to Psychology",
+    file:"bpcc.html",
+    icon:"📘",
+    tag:"Psychology",
+    desc:"Introduction to Psychology — foundational concepts for IGNOU students."
+  },
+  {
+    name:"BEDSV 101 Value Education",
+    file:"think.html",
+    icon:"🧠",
+    tag:"Psychology",
+    desc:"BEDSV 101 Value Education - Complete Study Notes."
+  },
+  {
+    name:"BPCS 183 Emotional Intelligence",
+    file:"BPCS.html",
+    icon:"📖",
+    tag:"Psychology",
+    desc:"BPCS-183 Emotional Intelligence notes for IGNOU students."
+  },
+  {
+    name:"BSOG 171",
+    file:"bsog.html",
+    icon:"🏛️",
+    tag:"Sociology",
+    desc:"Indian Society — sociology notes for IGNOU students."
+  },
+  {
+    name:"BCOS 185 Entrepreneurship",
+    file:"BCOS.html",
+    icon:"👁️",
+    tag:"Commerce",
+    desc:"Entrepreneurship notes covering MSME, funding and business ideas."
+  },
+  {
+    name:"BECS 184 Data Analysis",
+    file:"BECS.html",
+    icon:"📊",
+    tag:"Economics",
+    desc:"Statistical tools, correlation, index numbers and economic data analysis."
+  },
+  {
+    name:"Social Psychology",
+    file:"soc.html",
+    icon:"👥",
+    tag:"Psychology",
+    desc:"BPCC 107 Social Psychology — group behaviour and social influence notes."
+  }
 ];
+
+
+/* ── AUTO COUNTS ── */
+const totalSubjects = subjects.length;
+
+document.getElementById('navSubjectCount').textContent =
+  `${totalSubjects} Subject${totalSubjects !== 1 ? 's' : ''} Available`;
+
+document.getElementById('heroSubjectCount').textContent =
+  totalSubjects;
+
+document.getElementById('countBadge').textContent =
+  `${totalSubjects} Subject${totalSubjects !== 1 ? 's' : ''}`;
 
 
 /* ── BUILD CARDS ── */
 const container = document.getElementById('cardsContainer');
 
-subjects.forEach((s, i) => {
-  const card = document.createElement('div');
-  card.className = 'card';
-  card.dataset.search = `${s.name.toLowerCase()} ${s.desc.toLowerCase()} ${s.tag.toLowerCase()}`;
-  card.style.animationDelay = `${i * 0.08}s`;
-  card.innerHTML = `
-    <div class="card-icon">${s.icon}</div>
-    <span class="card-tag">${s.tag}</span>
-    <h2>${s.name}</h2>
-    <p>${s.desc}</p>
-    <div class="card-footer">
-      <a href="${s.file}">
-        Open Notes
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <span class="card-meta">
-        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-        Free PDF
-      </span>
-    </div>
-  `;
-  container.appendChild(card);
-});
+function buildCards(filteredSubjects){
+  container.innerHTML = '';
+
+  if(filteredSubjects.length === 0){
+    const msg = document.createElement('div');
+    msg.className = 'no-results';
+    msg.textContent = `No subjects found`;
+    container.appendChild(msg);
+    return;
+  }
+
+  filteredSubjects.forEach((s, i) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.dataset.search = `${s.name.toLowerCase()} ${s.desc.toLowerCase()} ${s.tag.toLowerCase()}`;
+    card.style.animationDelay = `${i * 0.08}s`;
+
+    card.innerHTML = `
+      <div class="card-icon">${s.icon}</div>
+      <span class="card-tag">${s.tag}</span>
+      <h2>${s.name}</h2>
+      <p>${s.desc}</p>
+      <div class="card-footer">
+        <a href="${s.file}">
+          Open Notes
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+        <span class="card-meta">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+          </svg>
+          Free PDF
+        </span>
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+buildCards(subjects);
 
 
 /* ── SEARCH ── */
 const searchInput = document.getElementById('searchInput');
-const countBadge  = document.getElementById('countBadge');
 
 searchInput.addEventListener('input', () => {
-  const val = searchInput.value.toLowerCase().trim();
-  const cards = document.querySelectorAll('.card');
-  let visible = 0;
+  const value = searchInput.value.toLowerCase().trim();
 
-  cards.forEach(card => {
-    const match = card.dataset.search.includes(val);
-    card.style.display = match ? '' : 'none';
-    if(match) visible++;
-  });
+  const filtered = subjects.filter(s =>
+    `${s.name} ${s.desc} ${s.tag}`.toLowerCase().includes(value)
+  );
 
-  countBadge.textContent = `${visible} subject${visible !== 1 ? 's' : ''}`;
-
-  // show no-results message
-  const existing = document.querySelector('.no-results');
-  if(existing) existing.remove();
-  if(visible === 0){
-    const msg = document.createElement('div');
-    msg.className = 'no-results';
-    msg.textContent = `No subjects found for "${val}"`;
-    container.appendChild(msg);
-  }
+  buildCards(filtered);
 });
 
 </script>
