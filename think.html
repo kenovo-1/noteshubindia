@@ -1,581 +1,1841 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- SEO -->
-
-<title>Thinking & Learning Notes | NOTESHUBINDIA</title>
-
-<meta name="description"
-content="Download Thinking & Learning psychology notes PDF for IGNOU and B.A. Psychology students. Organized study material for revision and exam preparation.">
-
-<meta name="keywords"
-content="Thinking and Learning Notes, IGNOU Psychology Notes, BPCC 101 Notes, Psychology PDF">
-
-<meta name="robots" content="index, follow">
-
-<meta name="theme-color" content="#07111f">
-
-<link rel="canonical"
-href="https://noteshubindia.run.place/think.html">
-
-<!-- OPEN GRAPH -->
-
-<meta property="og:title"
-content="Thinking & Learning Notes">
-
-<meta property="og:description"
-content="Download Thinking & Learning psychology notes PDF for IGNOU and B.A. students.">
-
-<meta property="og:type"
-content="website">
-
-<meta property="og:url"
-content="https://noteshubindia.run.place/think.html">
-
-<meta property="og:image"
-content="https://noteshubindia.run.place/file_00000000e1ec71f8a4427c9890576584.png">
-
-<!-- TWITTER -->
-
-<meta name="twitter:card"
-content="summary_large_image">
-
-<meta name="twitter:title"
-content="Thinking & Learning Notes">
-
-<meta name="twitter:description"
-content="Psychology notes for IGNOU and B.A. students.">
-
-<meta name="twitter:image"
-content="https://noteshubindia.run.place/file_00000000e1ec71f8a4427c9890576584.png">
-
-<!-- FAVICON -->
-
-<link rel="icon"
-type="image/png"
-href="file_00000000e1ec71f8a4427c9890576584.png">
-
-<link rel="apple-touch-icon"
-href="file_00000000e1ec71f8a4427c9890576584.png">
-
-<!-- GOOGLE FONT -->
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<style>
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:'Poppins',sans-serif;
-background:#07111f;
-color:white;
-overflow-x:hidden;
-}
-
-/* LOADER */
-
-#loader{
-position:fixed;
-inset:0;
-background:#07111f;
-z-index:99999;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-}
-
-.loader-title{
-font-size:2rem;
-margin-bottom:30px;
-font-weight:700;
-text-align:center;
-padding:0 20px;
-}
-
-.progress-container{
-width:320px;
-height:22px;
-background:#16253b;
-border-radius:50px;
-overflow:hidden;
-position:relative;
-}
-
-.progress-bar{
-width:0%;
-height:100%;
-border-radius:50px;
-background:linear-gradient(90deg,#5b8cff,#7c4dff);
-animation:load .9s linear forwards;
-}
-
-.hamster{
-position:absolute;
-top:-22px;
-left:0;
-font-size:2rem;
-animation:run .9s linear forwards;
-}
-
-.bubble{
-position:absolute;
-border-radius:50%;
-background:rgba(255,255,255,0.06);
-animation:float 8s infinite linear;
-}
-
-.b1{
-width:60px;
-height:60px;
-left:10%;
-top:20%;
-}
-
-.b2{
-width:90px;
-height:90px;
-right:15%;
-top:40%;
-}
-
-.b3{
-width:120px;
-height:120px;
-left:40%;
-bottom:10%;
-}
-
-@keyframes load{
-from{width:0%;}
-to{width:100%;}
-}
-
-@keyframes run{
-from{left:0%;}
-to{left:88%;}
-}
-
-@keyframes float{
-0%{transform:translateY(0px);}
-50%{transform:translateY(-30px);}
-100%{transform:translateY(0px);}
-}
-
-/* MAIN */
-
-.main-content{
-display:none;
-animation:fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(10px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* NAVBAR */
-
-.navbar{
-position:sticky;
-top:0;
-z-index:999;
-background:rgba(7,17,31,0.9);
-backdrop-filter:blur(4px);
-border-bottom:1px solid rgba(255,255,255,0.06);
-}
-
-.nav-container{
-max-width:1200px;
-margin:auto;
-padding:18px 20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-/* LOGO */
-
-.logo{
-display:flex;
-align-items:center;
-gap:14px;
-font-size:1.7rem;
-font-weight:800;
-}
-
-.logo img{
-width:52px;
-height:52px;
-border-radius:14px;
-object-fit:cover;
-box-shadow:0 5px 15px rgba(0,0,0,0.25);
-}
-
-.logo span{
-display:block;
-font-size:0.8rem;
-color:#9fb0c7;
-font-weight:400;
-}
-
-/* HERO */
-
-.hero{
-max-width:1200px;
-margin:auto;
-padding:80px 20px 50px;
-}
-
-.hero-box{
-background:linear-gradient(145deg,#101c2d,#14233a);
-border-radius:35px;
-padding:60px 40px;
-border:1px solid rgba(255,255,255,0.06);
-position:relative;
-overflow:hidden;
-}
-
-.hero-box::before{
-content:'';
-position:absolute;
-width:300px;
-height:300px;
-border-radius:50%;
-background:radial-gradient(circle,rgba(91,140,255,0.2),transparent 70%);
-right:-100px;
-top:-100px;
-}
-
-.hero h1{
-font-size:3.5rem;
-margin-bottom:20px;
-position:relative;
-z-index:2;
-}
-
-.hero p{
-max-width:700px;
-color:#b7c5d8;
-line-height:1.8;
-margin-bottom:35px;
-position:relative;
-z-index:2;
-}
-
-.download-btn{
-display:inline-block;
-text-decoration:none;
-padding:18px 34px;
-border-radius:16px;
-background:linear-gradient(135deg,#5b8cff,#7c4dff);
-color:white;
-font-weight:600;
-box-shadow:0 10px 25px rgba(91,140,255,0.35);
-transition:0.3s;
-position:relative;
-z-index:2;
-}
-
-.download-btn:hover{
-transform:translateY(-5px);
-}
-
-/* CONTENT */
-
-.content-section{
-max-width:1200px;
-margin:auto;
-padding:20px;
-}
-
-.content-card{
-background:linear-gradient(145deg,#101c2d,#132238);
-border-radius:30px;
-padding:40px;
-border:1px solid rgba(255,255,255,0.06);
-}
-
-.content-card h2{
-font-size:2rem;
-margin-bottom:20px;
-}
-
-.content-card p{
-color:#c3d0e1;
-line-height:1.9;
-margin-bottom:20px;
-}
-
-/* ADS */
-
-.ads-section{
-max-width:1200px;
-margin:auto;
-padding:20px;
-}
-
-.ad-box{
-background:linear-gradient(145deg,#101c2d,#132238);
-border-radius:24px;
-padding:20px;
-border:1px solid rgba(255,255,255,0.06);
-margin-bottom:20px;
-min-height:120px;
-overflow:hidden;
-}
-
-/* FOOTER */
-
-.footer{
-text-align:center;
-padding:50px 20px;
-color:#a8b6c8;
-}
-
-.footer h2{
-margin-bottom:12px;
-}
-
-.footer p{
-line-height:1.8;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:2.4rem;
-}
-
-.hero-box{
-padding:40px 25px;
-}
-
-.progress-container{
-width:260px;
-}
-
-.logo{
-font-size:1.4rem;
-}
-
-.logo img{
-width:45px;
-height:45px;
-}
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEDSV 101 Value Education - Complete Study Notes | IGNOU | All Units Covered | Solved PYQs</title>
+    <meta name="description" content="Comprehensive BEDSV 101 Value Education notes covering all units - Introduction to Value Education, Moral Development, Indian Culture Values, Human Conduct Theories, Verbal/Non-Verbal Interaction, Adjustment, Peer & School Influence, Media Role, Indian Philosophy, Cultural Pluralism, Social Malaises. Includes MCQs, mnemonics, important questions, solved PYQs for IGNOU students.">
+    <meta name="keywords" content="BEDSV 101, Value Education notes, IGNOU value education, moral education, Indian culture values, human conduct theories, verbal non-verbal interaction, adjustment push pull factors, peer influence, schools of Indian philosophy, cultural pluralism, social malaises, BEDSV 101 PYQ, IGNOU BAM notes">
+    <meta name="author" content="BEDSV 101 Study Notes">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://ignou-notes.example.com/bedsv101-value-education">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="BEDSV 101 Value Education - Complete Study Notes | IGNOU">
+    <meta property="og:description" content="Comprehensive BEDSV 101 Value Education notes covering all units with MCQs, mnemonics, important questions, and solved PYQs. Perfect for IGNOU students.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ignou-notes.example.com/bedsv101-value-education">
+    <meta property="og:image" content="https://ignou-notes.example.com/images/bedsv101-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="BEDSV 101 Value Education Notes">
+    <meta property="og:locale" content="en_IN">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BEDSV 101 Value Education - Complete Study Notes | IGNOU">
+    <meta name="twitter:description" content="Comprehensive BEDSV 101 Value Education notes - all units, MCQs, mnemonics, exam highlights, solved PYQs. Free study material for IGNOU students.">
+    <meta name="twitter:image" content="https://ignou-notes.example.com/images/bedsv101-og.jpg">
+    <meta name="twitter:site" content="@ignou_notes">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "BEDSV 101 Value Education - Complete Study Notes",
+            "description": "Comprehensive BEDSV 101 Value Education notes covering all units with MCQs, mnemonics, exam highlights, and solved PYQs for IGNOU students.",
+            "author": {
+                "@type": "Organization",
+                "name": "IGNOU Study Notes"
+            },
+            "datePublished": "2024-06-15",
+            "dateModified": "2025-05-15",
+            "mainEntityOfPage": "https://ignou-notes.example.com/bedsv101-value-education",
+            "image": "https://ignou-notes.example.com/images/bedsv101-og.jpg",
+            "publisher": {
+                "@type": "Organization",
+                "name": "IGNOU Study Notes",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://ignou-notes.example.com/logo.png"
+                }
+            },
+            "educationalUse": "Study Material",
+            "learningResourceType": "Lecture Notes",
+            "educationalLevel": "Undergraduate",
+            "about": {
+                "@type": "Course",
+                "courseCode": "BEDSV 101",
+                "name": "Value Education",
+                "provider": {
+                    "@type": "CollegeOrUniversity",
+                    "name": "Indira Gandhi National Open University"
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg: #0a0a1a;
+            --surface: rgba(18, 18, 40, 0.7);
+            --surface2: rgba(28, 28, 55, 0.6);
+            --glass: rgba(22, 22, 48, 0.55);
+            --glass-border: rgba(255, 255, 255, 0.07);
+            --neon-cyan: #00e5ff;
+            --neon-purple: #b44dff;
+            --neon-pink: #ff2d95;
+            --neon-green: #39ff14;
+            --neon-yellow: #ffe600;
+            --neon-orange: #ff6d00;
+            --neon-gold: #ffd700;
+            --text: #e0e0f5;
+            --text-secondary: #b8b8d4;
+            --text-muted: #8888aa;
+            --highlight-bg: rgba(180, 77, 255, 0.1);
+            --highlight-border: rgba(180, 77, 255, 0.35);
+            --mcq-bg: rgba(0, 229, 255, 0.05);
+            --mcq-border: rgba(0, 229, 255, 0.28);
+            --pyq-bg: rgba(255, 215, 0, 0.06);
+            --pyq-border: rgba(255, 215, 0, 0.32);
+            --sidebar-width: 285px;
+            --header-height: 60px;
+            --radius: 14px;
+            --radius-sm: 10px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-glow: 0 0 30px rgba(180, 77, 255, 0.18), 0 0 55px rgba(0, 229, 255, 0.07);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+        body {
+            background: var(--bg);
+            background-image:
+                radial-gradient(ellipse at 22% 18%, rgba(180, 77, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 78% 58%, rgba(0, 229, 255, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at 48% 88%, rgba(255, 45, 149, 0.03) 0%, transparent 50%);
+            color: var(--text);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.72;
+            min-height: 100vh;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            overflow-x: hidden;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--neon-purple);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--neon-cyan);
+        }
+        .vintage-banner {
+            background: linear-gradient(135deg, #1a0030, #0d0020, #1a0030);
+            border-bottom: 2px solid var(--neon-purple);
+            text-align: center;
+            padding: 10px 16px;
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: var(--neon-yellow);
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+            text-transform: uppercase;
+            font-weight: 700;
+            animation: bannerGlow 3s ease-in-out infinite;
+        }
+        @keyframes bannerGlow {
+            0%,
+            100% {
+                box-shadow: 0 0 15px rgba(180, 77, 255, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 35px rgba(255, 230, 0, 0.4), 0 0 50px rgba(180, 77, 255, 0.25);
+            }
+        }
+        .vintage-banner span {
+            animation: flicker 4s infinite;
+        }
+        @keyframes flicker {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.85;
+            }
+            25%,
+            75% {
+                opacity: 0.95;
+            }
+        }
+        .main-header {
+            position: sticky;
+            top: 40px;
+            z-index: 1000;
+            background: var(--surface);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 0 20px;
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            box-shadow: var(--shadow-glow);
+        }
+        .header-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            white-space: nowrap;
+        }
+        .search-wrap {
+            position: relative;
+            flex: 1;
+            max-width: 400px;
+        }
+        .search-wrap input {
+            width: 100%;
+            padding: 10px 16px 10px 40px;
+            border-radius: 30px;
+            border: 1px solid var(--glass-border);
+            background: var(--surface2);
+            color: var(--text);
+            font-size: 0.9rem;
+            outline: none;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+        .search-wrap input:focus {
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+        }
+        .search-wrap .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--neon-cyan);
+            font-size: 1rem;
+            pointer-events: none;
+        }
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--neon-cyan);
+            font-size: 1.6rem;
+            cursor: pointer;
+            padding: 6px;
+            z-index: 1100;
+        }
+        .header-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .btn-icon {
+            background: var(--surface2);
+            border: 1px solid var(--glass-border);
+            color: var(--neon-cyan);
+            padding: 8px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: var(--transition);
+            white-space: nowrap;
+            backdrop-filter: blur(10px);
+        }
+        .btn-icon:hover {
+            border-color: var(--neon-purple);
+            box-shadow: 0 0 15px rgba(180, 77, 255, 0.3);
+        }
+        .app-container {
+            display: flex;
+            min-height: calc(100vh - 100px);
+            position: relative;
+        }
+        .sidebar {
+            width: var(--sidebar-width);
+            min-width: var(--sidebar-width);
+            background: var(--surface);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-right: 1px solid var(--glass-border);
+            height: calc(100vh - 100px);
+            position: sticky;
+            top: 100px;
+            overflow-y: auto;
+            padding: 16px 12px;
+            transition: transform var(--transition), opacity var(--transition);
+            z-index: 999;
+        }
+        .sidebar-nav {
+            list-style: none;
+        }
+        .sidebar-nav li {
+            margin-bottom: 4px;
+        }
+        .sidebar-nav a {
+            display: block;
+            padding: 10px 14px;
+            border-radius: var(--radius-sm);
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            position: relative;
+            letter-spacing: 0.3px;
+        }
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            background: var(--highlight-bg);
+            border-color: var(--highlight-border);
+            color: var(--neon-cyan);
+            box-shadow: 0 0 18px rgba(0, 229, 255, 0.1);
+            text-shadow: 0 0 6px rgba(0, 229, 255, 0.3);
+        }
+        .sidebar-nav a .unit-num {
+            display: inline-block;
+            width: 26px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            border-radius: 50%;
+            background: var(--neon-purple);
+            color: #fff;
+            font-size: 0.7rem;
+            margin-right: 8px;
+            font-weight: 700;
+        }
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 998;
+        }
+        .main-content {
+            flex: 1;
+            padding: 24px 20px 60px;
+            max-width: 920px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .unit-section {
+            margin-bottom: 28px;
+            border-radius: var(--radius);
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+            box-shadow: var(--shadow-glow);
+            transition: var(--transition);
+        }
+        .unit-section:hover {
+            border-color: rgba(180, 77, 255, 0.3);
+        }
+        .unit-header {
+            padding: 18px 22px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            background: var(--surface2);
+            border-bottom: 1px solid var(--glass-border);
+            transition: var(--transition);
+            user-select: none;
+        }
+        .unit-header:hover {
+            background: rgba(35, 35, 65, 0.7);
+        }
+        .unit-header h2 {
+            font-size: 1.15rem;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            flex: 1;
+            margin: 0;
+        }
+        .unit-header .collapse-icon {
+            font-size: 1.4rem;
+            color: var(--neon-cyan);
+            transition: transform var(--transition);
+            min-width: 28px;
+            text-align: center;
+        }
+        .unit-section.collapsed .collapse-icon {
+            transform: rotate(-90deg);
+        }
+        .unit-section.collapsed .unit-body {
+            display: none;
+        }
+        .unit-body {
+            padding: 20px 22px;
+            animation: fadeIn 0.4s ease;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h3 {
+            color: var(--neon-cyan);
+            margin: 22px 0 10px;
+            font-size: 1.05rem;
+            border-left: 3px solid var(--neon-purple);
+            padding-left: 12px;
+            letter-spacing: 0.5px;
+        }
+        h4 {
+            color: var(--neon-pink);
+            margin: 14px 0 8px;
+            font-size: 0.95rem;
+        }
+        p {
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            text-align: justify;
+        }
+        ul,
+        ol {
+            margin: 8px 0 16px 20px;
+            color: var(--text-secondary);
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        strong {
+            color: var(--neon-yellow);
+        }
+        em {
+            color: var(--neon-orange);
+            font-style: normal;
+            font-weight: 600;
+        }
+        .exam-box {
+            background: var(--highlight-bg);
+            border: 1px solid var(--highlight-border);
+            border-radius: var(--radius-sm);
+            padding: 16px 18px;
+            margin: 18px 0;
+            position: relative;
+            box-shadow: 0 0 20px rgba(180, 77, 255, 0.1);
+        }
+        .exam-box::before {
+            content: '📌 EXAM TIP';
+            position: absolute;
+            top: -11px;
+            left: 16px;
+            background: var(--neon-purple);
+            color: #fff;
+            font-size: 0.7rem;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .exam-box p,
+        .exam-box li {
+            color: #d0c8f0;
+        }
+        .mnemonic-box {
+            background: rgba(255, 230, 0, 0.05);
+            border: 1px solid rgba(255, 230, 0, 0.35);
+            border-radius: var(--radius-sm);
+            padding: 14px 16px;
+            margin: 16px 0;
+            position: relative;
+        }
+        .mnemonic-box::before {
+            content: '🧠 MNEMONIC';
+            position: absolute;
+            top: -11px;
+            left: 16px;
+            background: var(--neon-yellow);
+            color: #000;
+            font-size: 0.7rem;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .mnemonic-box p {
+            color: #e8d880;
+        }
+        .mcq-section {
+            background: var(--mcq-bg);
+            border: 1px solid var(--mcq-border);
+            border-radius: var(--radius-sm);
+            padding: 16px 18px;
+            margin: 18px 0;
+        }
+        .mcq-section h4 {
+            color: var(--neon-cyan);
+            margin-top: 0;
+        }
+        .mcq-item {
+            margin-bottom: 14px;
+            padding: 10px 12px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .mcq-item:hover {
+            background: rgba(0, 229, 255, 0.06);
+        }
+        .mcq-item .question {
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+        .mcq-item .options {
+            list-style: none;
+            margin-left: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+        }
+        .mcq-item .options li {
+            padding: 6px 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .mcq-item .options li:hover {
+            background: rgba(0, 229, 255, 0.1);
+        }
+        .mcq-item .options li.correct-selected {
+            background: rgba(57, 255, 20, 0.2) !important;
+            border: 1px solid var(--neon-green);
+        }
+        .mcq-item .options li.wrong-selected {
+            background: rgba(255, 45, 149, 0.2) !important;
+            border: 1px solid var(--neon-pink);
+        }
+        .mcq-item .answer {
+            color: var(--neon-green);
+            font-weight: 700;
+            margin-top: 4px;
+            font-size: 0.8rem;
+            display: none;
+        }
+        .mcq-item .answer.show {
+            display: block;
+        }
+        .imp-questions {
+            background: rgba(255, 109, 0, 0.06);
+            border: 1px solid rgba(255, 109, 0, 0.35);
+            border-radius: var(--radius-sm);
+            padding: 14px 18px;
+            margin: 16px 0;
+        }
+        .imp-questions h4 {
+            color: var(--neon-orange);
+        }
+        .imp-questions ol li {
+            color: #ffcc99;
+            margin-bottom: 8px;
+        }
+        .pyq-section {
+            background: var(--pyq-bg);
+            border: 1px solid var(--pyq-border);
+            border-radius: var(--radius-sm);
+            padding: 16px 18px;
+            margin: 18px 0;
+        }
+        .pyq-section h4 {
+            color: var(--neon-gold);
+        }
+        .pyq-item {
+            margin-bottom: 12px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        .pyq-item .q {
+            font-weight: 700;
+            color: #fff;
+        }
+        .pyq-item .ans {
+            color: #d0c8a0;
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+        .notes-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.85rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .notes-table th,
+        .notes-table td {
+            padding: 10px 12px;
+            border: 1px solid var(--glass-border);
+            text-align: left;
+        }
+        .notes-table th {
+            background: rgba(180, 77, 255, 0.2);
+            color: var(--neon-cyan);
+            font-weight: 700;
+        }
+        .notes-table td {
+            background: rgba(0, 0, 0, 0.2);
+            color: var(--text-secondary);
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                position: fixed;
+                top: 100px;
+                left: 0;
+                transform: translateX(-105%);
+                opacity: 0;
+                height: calc(100vh - 100px);
+                z-index: 999;
+            }
+            .sidebar.open {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            .sidebar-overlay.active {
+                display: block;
+            }
+            .hamburger {
+                display: block;
+            }
+            .main-content {
+                padding: 16px 12px 40px;
+            }
+            .unit-header h2 {
+                font-size: 1rem;
+            }
+            .header-title {
+                font-size: 0.85rem;
+            }
+            .mcq-item .options {
+                grid-template-columns: 1fr;
+            }
+            .search-wrap {
+                max-width: 200px;
+            }
+            .btn-icon {
+                font-size: 0.7rem;
+                padding: 6px 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            .main-header {
+                padding: 0 8px;
+                gap: 6px;
+            }
+            .search-wrap {
+                max-width: 140px;
+            }
+            .search-wrap input {
+                font-size: 0.75rem;
+                padding: 8px 10px 8px 30px;
+            }
+            .unit-body {
+                padding: 12px;
+            }
+            .vintage-banner {
+                font-size: 10px;
+                padding: 6px 8px;
+            }
+            .main-header {
+                top: 30px;
+                height: 48px;
+            }
+            .sidebar {
+                top: 78px;
+                height: calc(100vh - 78px);
+            }
+        }
+        @media print {
+            body {
+                background: #fff !important;
+                color: #000 !important;
+                -webkit-user-select: text !important;
+                -moz-user-select: text !important;
+                -ms-user-select: text !important;
+                user-select: text !important;
+            }
+            .sidebar,
+            .main-header,
+            .vintage-banner,
+            .hamburger,
+            .btn-icon,
+            .sidebar-overlay,
+            .search-wrap,
+            .header-actions,
+            .collapse-icon {
+                display: none !important;
+            }
+            .main-content {
+                max-width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+            .unit-section {
+                box-shadow: none;
+                border: 1px solid #ccc;
+                background: #fff;
+                break-inside: avoid;
+                margin-bottom: 12px;
+                page-break-inside: avoid;
+            }
+            .unit-header {
+                background: #f5f5f5;
+                border-bottom: 2px solid #333;
+            }
+            .unit-header h2 {
+                -webkit-text-fill-color: #000 !important;
+                color: #000 !important;
+            }
+            .unit-body {
+                display: block !important;
+            }
+            .unit-section.collapsed .unit-body {
+                display: block !important;
+            }
+            .exam-box,
+            .mnemonic-box,
+            .mcq-section,
+            .imp-questions,
+            .pyq-section {
+                border: 1px solid #999;
+                background: #fafafa;
+                break-inside: avoid;
+            }
+            .exam-box::before,
+            .mnemonic-box::before {
+                background: #333 !important;
+                color: #fff !important;
+            }
+            p,
+            li,
+            td {
+                color: #222 !important;
+            }
+            h3 {
+                color: #333 !important;
+                border-left-color: #333 !important;
+            }
+            @page {
+                margin: 1.5cm;
+                size: A4;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- LOADER -->
-
-<div id="loader">
-
-<div class="bubble b1"></div>
-<div class="bubble b2"></div>
-<div class="bubble b3"></div>
-
-<div class="loader-title">
-Loading Thinking & Learning Notes...
-</div>
-
-<div class="progress-container">
-
-<div class="hamster">🐹</div>
-
-<div class="progress-bar"></div>
-
-</div>
-
-</div>
-
-<!-- MAIN -->
-
-<div class="main-content" id="mainContent">
-
-<!-- NAVBAR -->
-
-<nav class="navbar">
-
-<div class="nav-container">
-
-<div class="logo">
-
-<img
-src="file_00000000e1ec71f8a4427c9890576584.png"
-alt="NOTESHUBINDIA Logo">
-
-<div>
-NOTESHUBINDIA
-<span>Psychology Made Simple</span>
-</div>
-
-</div>
-
-</div>
-
-</nav>
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="hero-box">
-
-<h1>
-Thinking & Learning Notes
-</h1>
-
-<p>
-Download Thinking & Learning psychology notes PDF for IGNOU and B.A. Psychology students. Simple and organized study material for revision and exam preparation.
-</p>
-
-<a class="download-btn"
-href="https://drive.google.com/uc?export=download&id=1cg88oLq-qgvLVsobqZTwkC7fzWyuLxJw"
-target="_blank">
-
-Download PDF
-
-</a>
-
-</div>
-
-</section>
-
-<!-- CONTENT -->
-
-<section class="content-section">
-
-<div class="content-card">
-
-<h2>
-About Thinking & Learning
-</h2>
-
-<p>
-Thinking and Learning are important cognitive processes in psychology. These topics explain how humans acquire knowledge, solve problems, make decisions and process information.
-</p>
-
-<p>
-The unit includes concepts like mental imagery, creativity, problem solving, language development, memory and learning behaviour.
-</p>
-
-<p>
-These notes are useful for IGNOU BPCC 101 students preparing for assignments, semester exams and concept revision.
-</p>
-
-<div style="margin-top:40px;text-align:center;">
-
-<a class="download-btn"
-href="https://drive.google.com/uc?export=download&id=1cg88oLq-qgvLVsobqZTwkC7fzWyuLxJw"
-target="_blank">
-
-Download Full Notes
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ADS -->
-
-<section class="ads-section">
-
-<div class="ad-box">
-<script async="async" data-cfasync="false"
-src="https://pl29365361.profitablecpmratenetwork.com/71311088c3fe35ba595e4abb4f234f6a/invoke.js"></script>
-<div id="container-71311088c3fe35ba595e4abb4f234f6a"></div>
-</div>
-
-<div class="ad-box">
-<script async="async" data-cfasync="false"
-src="https://pl29365361.profitablecpmratenetwork.com/71311088c3fe35ba595e4abb4f234f6a/invoke.js"></script>
-<div id="container-71311088c3fe35ba595e4abb4f234f6a2"></div>
-</div>
-
-<div class="ad-box">
-<script async="async" data-cfasync="false"
-src="https://pl29365361.profitablecpmratenetwork.com/71311088c3fe35ba595e4abb4f234f6a/invoke.js"></script>
-<div id="container-71311088c3fe35ba595e4abb4f234f6a3"></div>
-</div>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer class="footer">
-
-<h2>
-NOTESHUBINDIA
-</h2>
-
-<p>
-Modern psychology notes website for IGNOU & B.A. students.
-</p>
-
-<div style="margin-top:20px;">
-© 2026 NOTESHUBINDIA
-</div>
-
-</footer>
-
-</div>
-
-<!-- PAGE LOAD -->
-
-<script>
-
-window.addEventListener('load', () => {
-
-setTimeout(() => {
-
-document.getElementById('loader').style.display = 'none';
-
-document.getElementById('mainContent').style.display = 'block';
-
-}, 900);
-
-});
-
-</script>
-
+    <div class="vintage-banner">
+        <span>✦ IGNOU BEDSV 101 VALUE EDUCATION — COMPLETE STUDY NOTES — ALL UNITS — SOLVED PYQs — EXAM READY ✦</span>
+    </div>
+
+    <header class="main-header">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">☰</button>
+        <div class="header-title">📗 BEDSV 101 Notes</div>
+        <div class="search-wrap">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" placeholder="Search notes... (e.g. 'dharma', 'utilitarianism', 'peers')" autocomplete="off">
+        </div>
+        <div class="header-actions">
+            <button class="btn-icon" onclick="expandAll()" title="Expand All Units">📖 Expand</button>
+            <button class="btn-icon" onclick="collapseAll()" title="Collapse All Units">📕 Collapse</button>
+            <button class="btn-icon" onclick="window.print()" title="Print to PDF">🖨️ Print/PDF</button>
+        </div>
+    </header>
+
+    <div class="app-container">
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+        <aside class="sidebar" id="sidebar">
+            <nav>
+                <ul class="sidebar-nav">
+                    <li><a href="#unit1" class="active" onclick="closeSidebar()"><span class="unit-num">1</span> Introduction to Value Education</a></li>
+                    <li><a href="#unit2" onclick="closeSidebar()"><span class="unit-num">2</span> Morally Educated Person & Facets of Morality</a></li>
+                    <li><a href="#unit3" onclick="closeSidebar()"><span class="unit-num">3</span> Values Underlying Indian Culture</a></li>
+                    <li><a href="#unit4" onclick="closeSidebar()"><span class="unit-num">4</span> Rules & Principles of Human Conduct</a></li>
+                    <li><a href="#unit5" onclick="closeSidebar()"><span class="unit-num">5</span> Theories of Conduct</a></li>
+                    <li><a href="#unit6" onclick="closeSidebar()"><span class="unit-num">6</span> Verbal & Non-Verbal Interaction</a></li>
+                    <li><a href="#unit7" onclick="closeSidebar()"><span class="unit-num">7</span> Adjustment: Push & Pull Factors</a></li>
+                    <li><a href="#unit8" onclick="closeSidebar()"><span class="unit-num">8</span> Peers & Value Development Through School</a></li>
+                    <li><a href="#unit9" onclick="closeSidebar()"><span class="unit-num">9</span> Role & Functions of Media</a></li>
+                    <li><a href="#unit10" onclick="closeSidebar()"><span class="unit-num">10</span> Moral Education vs Religious Education</a></li>
+                    <li><a href="#unit11" onclick="closeSidebar()"><span class="unit-num">11</span> Schools of Indian Philosophy</a></li>
+                    <li><a href="#unit12" onclick="closeSidebar()"><span class="unit-num">12</span> Cultural Pluralism in India</a></li>
+                    <li><a href="#unit13" onclick="closeSidebar()"><span class="unit-num">13</span> Social Malaises & Value-Oriented Education</a></li>
+                    <li><a href="#unit14" onclick="closeSidebar()"><span class="unit-num">14</span> Character-Personality Patterns</a></li>
+                    <li><a href="#pyq-section" onclick="closeSidebar()"><span class="unit-num">📝</span> Solved PYQs (Previous Year Questions)</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content" id="mainContent">
+
+            <!-- ═══════════════ UNIT 1 ═══════════════ -->
+            <div class="unit-section" id="unit1">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2>📌 Unit 1: Introduction to Value Education</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>1.1 Meaning and Concept of Value Education</h3>
+                    <p><strong>Value Education</strong> is the process by which individuals are taught moral values, ethical principles, and social responsibility. It is a holistic approach to education that aims at the <em>total development of human personality</em> — intellectual, emotional, social, moral, and spiritual. Unlike traditional academic education that focuses on knowledge acquisition, value education focuses on character building and instilling qualities that help individuals lead meaningful lives.</p>
+                    <p>The term <strong>"value"</strong> comes from the Latin word <em>"valere"</em> meaning "to be of worth." Values are the beliefs, standards, or principles that guide an individual's behavior and decision-making. They are deeply held convictions about what is right, good, and desirable.</p>
+                    <p>According to the <strong>National Policy on Education (NPE) 1986</strong> and its subsequent revisions, value education is essential for cultivating social and moral values, promoting national integration, and developing scientific temper among students. The policy emphasized that education must be a tool for cultivating <em>ethical, social, and spiritual values</em>.</p>
+                    <div class="exam-box">
+                        <p><strong>Key Definition for Exams:</strong> Value Education is a deliberate process of inculcating moral, ethical, and social values in individuals through formal and informal educational approaches. It aims at the holistic development of personality and the cultivation of responsible citizenship.</p>
+                    </div>
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic: "VALUE-ED"</strong> — Remember the core components:</p>
+                        <p><strong>V</strong>irtues cultivation · <strong>A</strong>ttitude formation · <strong>L</strong>ife skills development · <strong>U</strong>nderstanding ethics · <strong>E</strong>motional intelligence · <strong>E</strong>mpowerment · <strong>D</strong>ecision-making skills</p>
+                    </div>
+                    <h3>1.2 Need and Importance of Value Education</h3>
+                    <ul>
+                        <li><strong>Character Building:</strong> Value education helps in developing a strong moral character and ethical foundation in individuals.</li>
+                        <li><strong>Social Harmony:</strong> It promotes peace, tolerance, and mutual respect among diverse communities.</li>
+                        <li><strong>Combating Social Evils:</strong> Value-oriented individuals are less likely to engage in corruption, discrimination, or violence.</li>
+                        <li><strong>National Integration:</strong> Values like patriotism, secularism, and unity in diversity strengthen the fabric of the nation.</li>
+                        <li><strong>Global Citizenship:</strong> Universal values like peace, environmental consciousness, and human rights prepare individuals for global challenges.</li>
+                        <li><strong>Personal Development:</strong> It enhances self-awareness, emotional intelligence, and decision-making capabilities.</li>
+                        <li><strong>Professional Ethics:</strong> Prepares individuals for ethical conduct in professional life.</li>
+                    </ul>
+                    <h3>1.3 Types of Values</h3>
+                    <table class="notes-table">
+                        <thead>
+                            <tr><th>Type</th><th>Description</th><th>Examples</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Personal Values</strong></td><td>Internal beliefs guiding individual behavior</td><td>Honesty, Integrity, Self-discipline</td></tr>
+                            <tr><td><strong>Social Values</strong></td><td>Values governing interactions in society</td><td>Respect, Cooperation, Tolerance</td></tr>
+                            <tr><td><strong>Cultural Values</strong></td><td>Values rooted in cultural traditions</td><td>Respect for elders, Hospitality, Ahimsa</td></tr>
+                            <tr><td><strong>Universal Values</strong></td><td>Values accepted across all cultures</td><td>Peace, Truth, Non-violence, Justice</td></tr>
+                            <tr><td><strong>Professional Values</strong></td><td>Values related to workplace ethics</td><td>Accountability, Transparency, Fairness</td></tr>
+                            <tr><td><strong>Spiritual Values</strong></td><td>Values concerning inner growth</td><td>Compassion, Detachment, Self-realization</td></tr>
+                        </tbody>
+                    </table>
+                    <h3>1.4 Fivefold Moral Culture</h3>
+                    <p>The concept of <strong>Panchsheel</strong> or fivefold moral culture includes: <strong>(1) Truth (Satya)</strong> — commitment to honesty in thought, word, and deed. <strong>(2) Righteous Conduct (Dharma)</strong> — performing one's duties with integrity. <strong>(3) Peace (Shanti)</strong> — maintaining inner calm and promoting social harmony. <strong>(4) Love (Prema)</strong> — universal compassion and selfless service. <strong>(5) Non-violence (Ahimsa)</strong> — refraining from harm to any living being in thought, word, or action.</p>
+                    <div class="imp-questions">
+                        <h4>🔶 Important Questions — Unit 1</h4>
+                        <ol>
+                            <li>Define Value Education. Discuss its need and importance in contemporary Indian society.</li>
+                            <li>Explain the different types of values with suitable examples.</li>
+                            <li>What is the fivefold moral culture? How does it contribute to personality development?</li>
+                            <li>Discuss the role of value education in national integration and social harmony.</li>
+                        </ol>
+                    </div>
+                    <div class="mcq-section">
+                        <h4>📝 MCQs — Unit 1 (Click options to test yourself!)</h4>
+                        <div class="mcq-item" data-correct="B">
+                            <p class="question">Q1. The word "value" is derived from the Latin word:</p>
+                            <ul class="options"><li data-opt="A">A) Valere (to be of worth)</li><li data-opt="B">B) Valor (courage)</li><li data-opt="C">C) Vale (farewell)</li><li data-opt="D">D) Validus (strong)</li></ul>
+                            <p class="answer">✅ Answer: A) Valere — meaning "to be of worth"</p>
+                        </div>
+                        <div class="mcq-item" data-correct="B">
+                            <p class="question">Q2. Which policy emphasized value education for national integration in India?</p>
+                            <ul class="options"><li data-opt="A">A) NPE 1968</li><li data-opt="B">B) NPE 1986</li><li data-opt="C">C) Right to Education Act 2009</li><li data-opt="D">D) NEP 2020</li></ul>
+                            <p class="answer">✅ Answer: B) National Policy on Education (NPE) 1986</p>
+                        </div>
+                        <div class="mcq-item" data-correct="C">
+                            <p class="question">Q3. Which of the following is NOT a type of value?</p>
+                            <ul class="options"><li data-opt="A">A) Personal Values</li><li data-opt="B">B) Cultural Values</li><li data-opt="C">C) Monetary Values</li><li data-opt="D">D) Universal Values</li></ul>
+                            <p class="answer">✅ Answer: C) Monetary Values — values refer to ethical/moral principles, not financial worth</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════ UNIT 2 ═══════════════ -->
+            <div class="unit-section" id="unit2">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2>📌 Unit 2: Morally Educated Person & Facets of Morality</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>2.1 Who is a Morally Educated Person?</h3>
+                    <p>A <strong>morally educated person</strong> is someone who understands, practices, and promotes ethical behavior in daily life. Such a person not only follows moral principles but also encourages others to do so. They possess strong ethical values like honesty, compassion, respect, and responsibility, and they <em>practice what they preach</em>. A morally educated person makes decisions based on what is good for both self and society, is not easily influenced by peer pressure or unethical temptations, respects the rights and feelings of others, and takes responsibility for their actions. In short, a morally educated person is guided by their conscience and a clear understanding of ethical values.</p>
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic: "I-FAIR-NT"</strong> — Qualities of a Morally Educated Person:</p>
+                        <p><strong>I</strong>ntegrity · <strong>F</strong>airness · <strong>A</strong>ccountability · <strong>I</strong>ntrospection (self-reflection) · <strong>R</strong>espect · <strong>N</strong>on-violence · <strong>T</strong>olerance</p>
+                    </div>
+                    <h3>2.2 Qualities of a Morally Educated Person</h3>
+                    <ul>
+                        <li><strong>Empathy:</strong> Understanding and sharing the feelings of others; putting oneself in another's shoes.</li>
+                        <li><strong>Integrity:</strong> Doing the right thing even when no one is watching; consistency between words and actions.</li>
+                        <li><strong>Fairness:</strong> Treating everyone equally and justly without favoritism or prejudice.</li>
+                        <li><strong>Accountability:</strong> Owning up to mistakes, accepting consequences, and correcting errors.</li>
+                        <li><strong>Non-violence:</strong> Believing in peaceful and respectful behavior; resolving conflicts without aggression.</li>
+                        <li><strong>Tolerance:</strong> Accepting different views, lifestyles, and belief systems without hostility.</li>
+                        <li><strong>Compassion:</strong> Genuine concern for the suffering of others and willingness to help alleviate it.</li>
+                    </ul>
+                    <h3>2.3 Different Facets of Morality</h3>
+                    <p>Morality is not a single concept; it has various dimensions or facets that together form a comprehensive ethical framework.</p>
+                    <p><strong>1. Personal Morality:</strong> Refers to an individual's internal sense of right and wrong, shaped by family, education, religion, and personal experiences. Examples include telling the truth, being punctual, and respecting parents. Personal morality forms the foundation of one's character.</p>
+                    <p><strong>2. Social Morality:</strong> Relates to how a person behaves in society. It includes social responsibilities, respecting laws, and behaving with others in a respectful manner. Examples include following traffic rules, helping neighbors, standing up against injustice, and participating in community welfare activities.</p>
+                    <p><strong>3. Professional Morality:</strong> Applies to ethics in the workplace. It involves honesty in one's job, fairness in dealing with clients and colleagues, and responsibility toward the organization. Examples include not cheating customers, respecting colleagues, maintaining confidentiality, and not misusing company resources.</p>
+                    <p><strong>4. Environmental Morality:</strong> Being morally responsible toward the environment. This includes avoiding harm to nature, promoting sustainable practices, and being conscious of one's ecological footprint. Examples include not littering, saving water, planting trees, and reducing plastic use.</p>
+                    <p><strong>5. Universal Morality:</strong> The set of values accepted globally — peace, non-violence, human rights, equality, and dignity for all. These values transcend religious and cultural boundaries. Examples include opposing war, standing against racism, and supporting gender equality.</p>
+                    <div class="exam-box">
+                        <p><strong>Exam Focus:</strong> The five facets of morality — Personal, Social, Professional, Environmental, and Universal — are frequently tested. Remember to explain each with at least two examples. Questions like "Explain the different facets of Morality" carry 20 marks.</p>
+                    </div>
+                    <h3>2.4 Why Moral Education is Important</h3>
+                    <ul>
+                        <li>Builds good character in individuals</li>
+                        <li>Helps in developing self-discipline and emotional control</li>
+                        <li>Promotes social harmony and reduces conflicts</li>
+                        <li>Reduces crime, corruption, and antisocial behavior</li>
+                        <li>Creates responsible citizens who contribute positively to society</li>
+                        <li>Prepares individuals to face ethical dilemmas in personal and professional life</li>
+                    </ul>
+                    <div class="imp-questions">
+                        <h4>🔶 Important Questions — Unit 2</h4>
+                        <ol>
+                            <li>Who is a morally educated person? Explain the different facets of morality with examples.</li>
+                            <li>Discuss the qualities of a morally educated person. How can moral education contribute to social development?</li>
+                            <li>Explain environmental morality and its significance in the contemporary world.</li>
+                        </ol>
+                    </div>
+                    <div class="mcq-section">
+                        <h4>📝 MCQs — Unit 2</h4>
+                        <div class="mcq-item" data-correct="C">
+                            <p class="question">Q1. Which facet of morality deals with workplace ethics?</p>
+                            <ul class="options"><li data-opt="A">A) Personal Morality</li><li data-opt="B">B) Social Morality</li><li data-opt="C">C) Professional Morality</li><li data-opt="D">D) Universal Morality</li></ul>
+                            <p class="answer">✅ Answer: C) Professional Morality</p>
+                        </div>
+                        <div class="mcq-item" data-correct="D">
+                            <p class="question">Q2. "Vasudhaiva Kutumbakam" relates to which facet of morality?</p>
+                            <ul class="options"><li data-opt="A">A) Personal Morality</li><li data-opt="B">B) Environmental Morality</li><li data-opt="C">C) Professional Morality</li><li data-opt="D">D) Universal Morality</li></ul>
+                            <p class="answer">✅ Answer: D) Universal Morality — "The world is one family"</p>
+                        </div>
+                        <div class="mcq-item" data-correct="A">
+                            <p class="question">Q3. Integrity as a quality means:</p>
+                            <ul class="options"><li data-opt="A">A) Doing the right thing even when no one is watching</li><li data-opt="B">B) Following rules only when supervised</li><li data-opt="C">C) Being popular among peers</li><li data-opt="D">D) Achieving high academic scores</li></ul>
+                            <p class="answer">✅ Answer: A) Doing the right thing even when no one is watching</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════ UNIT 3 ═══════════════ -->
+            <div class="unit-section" id="unit3">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2>📌 Unit 3: Values Underlying Indian Culture</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>3.1 Introduction to Indian Cultural Values</h3>
+                    <p>Indian culture is one of the oldest and richest cultures in the world, a blend of spiritual beliefs, customs, moral values, and traditions followed for thousands of years. The values embedded in Indian culture provide a foundation for individuals to live harmoniously and respectfully within society. These values are passed down through generations and influence every aspect of life — from family and education to social behavior and national identity.</p>
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic: "R-FTS-CHH-DWP"</strong> — 10 Core Indian Cultural Values:</p>
+                        <p><strong>R</strong>espect for elders · <strong>F</strong>amily values · <strong>T</strong>olerance · <strong>S</strong>pirituality · <strong>C</strong>ompassion · <strong>H</strong>ospitality · <strong>H</strong>umility · <strong>D</strong>harma (duty) · <strong>W</strong>isdom · <strong>P</strong>atience & forgiveness</p>
+                    </div>
+                    <h3>3.2 Core Values Underlying Indian Culture</h3>
+                    <p><strong>1. Respect for Elders:</strong> In Indian culture, elders are given great respect. Touching the feet of parents, grandparents, and teachers (Charan Sparsh) is a common practice to show reverence. Elders are seen as sources of wisdom and guidance, and their blessings are considered important for success.</p>
+                    <p><strong>2. Family Values:</strong> Indian society strongly believes in the joint family system, where multiple generations live together, supporting one another. The idea of living together, sharing responsibilities, and respecting family roles is highly valued. Even as nuclear families become more common, the underlying values of kinship and mutual care remain strong.</p>
+                    <p><strong>3. Tolerance and Acceptance:</strong> India is a land of diverse religions, languages, and customs. The culture teaches people to live peacefully with differences. Religious tolerance and "Unity in Diversity" are key aspects of Indian values, reflected in the coexistence of Hinduism, Islam, Christianity, Sikhism, Buddhism, Jainism, and other faiths.</p>
+                    <p><strong>4. Spirituality and Faith:</strong> Spirituality is deeply rooted in Indian culture. People follow religious practices such as prayer, fasting, and rituals. The belief in karma (the law of cause and effect) and the pursuit of moksha (liberation) guide moral conduct. Yoga and meditation, India's gifts to the world, originated from this spiritual tradition.</p>
+                    <p><strong>5. Dharma (Duty and Righteousness):</strong> Dharma is the foundational value of Indian culture — an ethical code governing individual and societal conduct. It represents the importance of living in harmony with one's responsibilities. Whether it is the duty of a student, a parent, or a citizen, Indian culture emphasizes responsibility and commitment to one's role.</p>
+                    <p><strong>6. Truth and Honesty (Satya):</strong> The value of truth is central in Indian philosophy. Mahatma Gandhi promoted 'Satya' (truth) and 'Ahimsa' (non-violence) as tools for freedom and justice. The motto "Satyameva Jayate" (Truth Alone Triumphs) is the national motto of India.</p>
+                    <p><strong>7. Compassion and Kindness:</strong> Indian scriptures and teachings promote love and compassion for all living beings. The concept of "Vasudhaiva Kutumbakam" (the world is one family) reflects the spirit of universal brotherhood. Acts of charity (daan) and selfless service (seva) are integral to Indian culture.</p>
+                    <p><strong>8. Hospitality (Atithi Devo Bhava):</strong> "Atithi Devo Bhava" (Guest is God) is a famous Indian saying. It reflects the culture's emphasis on being polite, kind, and generous to guests and strangers. Hospitality is an expression of selflessness and community spirit.</p>
+                    <p><strong>9. Humility and Simplicity:</strong> Indian saints and leaders often lived simple lives and taught the value of humility. The culture respects modesty and discourages pride and arrogance. This value is reflected in social customs, attire, and interpersonal relationships.</p>
+                    <p><strong>10. Patience and Forgiveness (Kshama):</strong> Indian values encourage people to stay calm in difficult times and forgive others for their mistakes. This helps in maintaining peace, harmony, and emotional well-being in society.</p>
+                    <div class="exam-box">
+                        <p><strong>Exam Tip:</strong> This is one of the most frequently asked questions. Be prepared to explain at least 5-7 values with detailed examples. Questions like "What are the values underlying Indian Culture? Explain" carry 20 marks and appear in almost every exam.</p>
+                    </div>
+                    <div class="imp-questions">
+                        <h4>🔶 Important Questions — Unit 3</h4>
+                        <ol>
+                            <li>What are the values underlying Indian Culture? Explain any five with examples.</li>
+                            <li>Discuss the significance of Dharma in Indian culture. How does it guide individual conduct?</li>
+                            <li>Explain the concepts of "Vasudhaiva Kutumbakam" and "Atithi Devo Bhava" in the context of Indian values.</li>
+                            <li>How has spirituality shaped the value system of Indian society?</li>
+                        </ol>
+                    </div>
+                    <div class="mcq-section">
+                        <h4>📝 MCQs — Unit 3</h4>
+                        <div class="mcq-item" data-correct="B">
+                            <p class="question">Q1. "Atithi Devo Bhava" means:</p>
+                            <ul class="options"><li data-opt="A">A) Teacher is like God</li><li data-opt="B">B) Guest is equivalent to God</li><li data-opt="C">C) Parents are like God</li><li data-opt="D">D) Nature is divine</li></ul>
+                            <p class="answer">✅ Answer: B) Guest is equivalent to God</p>
+                        </div>
+                        <div class="mcq-item" data-correct="C">
+                            <p class="question">Q2. The principle of non-violence in Indian culture is known as:</p>
+                            <ul class="options"><li data-opt="A">A) Satya</li><li data-opt="B">B) Dharma</li><li data-opt="C">C) Ahimsa</li><li data-opt="D">D) Karma</li></ul>
+                            <p class="answer">✅ Answer: C) Ahimsa</p>
+                        </div>
+                        <div class="mcq-item" data-correct="D">
+                            <p class="question">Q3. "Vasudhaiva Kutumbakam" reflects the spirit of:</p>
+                            <ul class="options"><li data-opt="A">A) National pride</li><li data-opt="B">B) Religious exclusivity</li><li data-opt="C">C) Competitive spirit</li><li data-opt="D">D) Universal brotherhood</li></ul>
+                            <p class="answer">✅ Answer: D) Universal brotherhood — "The world is one family"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════ UNIT 4 ═══════════════ -->
+            <div class="unit-section" id="unit4">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2>📌 Unit 4: Rules & Principles of Human Conduct</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>4.1 Introduction to Human Conduct</h3>
+                    <p><strong>Human conduct</strong> refers to how people behave in their daily lives, both individually and within society. Our actions are not random; they are guided by certain rules and principles that help us live in a moral, respectful, and socially acceptable manner. These rules are often shaped by culture, religion, education, and personal experiences.</p>
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic: "RHR-SFN"</strong> — Rules vs Principles:</p>
+                        <p><strong>R</strong>ules are external (written/unwritten do's and don'ts) · <strong>P</strong>rinciples are internal (moral compass from within) · <strong>H</strong>onesty · <strong>R</strong>espect · <strong>S</strong>elf-control · <strong>F</strong>airness · <strong>N</strong>on-harm</p>
+                    </div>
+                    <h3>4.2 Rules of Human Conduct</h3>
+                    <p>The rules of human conduct are the <strong>dos and don'ts</strong> that guide behavior in society. These rules may be written (laws, school codes, organizational policies) or unwritten (social customs, moral expectations). They are important to maintain order and harmony.</p>
+                    <ul>
+                        <li><strong>Respect others' rights and property:</strong> Do not take or damage what belongs to others without permission.</li>
+                        <li><strong>Do not harm others:</strong> Physically or emotionally; refrain from violence, bullying, or abuse.</li>
+                        <li><strong>Speak truthfully:</strong> Honesty in communication builds trust and credibility.</li>
+                        <li><strong>Be responsible for your actions:</strong> Accept consequences and avoid blaming others unfairly.</li>
+                        <li><strong>Follow the laws of the land:</strong> Adhere to legal and constitutional obligations.</li>
+                        <li><strong>Help those in need:</strong> Assist the vulnerable, elderly, and disadvantaged.</li>
+                        <li><strong>Practice fairness and justice:</strong> Treat all individuals with equity and impartiality.</li>
+                    </ul>
+                    <h3>4.3 Principles of Human Conduct</h3>
+                    <p>Principles go beyond rules. They are <strong>moral values that come from within</strong> a person. Principles guide long-term behavior and help in decision-making, especially when rules are unclear. They are rooted in conscience and character.</p>
+                    <ul>
+                        <li><strong>Honesty:</strong> Telling the truth and being trustworthy in all dealings.</li>
+                        <li><strong>Respect:</strong> Valuing others, their opinions, their rights, and their dignity.</li>
+                        <li><strong>Responsibility:</strong> Being accountable for one's actions and fulfilling obligations.</li>
+                        <li><strong>Compassion:</strong> Caring for the suffering of others and responding with kindness.</li>
+                        <li><strong>Justice:</strong> Treating everyone equally and fairly, ensuring rights are protected.</li>
+                        <li><strong>Self-control:</strong> Managing emotions, desires, and impulses for constructive purposes.</li>
+                        <li><strong>Integrity:</strong> Consistency between beliefs, words, and actions.</li>
+                    </ul>
+                    <div class="exam-box">
+                        <p><strong>Exam Focus:</strong> Distinguish clearly between rules (external, specific, enforceable) and principles (internal, broad, moral guides). Both are essential for maintaining social order and individual character.</p>
+                    </div>
+                    <div class="imp-questions">
+                        <h4>🔶 Important Questions — Unit 4</h4>
+                        <ol>
+                            <li>What are the rules and principles of human conduct? Explain with examples.</li>
+                            <li>Differentiate between rules and principles. Why are both important for society?</li>
+                            <li>Discuss the significance of honesty and integrity as principles of human conduct.</li>
+                        </ol>
+                    </div>
+                    <div class="mcq-section">
+                        <h4>📝 MCQs — Unit 4</h4>
+                        <div class="mcq-item" data-correct="B">
+                            <p class="question">Q1. Rules of human conduct are primarily:</p>
+                            <ul class="options"><li data-opt="A">A) Internal moral compass</li><li data-opt="B">B) External do's and don'ts</li><li data-opt="C">C) Personal preferences</li><li data-opt="D">D) Religious beliefs only</li></ul>
+                            <p class="answer">✅ Answer: B) External do's and don'ts (written or unwritten)</p>
+                        </div>
+                        <div class="mcq-item" data-correct="C">
+                            <p class="question">Q2. Which principle involves managing emotions and desires?</p>
+                            <ul class="options"><li data-opt="A">A) Honesty</li><li data-opt="B">B) Justice</li><li data-opt="C">C) Self-control</li><li data-opt="D">D) Compassion</li></ul>
+                            <p class="answer">✅ Answer: C) Self-control</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════ UNIT 5 ═══════════════ -->
+            <div class="unit-section" id="unit5">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2>📌 Unit 5: Theories of Conduct</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>5.1 Overview of Theories of Conduct</h3>
+                    <p>Many philosophers and thinkers have tried to explain what guides human behavior. Theories of conduct try to understand the reasons behind why people do what they do. These theories provide frameworks for evaluating moral actions and making ethical decisions.</p>
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic: "HUK-DVS"</strong> — Five Major Theories:</p>
+                        <p><strong>H</strong>edonism · <strong>U</strong>tilitarianism · <strong>K</strong>antian Ethics · <strong>D</strong>ivine Command · <strong>V</strong>irtue Ethics · <strong>S</strong>ocial Contract</p>
+                    </div>
+                    <h3>5.2 Detailed Theories</h3>
+                    <p><strong>1. Hedonism:</strong> This theory suggests that people act mainly to gain pleasure and avoid pain. According to hedonism, a good action is one that brings happiness to the individual. Example: Helping others because it makes you feel good. <em>Limitation:</em> It can lead to selfish behavior and neglect of long-term consequences.</p>
+                    <p><strong>2. Utilitarianism (Consequentialism):</strong> Developed by Jeremy Bentham and John Stuart Mill, this theory believes that actions are right if they benefit the greatest number of people. It focuses on the <em>outcome</em> of the action. The guiding principle is "the greatest good for the greatest number." Example: Donating to a school that helps many poor children. <em>Limitation:</em> It may justify sacrificing individual rights for collective benefit.</p>
+                    <p><strong>3. Kantian Ethics (Deontology/Duty-Based Ethics):</strong> Proposed by Immanuel Kant, this theory says people should do the right thing not because of the result but because it is their <em>duty</em>. Moral laws are universal and must be followed by everyone (the Categorical Imperative). Example: Telling the truth even when lying could benefit you. <em>Limitation:</em> Rigidity can create conflicts when duties clash.</p>
+                    <p><strong>4. Virtue Ethics:</strong> Introduced by Aristotle, this theory says that good conduct is a result of good character. A person should develop virtues like courage, honesty, and kindness. Example: Being honest not just in one case but always, because it's part of who you are. <em>Limitation:</em> Offers less guidance in resolving specific moral dilemmas.</p>
+                    <p><strong>5. Divine Command Theory:</strong> This theory is based on religion. It suggests that human conduct should follow the will or command of God. Actions are right if they obey divine laws. Example: Not stealing because it is against your religious beliefs. <em>Limitation:</em> Varies across different religions; may not apply in secular contexts.</p>
+                    <p><strong>6. Social Contract Theory:</strong> Proposed by Thomas Hobbes, John Locke, and Jean-Jacques Rousseau, this theory asserts that human conduct is governed by an implicit agreement among individuals to abide by rules for mutual benefit. Individuals surrender certain freedoms to ensure security, justice, and order. Example: Obeying traffic laws benefits everyone by maintaining safety.</p>
+                    <table class="notes-table">
+                        <thead>
+                            <tr><th>Theory</th><th>Focus</th><th>Key Thinker(s)</th><th>Example</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Hedonism</td><td>Pleasure/Pain</td><td>Epicurus, Bentham</td><td>Eating good food for happiness</td></tr>
+                            <tr><td>Utilitarianism</td><td>Outcome for maximum people</td><td>Bentham, J.S. Mill</td><td>Vaccination programs</td></tr>
+                            <tr><td>Kantian Ethics</td><td>Duty/Universal moral law</td><td>Immanuel Kant</td><td>Always telling the truth</td></tr>
+                            <tr><td>Virtue Ethics</td><td>Character/Virtues</td><td>Aristotle</td><td>Being courageous in adversity</td></tr>
+                            <tr><td>Divine Command</td><td>God's will/Religious law</td><td>Various religious thinkers</td><td>Following Ten Commandments</td></tr>
+                            <tr><td>Social Contract</td><td>Mutual agreement/Society</td><td>Hobbes, Locke, Rousseau</td><td>Obeying national laws</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="exam-box">
+                        <p><strong>Exam Tip:</strong> This is a high-weightage topic. You must know at least 4-5 theories with their proponents, basic principles, examples, and limitations. The question "Explain the theories of conduct" (20 marks) appears frequently.</p>
+                    </div>
+                    <div class="imp-questions">
+                        <h4>🔶 Important Questions — Unit 5</h4>
+                        <ol>
+                            <li>Explain the major theories of human conduct with suitable examples.</li>
+                            <li>Compare and contrast Utilitarianism and Kantian Ethics.</li>
+                            <li>Discuss Virtue Ethics as propounded by Aristotle. How is it relevant today?</li>
+                            <li>What is Social Contract Theory? Explain its significance in modern society.</li>
+                        </ol>
+                    </div>
+                    <div class="mcq-section">
+                        <h4>📝 MCQs — Unit 5</h4>
+                        <div class="mcq-item" data-correct="B">
+                            <p class="question">Q1. Utilitarianism was developed by:</p>
+                            <ul class="options"><li data-opt="A">A) Immanuel Kant</li><li data-opt="B">B) Jeremy Bentham and J.S. Mill</li><li data-opt="C">C) Aristotle</li><li data-opt="D">D) Thomas Hobbes</li></ul>
+                            <p class="answer">✅ Answer: B) Jeremy Bentham and John Stuart Mill</p>
+                        </div>
+                        <div class="mcq-item" data-correct="A">
+                            <p class="question">Q2. Kantian Ethics is also known as:</p>
+                            <ul class="options"><li data-opt="A">A) Deontology (Duty-Based Ethics)</li><li data-opt="B">B) Consequentialism</li><li data-opt="C">C) Hedonism</li><li data-opt="D">D) Virtue Ethics</li></ul>
+                            <p class="answer">✅ Answer: A) Deontology (Duty-Based Ethics)</p>
+                        </div>
+                        <div class="mcq-item" data-correct="D">
+                            <p class="question">Q3. The theory that focuses on developing good character traits is:</p>
+                            <ul class="options"><li data-opt="A">A) Hedonism</li><li data-opt="B">B) Divine Command Theory</li><li data-opt="C">C) Social Contract Theory</li><li data-opt="D">D) Virtue Ethics</li></ul>
+                            <p class="answer">✅ Answer: D) Virtue Ethics (Aristotle)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════ UNIT 6 ═══════════════ -->
+            <div class="unit-section" id="unit6">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2>📌 Unit 6: Verbal & Non-Verbal Interaction</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>6.1 What is Verbal Interaction?</h3>
+                    <p><strong>Verbal interaction</strong> refers to the use of spoken or written words to communicate. It is the most direct way of sharing thoughts and ideas. Verbal interaction includes face-to-face conversations, phone calls, speeches, classroom discussions, written letters, emails, and chats.</p>
+                    <p><strong>Types:</strong> <em>Oral Communication</em> — spoken words like conversations, debates, lectures, presentations. <em>Written Communication</em> — written words like letters, messages, articles, reports, and emails.</p>
+                    <p><strong>Features:</strong> Uses language (words, grammar, sentences); can be formal or informal; requires listening and understanding; helps in sharing clear and specific information.</p>
+                    <h3>6.2 What is Non-Verbal Interaction?</h3>
+                    <p><strong>Non-verbal interaction</strong> is the process of communicating without words. It includes body language, facial expressions, gestures, tone of voice, eye contact, and even silence. Non-verbal cues often express emotions and attitudes more effectively than words.</p>
+                    <p><strong>Types:</strong> <em>Facial Expressions</em> (smiling, frowning), <em>Body Language</em> (posture, movement), <em>Eye Contact</em> (shows interest/honesty), <em>Paralanguage</em> (tone, pitch, speed of voice), <em>Touch</em> (handshake, pat on back), <em>Appearance</em> (clothing, grooming), <em>Proxemics</em> (use of personal space), <em>Chronemics</em> (use of time).</p>
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic: "FAB-PECT"</strong> — Types of Non-Verbal Cues:</p>
+                        <p><strong>F</strong>acial expressions · <strong>A</strong>ppearance · <strong>B</strong>ody language · <strong>P</strong>aralanguage · <strong>E</strong>ye contact · <strong>C</strong>hronemics (time) · <strong>T</strong>ouch (haptics)</p>
+                    </div>
+                    <h3>6.3 Verbal vs Non-Verbal Interaction: Key Differences</h3>
+                    <table class="notes-table">
+                        <thead>
+                            <tr><th>Aspect</th><th>Verbal Interaction</th><th>Non-Verbal Interaction</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Medium</td><td>Spoken or written words</td><td>Body, gestures, facial expressions</td></tr>
+                            <tr><td>Clarity</td><td>Usually more direct and clear</td><td>Can be vague or interpreted differently</td></tr>
+                            <tr><td>Formality</td><td>Can be formal (meetings) or informal</td><td>Mostly informal and emotional</td></tr>
+                            <tr><td>Expression</td><td>Shares facts and ideas</td><td>Shares emotions and attitudes</td></tr>
+                            <tr><td>Conscious Control</td><td>Highly controlled</td><td>Often subconscious</td></tr>
+                        </tbody>
+                    </table>
+                    <h3>6.4 Interplay Between Verbal and Non-Verbal Communication</h3>
+                    <p>Verbal and non-verbal communication work together to create a cohesive message. Non-verbal cues can <em>reinforce, contradict, or clarify</em> verbal communication. For example, saying "I'm fine" with a trembling voice and downcast eyes might signal distress, contradicting the words. Conversely, a nod while saying "I agree" reinforces the verbal message. <strong>Effective communicators align their verbal and non-verbal signals</strong> and adapt to their audience's cultural and emotional context.</p>
+                    <div class="imp-questions">
+                        <h4>🔶 Important Questions — Unit 6</h4>
+                        <ol>
+                            <li>What is verbal interaction? Explain the different types of verbal communication.</li>
+                            <li>Explain verbal and non-verbal interaction with examples. How do they complement each other?</li>
+                            <li>Discuss the importance of non-verbal cues in effective communication.</li>
+                        </ol>
+                    </div>
+                    <div class="mcq-section">
+                        <h4>📝 MCQs — Unit 6</h4>
+                        <div class="mcq-item" data-correct="C">
+                            <p class="question">Q1. Paralanguage refers to:</p>
+                            <ul class="options"><li data-opt="A">A) Written words</li><li data-opt="B">B) Facial expressions</li><li data-opt="C">C) Tone, pitch, and speed of voice</li><li data-opt="D">D) Physical gestures</li></ul>
+                            <p class="answer">✅ Answer: C) Tone, pitch, and speed of voice</p>
+                        </div>
+                        <div class="mcq-item" data-correct="A">
+                            <p class="question">Q2. Proxemics is the study of:</p>
+                            <ul class="options"><li data-opt="A">A) Personal space in communication</li><li data-opt="B">B) Written communication</li><li data-opt="C">C) Voice modulation</li><li data-opt="D">D) Digital messaging</li></ul>
+                            <p class="answer">✅ Answer: A) Personal space in communication</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════ UNIT 7 ═══════════════ -->
+            <div class="unit-section" id="unit7">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2>📌 Unit 7: Adjustment — Push & Pull Factors</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>7.1 What is Adjustment?</h3>
+                    <p><strong>Adjustment</strong> is the process of finding and adopting modes of behavior suitable to the environment or changes in the environment. According to Caster V. Good (1959), "Adjustment is the process of finding and adopting modes of behavior suitable to the environment or the changes in the environment." It is a continuous process by which a living organism maintains a balance between its needs and the circumstances that influence the satisfaction of these needs.</p>
+                    <p>Adjustment involves <em>harmonious relationship</em> between the individual and their environment. When there is a mismatch between needs and environmental conditions, the individual must adapt — either by changing themselves or modifying the environment.</p>
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic: "PUSH-PULL"</strong> — Adjustment Factors:</p>
+                        <p><strong>PUSH</strong> factors: Pressure · Unhappiness · Stress · Hardship (factors that compel change) · <strong>PULL</strong> factors: Pleasure · Upliftment · Love · Learning (factors that attract toward change)</p>
+                    </div>
+                    <h3>7.2 Push Factors of Adjustment</h3>
+                    <p><strong>Push factors</strong> are conditions or circumstances that <em>compel</em> an individual to make adjustments or changes. These are negative forces that drive people away from their current state. Examples include:</p>
+                    <ul>
+                        <li><strong>Dissatisfaction:</strong> Unhappiness with current job, relationship, or living conditions.</li>
+                        <li><strong>Stress and Anxiety:</strong> Mental pressure from overwhelming demands or conflicts.</li>
+                        <li><strong>Failure:</strong> Academic, professional, or personal setbacks that necessitate change.</li>
+                        <li><strong>Conflict:</strong> Interpersonal or intrapersonal conflicts that disrupt harmony.</li>
+                        <li><strong>Economic Hardship:</strong> Poverty, unemployment, or financial insecurity.</li>
+                        <li><strong>Health Issues:</strong> Physical or mental health problems requiring lifestyle changes.</li>
+                        <li><strong>Social Pressure:</strong> Discrimination, bullying, or social exclusion.</li>
+                    </ul>
+                    <h3>7.3 Pull Factors of Adjustment</h3>
+                    <p><strong>Pull factors</strong> are attractive conditions that <em>draw</em> individuals toward change or adjustment. These are positive forces that motivate people to move toward a more desirable state. Examples include:</p>
+                    <ul>
+                        <li><strong>Opportunity:</strong> Better job prospects, educational opportunities, or career growth.</li>
+                        <li><strong>Desire for Growth:</strong> Personal development, self-actualization, and skill enhancement.</li>
+                        <li><strong>Social Connection:</strong> Desire for belonging, meaningful relationships, and community.</li>
+                        <li><strong>Improved Quality of Life:</strong> Access to better healthcare, education, and amenities.</li>
+                        <li><strong>Aspiration:</strong> Ambition to achieve goals, recognition, or success.</li>
+                        <li><strong>Inspiration:</strong> Positive role models, mentors, or transformative experiences.</li>
+                        <li><strong>Rewards:</strong> Financial incentives, promotions, or material benefits.</li>
+                    </ul>
+                    <div class="exam-box">
+                        <p><strong>Exam Focus:</strong> The PYQ asks: "What is Adjustment? What are the push and pull factors of adjustment?" (20 marks). Define adjustment clearly, then explain push factors (negative, compelling forces) and pull factors (positive, attracting forces) with at least 4-5 examples each.</p>
+                    </div>
+                    <div class="imp-questions">
+                        <h4>🔶 Important Questions — Unit 7</h4>
+                        <ol>
+                            <li>Define adjustment. Explain the push and pull factors of adjustment with examples.</li>
+                            <li>Discuss the role of motivation, frustration, and conflict in the adjustment process.</li>
+                        </ol>
+                    </div>
+                    <div class="mcq-section">
+                        <h4>📝 MCQs — Unit 7</h4>
+                        <div class="mcq-item" data-correct="B">
+                            <p class="question">Q1. Push factors in adjustment are:</p>
+                            <ul class="options"><li data-opt="A">A) Attractive conditions drawing people toward change</li><li data-opt="B">B) Negative forces compelling people to change</li><li data-opt="C">C) Neutral conditions with no impact</li><li data-opt="D">D) Rewards and incentives</li></ul>
+                            <p class="answer">✅ Answer: B) Negative forces compelling people to change</p>
+                        </div>
+                        <div class="mcq-item" data-correct="D">
+                            <p class="question">Q2. Which is an example of a pull factor?</p>
+                            <ul class="options"><li data-opt="A">A) Unemployment</li><li data-opt="B">B) Discrimination</li><li data-opt="C">C) Academic failure</li><li data-opt="D">D) Better career opportunity</li></ul>
+                            <p class="answer">✅ Answer: D) Better career opportunity (attracts toward positive change)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════ UNIT 8 ═══════════════ -->
+            <div class="unit-section" id="unit8">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2>📌 Unit 8: Peers & Value Development Through School</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>8.1 Who are Peers?</h3>
+                    <p><strong>Peers</strong> are individuals who belong to the same age group, social group, or who share common interests. In the context of students, peers are usually classmates, school friends, or children in the same neighborhood or activity group. Peers are often seen as equals (no authority involved) and can influence thoughts, behavior, habits, and values. Peer relationships are based on friendship, mutual respect, and shared experiences, often having a strong emotional impact on shaping behavior — positively or negatively.</p>
+                    <h3>8.2 Inculcation of Values Through Peers</h3>
+                    <p>Peers influence each other in several ways:</p>
+                    <ul>
+                        <li><strong>Sharing and Cooperation:</strong> Children learn to share toys, notes, or help each other during group projects.</li>
+                        <li><strong>Teamwork:</strong> Participating in sports or group activities builds values like collaboration and fairness.</li>
+                        <li><strong>Honesty and Loyalty:</strong> Strong friendships encourage truthfulness and commitment.</li>
+                        <li><strong>Respect and Tolerance:</strong> Interacting with peers from different cultures helps develop respect for diversity.</li>
+                        <li><strong>Responsibility:</strong> Being a good friend requires one to be responsible and caring.</li>
+                        <li><strong>Empathy:</strong> Understanding and sharing friends' feelings develops emotional intelligence.</li>
+                    </ul>
+                    <h3>8.3 Inculcation of Values Through School</h3>
+                    <p>Schools are one of the most important institutions in value development. Teachers, school rules, and activities all contribute to shaping students' character.</p>
+                    <ul>
+                        <li><strong>Curriculum:</strong> Subjects like moral science, social studies, and literature teach honesty, justice, and compassion.</li>
+                        <li><strong>Discipline:</strong> School rules promote punctuality, respect for teachers, and following instructions.</li>
+                        <li><strong>Role Models:</strong> Teachers serve as role models; their words and actions deeply influence students.</li>
+                        <li><strong>Morning Assembly:</strong> Prayers, moral talks, and the national anthem create a sense of unity and patriotism.</li>
+                        <li><strong>Co-curricular Activities:</strong> Drama, debates, art, and games help develop creativity, teamwork, and respect for others.</li>
+                        <li><strong>Social Service:</strong> Cleanliness drives, tree planting, and helping the needy teach responsibility and kindness.</li>
+                    </ul>
+                    <div class="exam-box">
+                        <p><strong>Exam Tip:</strong> This is a frequently tested topic. Questions like "Who are Peers? Discuss inculcation of values through school and peers" (20 marks) appear regularly. Always discuss both positive and negative peer influences.</p>
+                    </div>
+                    <div class="imp-questions">
+                        <h4>🔶 Important Questions — Unit 8</h4>
+                        <ol>
+                            <li>Who are peers? Discuss the inculcation of values through school and peers.</li>
+                            <li>Explain the role of schools in value development. How do co-curricular activities contribute?</li>
+                            <li>Discuss the positive and negative influences of peer groups on value formation.</li>
+                        </ol>
+                    </div>
+                    <div class="mcq-section">
+                        <h4>📝 MCQs — Unit 8</h4>
+                        <div class="mcq-item" data-correct="C">
+                            <p class="question">Q1. Peers are best defined as:</p>
+                            <ul class="options"><li data-opt="A">A) Authority figures like teachers</li><li data-opt="B">B) Parents and family members</li><li data-opt="C">C) Individuals of similar age/status sharing social context</li><li data-opt="D">D) Professional colleagues only</li></ul>
+                            <p class="answer">✅ Answer: C) Individuals of similar age/status sharing social context</p>
+                        </div>
+                        <div class="mcq-item" data-correct="A">
+                            <p class="question">Q2. Which school activity directly promotes teamwork?</p>
+                            <ul class="options"><li data-opt="A">A) Sports and group projects</li><li data-opt="B">B) Individual exams</li><li data-opt="C">C) Homework assignments</li><li data-opt="D">D) Library reading</li></ul>
+                            <p class="answer">✅ Answer: A) Sports and group projects</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════ UNIT 9 ═══════════════ -->
+            <div class="unit-section" id="unit9">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2>📌 Unit 9: Role & Functions of Media</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>9.1 Functions of Media</h3>
+                    <p><strong>Media</strong> plays a crucial role in modern society as a powerful agent of communication, information dissemination, and value formation. The key functions of media include:</p>
+                    <ul>
+                        <li><strong>Information Function:</strong> Providing news, facts, and knowledge about events locally, nationally, and globally.</li>
+                        <li><strong>Educational Function:</strong> Spreading awareness about social issues, health, environment, and civic rights.</li>
+                        <li><strong>Entertainment Function:</strong> Offering relaxation and cultural enrichment through films, music, and shows.</li>
+                        <li><strong>Watchdog Function:</strong> Acting as the "fourth estate" to monitor government actions and expose corruption.</li>
+                        <li><strong>Agenda-Setting Function:</strong> Influencing public opinion by highlighting certain issues over others.</li>
+                        <li><strong>Socialization Function:</strong> Transmitting cultural values, norms, and behavioral patterns across society.</li>
+                        <li><strong>Mobilization Function:</strong> Encouraging public participation in social causes, campaigns, and movements.</li>
+                    </ul>
+                    <h3>9.2 Positive Effects of Media</h3>
+                    <ul>
+                        <li>Promotes awareness about social issues (health, environment, education)</li>
+                        <li>Facilitates global connectivity and cross-cultural understanding</li>
+                        <li>Provides educational content and skill development resources</li>
+                        <li>Amplifies marginalized voices and promotes social justice</li>
+                        <li>Entertains and reduces stress through creative content</li>
+                        <li>Strengthens democracy through investigative journalism</li>
+                    </ul>
+                    <h3>9.3 Negative Effects of Media</h3>
+                    <ul>
+                        <li>Spread of misinformation and fake news</li>
+                        <li>Promotion of violence, stereotypes, and harmful content</li>
+                        <li>Addiction to screen time and social media platforms</li>
+                        <li>Privacy violations and data exploitation</li>
+                        <li>Erosion of traditional values through commercialization</li>
+                        <li>Cyberbullying and online harassment</li>
+                    </ul>
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic: "I-E-WAS-M"</strong> — Media Functions:</p>
+                        <p><strong>I</strong>nformation · <strong>E</strong>ducation · <strong>W</strong>atchdog · <strong>A</strong>genda-setting · <strong>S</strong>ocialization · <strong>M</strong>obilization</p>
+                    </div>
+                    <div class="imp-questions">
+                        <h4>🔶 Important Questions — Unit 9</h4>
+                        <ol>
+                            <li>Describe the role and functions of media in contemporary society.</li>
+                            <li>What are the positive and negative effects of media on value formation?</li>
+                            <li>Discuss the media's role as the "fourth estate" in a democracy.</li>
+                        </ol>
+                    </div>
+                    <div class="mcq-section">
+                        <h4>📝 MCQs — Unit 9</h4>
+                        <div class="mcq-item" data-correct="B">
+                            <p class="question">Q1. The media's role as "fourth estate" refers to:</p>
+                            <ul class="options"><li data-opt="A">A) Entertainment provision</li><li data-opt="B">B) Monitoring government and exposing corruption</li><li data-opt="C">C) Educational broadcasting</li><li data-opt="D">D) Commercial advertising</li></ul>
+                            <p class="answer">✅ Answer: B) Monitoring government and exposing corruption</p>
+                        </div>
+                        <div class="mcq-item" data-correct="C">
+                            <p class="question">Q2. Agenda-setting function of media means:</p>
+                            <ul class="options"><li data-opt="A">A) Setting meeting agendas for government</li><li data-opt="B">B) Organizing media events</li><li data-opt="C">C) Influencing public opinion by highlighting certain issues</li><li data-opt="D">D) Creating entertainment schedules</li></ul>
+                            <p class="answer">✅ Answer: C) Influencing public opinion by highlighting certain issues</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════ UNIT 10 ═══════════════ -->
+            <div class="unit-section" id="unit10">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2>📌 Unit 10: Moral Education vs Religious Education</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>10.1 Understanding Moral Education</h3>
+                    <p><strong>Moral Education</strong> is the process of teaching individuals about ethical principles, values, and behaviors that are considered right and good in society. It focuses on developing universal ethical values such as honesty, integrity, compassion, justice, and respect for others. Moral education is <em>secular and universal</em> — it is not tied to any specific religion and can be adapted to any cultural or social context.</p>
+                    <h3>10.2 Understanding Religious Education</h3>
+                    <p><strong>Religious Education</strong> is the teaching of a particular religion's beliefs, practices, scriptures, rituals, and moral codes. It is <em>specific to a faith tradition</em> (e.g., Hindu, Islamic, Christian, Sikh education) and aims to transmit religious knowledge and values to followers of that faith. Religious education often incorporates moral education as part of its teachings, but the foundation is within the context of religious belief.</p>
+                    <h3>10.3 Key Distinctions</h3>
+                    <table class="notes-table">
+                        <thead>
+                            <tr><th>Basis</th><th>Moral Education</th><th>Religious Education</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Foundation</td><td>Universal ethical principles</td><td>Specific religious doctrines</td></tr>
+                            <tr><td>Scope</td><td>Applicable to all, regardless of faith</td><td>Specific to followers of a religion</td></tr>
+                            <tr><td>Approach</td><td>Secular, rational, inclusive</td><td>Faith-based, doctrinal</td></tr>
+                            <tr><td>Goal</td><td>Develop ethical character & citizenship</td><td>Spiritual growth & religious adherence</td></tr>
+                            <tr><td>Examples</td><td>Teaching honesty, compassion, justice</td><td>Teaching scriptures, rituals, prayers</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="exam-box">
+                        <p><strong>Exam Tip:</strong> This is a PYQ topic: "What is the distinction between Moral Education and Religious Education? Explain." (20 marks). Clearly differentiate on the basis of foundation, scope, approach, and goal. Highlight that moral education is universal and secular, while religious education is faith-specific.</p>
+                    </div>
+                    <div class="imp-questions">
+                        <h4>🔶 Important Questions — Unit 10</h4>
+                        <ol>
+                            <li>What is the distinction between Moral Education and Religious Education? Explain.</li>
+                            <li>Can moral education exist independently of religious education? Discuss.</li>
+                        </ol>
+                    </div>
+                    <div class="mcq-section">
+                        <h4>📝 MCQs — Unit 10</h4>
+                        <div class="mcq-item" data-correct="C">
+                            <p class="question">Q1. Moral education is primarily:</p>
+                            <ul class="options"><li data-opt="A">A) Faith-based teaching</li><li data-opt="B">B) Scripture-based instruction</li><li data-opt="C">C) Secular and universal ethical teaching</li><li data-opt="D">D) Ritualistic practice</li></ul>
+                            <p class="answer">✅ Answer: C) Secular and universal ethical teaching</p>
+                        </div>
+                        <div class="mcq-item" data-correct="A">
+                            <p class="question">Q2. Religious education focuses on:</p>
+                            <ul class="options"><li data-opt="A">A) Specific religious doctrines and practices</li><li data-opt="B">B) Universal human rights only</li><li data-opt="C">C) Scientific reasoning</li><li data-opt="D">D) Political ideologies</li></ul>
+                            <p class="answer">✅ Answer: A) Specific religious doctrines and practices</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════ UNIT 11 ═══════════════ -->
+            <div class="unit-section" id="unit11">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2>📌 Unit 11: Schools of Indian Philosophy</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>11.1 Classification of Indian Philosophical Schools</h3>
+                    <p>Indian philosophy is traditionally classified into two broad categories:</p>
+                    <p><strong>A) Orthodox Schools (Astika):</strong> These schools <em>accept the authority of the Vedas</em> as the supreme source of knowledge. There are six orthodox schools (Shad Darshanas):</p>
+                    <ol>
+                        <li><strong>Samkhya:</strong> Founded by Sage Kapila; propounds dualism between Purusha (consciousness) and Prakriti (matter).</li>
+                        <li><strong>Yoga:</strong> Systematized by Patanjali; focuses on practical methods for spiritual liberation through eightfold path (Ashtanga Yoga).</li>
+                        <li><strong>Nyaya:</strong> Founded by Gautama; emphasizes logic and epistemology; provides the framework for valid knowledge.</li>
+                        <li><strong>Vaisheshika:</strong> Founded by Kanada; propounds atomic theory; classifies reality into categories (Padarthas).</li>
+                        <li><strong>Purva Mimamsa:</strong> Founded by Jaimini; focuses on Vedic rituals, dharma, and the philosophy of action (Karma Kanda).</li>
+                        <li><strong>Uttara Mimamsa (Vedanta):</strong> Based on Upanishads; explores the nature of Brahman (ultimate reality) and Atman (self).</li>
+                    </ol>
+                    <p><strong>B) Heterodox Schools (Nastika):</strong> These schools <em>reject the authority of the Vedas</em>. They include:</p>
+                    <ul>
+                        <li><strong>Charvaka (Lokayata):</strong> Materialistic philosophy; believes only in perception as valid knowledge; rejects afterlife.</li>
+                        <li><strong>Buddhism:</strong> Founded by Gautama Buddha; emphasizes Four Noble Truths and Eightfold Path.</li>
+                        <li><strong>Jainism:</strong> Founded by Mahavira; emphasizes Ahimsa (non-violence), Anekantavada (multiple viewpoints), and Aparigraha (non-possession).</li>
+                    </ul>
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic: "SYN-VPM"</strong> — Six Orthodox Schools:</p>
+                        <p><strong>S</strong>amkhya · <strong>Y</strong>oga · <strong>N</strong>yaya · <strong>V</strong>aisheshika · <strong>P</strong>urva Mimamsa · <strong>M</strong>imamsa (Uttara/Vedanta)</p>
+                    </div>
+                    <div class="imp-questions">
+                        <h4>🔶 Important Questions — Unit 11</h4>
+                        <ol>
+                            <li>What are the different schools of Indian Philosophy? Explain any two orthodox schools.</li>
+                            <li>Differentiate between orthodox (Astika) and heterodox (Nastika) schools of Indian philosophy.</li>
+                        </ol>
+                    </div>
+                    <div class="mcq-section">
+                        <h4>📝 MCQs — Unit 11</h4>
+                        <div class="mcq-item" data-correct="B">
+                            <p class="question">Q1. How many orthodox schools (Shad Darshanas) are there in Indian philosophy?</p>
+                            <ul class="options"><li data-opt="A">A) Four</li><li data-opt="B">B) Six</li><li data-opt="C">C) Eight</li><li data-opt="D">D) Ten</li></ul>
+                            <p class="answer">✅ Answer: B) Six (Shad Darshanas)</p>
+                        </div>
+                        <div class="mcq-item" data-correct="C">
+                            <p class="question">Q2. Charvaka school is classified as:</p>
+                            <ul class="options"><li data-opt="A">A) Orthodox (Astika)</li><li data-opt="B">B) Vedanta</li><li data-opt="C">C) Heterodox (Nastika)</li><li data-opt="D">D) Yoga</li></ul>
+                            <p class="answer">✅ Answer: C) Heterodox (Nastika) — rejects Vedic authority</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════ UNIT 12 ═══════════════ -->
+            <div class="unit-section" id="unit12">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2>📌 Unit 12: Cultural Pluralism in India</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>12.1 Meaning of Cultural Pluralism</h3>
+                    <p><strong>Cultural pluralism</strong> is defined as the societal condition in which minority groups within a society can maintain their distinctive cultural identities, values, and practices while participating in the wider society. Unlike cultural assimilation (where minorities are absorbed into the dominant culture), cultural pluralism celebrates diversity and allows multiple cultures to coexist peacefully.</p>
+                    <p>In the Indian context, cultural pluralism is rooted in the idea that different cultural groups can contribute to the richness and dynamism of society. The resilience and adaptability nurtured by pluralism in India has led to assimilation and synthesis, enriching India's unique culture. Key features include <em>multiple languages, religions, cuisines, customs, and traditions</em> coexisting within a unified national framework.</p>
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic: "UNITY"</strong> — Elements of Indian Pluralism:</p>
+                        <p><strong>U</strong>nity in diversity · <strong>N</strong>umerous languages & faiths · <strong>I</strong>nclusivity & acceptance · <strong>T</strong>olerance of differences · <strong>Y</strong>earning for harmony (Vasudhaiva Kutumbakam)</p>
+                    </div>
+                    <h3>12.2 Cultural Pluralism vs Multiculturalism</h3>
+                    <table class="notes-table">
+                        <thead>
+                            <tr><th>Cultural Pluralism</th><th>Multiculturalism</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Minority cultures maintain distinct identities within a dominant culture</td><td>Multiple cultures coexist with equal recognition and respect</td></tr>
+                            <tr><td>Focus on coexistence with the wider society's laws and values</td><td>Focus on appreciation, acceptance, and promotion of multiple cultures</td></tr>
+                            <tr><td>Examples: Religious festivals celebrated by all communities</td><td>Examples: Official recognition of multiple languages and cultural rights</td></tr>
+                        </tbody>
+                    </table>
+                    <h3>12.3 Preserving Pluralism Through Education</h3>
+                    <p>Education plays a critical role in preserving cultural pluralism. Interventions include designing inclusive curricula, preparing teachers for diverse classrooms, creating multicultural school environments, and promoting interfaith and intercultural dialogue. Value education specifically teaches respect for diversity, tolerance, and the principle of "Unity in Diversity."</p>
+                    <div class="imp-questions">
+                        <h4>🔶 Important Questions — Unit 12</h4>
+                        <ol>
+                            <li>What do you mean by Cultural Pluralism in India? Discuss.</li>
+                            <li>How can education help preserve cultural pluralism in Indian society?</li>
+                        </ol>
+                    </div>
+                    <div class="mcq-section">
+                        <h4>📝 MCQs — Unit 12</h4>
+                        <div class="mcq-item" data-correct="A">
+                            <p class="question">Q1. Cultural pluralism means:</p>
+                            <ul class="options"><li data-opt="A">A) Minority cultures maintain distinct identities within wider society</li><li data-opt="B">B) Complete assimilation into dominant culture</li><li data-opt="C">C) Rejection of all cultural traditions</li><li data-opt="D">D) Cultural isolationism</li></ul>
+                            <p class="answer">✅ Answer: A) Minority cultures maintain distinct identities within wider society</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════ UNIT 13 ═══════════════ -->
+            <div class="unit-section" id="unit13">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2>📌 Unit 13: Social Malaises & Need for Value-Oriented Education</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>13.1 Social Malaises in Indian Society</h3>
+                    <p>India, despite its rich cultural heritage and progress, faces numerous social challenges:</p>
+                    <ul>
+                        <li><strong>Poverty and Inequality:</strong> Vast differences in income, opportunities, and living standards; millions below poverty line lacking basic amenities.</li>
+                        <li><strong>Caste Discrimination:</strong> Although constitutionally abolished, the caste system continues to influence social interactions, causing exclusion and marginalization.</li>
+                        <li><strong>Gender Inequality:</strong> Patriarchal norms result in discrimination in education, employment, healthcare; gender-based violence remains pervasive.</li>
+                        <li><strong>Corruption:</strong> Rampant in various sectors; erodes public trust, stifles growth, diverts resources meant for public welfare.</li>
+                        <li><strong>Illiteracy:</strong> High rates particularly in rural areas; education system often focuses on rote learning rather than critical thinking.</li>
+                        <li><strong>Communalism and Religious Intolerance:</strong> Politicization of religion creates mistrust, hostility, and social unrest among communities.</li>
+                        <li><strong>Substance Abuse:</strong> Growing concern among youth; leads to health issues, crime, and family breakdowns.</li>
+                        <li><strong>Environmental Degradation:</strong> Rapid urbanization causes pollution, deforestation, biodiversity loss, affecting public health.</li>
+                    </ul>
+                    <h3>13.2 Need for Value-Oriented Education</h3>
+                    <ul>
+                        <li><strong>Promotes Ethical and Moral Values:</strong> Fosters integrity, responsibility, and empathy to combat corruption and discrimination.</li>
+                        <li><strong>Fosters Social Responsibility:</strong> Encourages individuals to contribute positively to society and engage in social justice.</li>
+                        <li><strong>Encourages Critical Thinking:</strong> Equips individuals to analyze social issues and devise innovative solutions.</li>
+                        <li><strong>Builds Emotional Intelligence:</strong> Helps manage emotions, develop empathy, and build healthy relationships.</li>
+                        <li><strong>Promotes Gender Equality:</strong> Challenges patriarchal norms and promotes inclusive attitudes.</li>
+                        <li><strong>Enhances Environmental Awareness:</strong> Fosters stewardship for the environment and sustainable practices.</li>
+                        <li><strong>Reduces Social Disparities:</strong> Provides equal access to quality education, empowering marginalized communities.</li>
+                    </ul>
+                    <div class="imp-questions">
+                        <h4>🔶 Important Questions — Unit 13</h4>
+                        <ol>
+                            <li>What are the social malaises existing in Indian society? Why is there a need for value-oriented education?</li>
+                            <li>Discuss how value-oriented education can address issues like corruption and gender inequality.</li>
+                        </ol>
+                    </div>
+                    <div class="mcq-section">
+                        <h4>📝 MCQs — Unit 13</h4>
+                        <div class="mcq-item" data-correct="C">
+                            <p class="question">Q1. Which social malaise involves the politicization of religion?</p>
+                            <ul class="options"><li data-opt="A">A) Poverty</li><li data-opt="B">B) Gender inequality</li><li data-opt="C">C) Communalism</li><li data-opt="D">D) Substance abuse</li></ul>
+                            <p class="answer">✅ Answer: C) Communalism</p>
+                        </div>
+                        <div class="mcq-item" data-correct="A">
+                            <p class="question">Q2. Value-oriented education primarily aims to:</p>
+                            <ul class="options"><li data-opt="A">A) Instill ethical and moral values alongside academic knowledge</li><li data-opt="B">B) Focus only on religious teachings</li><li data-opt="C">C) Promote competitive exam preparation</li><li data-opt="D">D) Replace academic education entirely</li></ul>
+                            <p class="answer">✅ Answer: A) Instill ethical and moral values alongside academic knowledge</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════ UNIT 14 ═══════════════ -->
+            <div class="unit-section" id="unit14">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2>📌 Unit 14: Character-Personality Patterns</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>14.1 Defining Character and Personality</h3>
+                    <p><strong>Character</strong> refers to a set of moral and ethical traits that are relatively stable over time. It encompasses an individual's values, beliefs, and behaviors considered socially and culturally acceptable. <strong>Personality</strong> includes broader patterns of thinking, feeling, and behaving that are unique to an individual. While personality traits are often innate and stable, character can be influenced by environmental factors, experiences, and personal choices.</p>
+                    <h3>14.2 Interplay Between Character and Personality</h3>
+                    <p>The interplay between character and personality shapes an individual's overall behavior and interactions. Character provides the moral compass (what is right or wrong), while personality determines the style and approach (how one expresses values). A person with strong character but introverted personality may express values quietly, while an extroverted person may express the same values more visibly.</p>
+                    <h3>14.3 Common Character-Personality Patterns</h3>
+                    <ul>
+                        <li><strong>Impulsivity and Instability:</strong> Rapid mood swings, impulsive behaviors, difficulty maintaining stable relationships.</li>
+                        <li><strong>Grandiosity and Entitlement:</strong> Inflated sense of self-importance, need for excessive admiration, lack of empathy.</li>
+                        <li><strong>Social Inhibition and Hypersensitivity:</strong> Avoidance of social interactions due to fear of rejection; feelings of inadequacy.</li>
+                        <li><strong>Perfectionism and Control:</strong> Preoccupation with orderliness, rigid adherence to rules, struggle with flexibility.</li>
+                        <li><strong>Attention-Seeking and Emotionality:</strong> Excessive emotionality, discomfort when not center of attention, dramatic behavior.</li>
+                    </ul>
+                    <div class="exam-box">
+                        <p><strong>Exam Focus:</strong> The PYQ asks: "Explain character-personality patterns" (20 marks). Define both character and personality, explain their interplay, and describe at least 3-4 common patterns with examples.</p>
+                    </div>
+                    <div class="imp-questions">
+                        <h4>🔶 Important Questions — Unit 14</h4>
+                        <ol>
+                            <li>Explain character-personality patterns with suitable examples.</li>
+                            <li>Differentiate between character and personality. How do they influence human behavior?</li>
+                        </ol>
+                    </div>
+                    <div class="mcq-section">
+                        <h4>📝 MCQs — Unit 14</h4>
+                        <div class="mcq-item" data-correct="B">
+                            <p class="question">Q1. Character primarily refers to:</p>
+                            <ul class="options"><li data-opt="A">A) Innate behavioral traits</li><li data-opt="B">B) Moral and ethical traits</li><li data-opt="C">C) Physical appearance</li><li data-opt="D">D) Intellectual capacity</li></ul>
+                            <p class="answer">✅ Answer: B) Moral and ethical traits</p>
+                        </div>
+                        <div class="mcq-item" data-correct="D">
+                            <p class="question">Q2. Grandiosity and entitlement are patterns associated with:</p>
+                            <ul class="options"><li data-opt="A">A) Avoidant personality</li><li data-opt="B">B) Dependent personality</li><li data-opt="C">C) Perfectionism</li><li data-opt="D">D) Narcissistic personality</li></ul>
+                            <p class="answer">✅ Answer: D) Narcissistic personality</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══════════════ SOLVED PYQ SECTION ═══════════════ -->
+            <div class="unit-section" id="pyq-section">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2>📝 SOLVED PYQs (Previous Year Questions) — BEDSV 101</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <div class="pyq-section">
+                        <h4>📋 June 2025 Solved Question Paper — Key Questions</h4>
+                        <div class="pyq-item">
+                            <p class="q">Q1. What is the distinction between Moral Education and Religious Education? Explain. (20 Marks)</p>
+                            <p class="ans"><strong>Answer:</strong> Moral Education is secular and universal, focusing on ethical values applicable to all cultures (honesty, integrity, compassion, justice). It develops ethical character and responsible citizenship. Religious Education is faith-specific, teaching doctrines, rituals, and moral codes of a particular religion (Hinduism, Islam, Christianity). The foundation of Moral Education is rational ethical principles; Religious Education is based on scriptural authority. Moral Education can be taught in any context; Religious Education is tied to specific faith traditions.</p>
+                        </div>
+                        <div class="pyq-item">
+                            <p class="q">Q2. What are the different schools of Indian Philosophy? Explain any two orthodox schools. (20 Marks)</p>
+                            <p class="ans"><strong>Answer:</strong> Indian philosophy has two classifications: Orthodox (Astika - accepting Vedic authority) and Heterodox (Nastika - rejecting Vedas). Six orthodox schools include Samkhya, Yoga, Nyaya, Vaisheshika, Purva Mimamsa, and Uttara Mimamsa (Vedanta). <em>Samkhya:</em> Founded by Sage Kapila; dualistic philosophy of Purusha (consciousness) and Prakriti (matter); liberation through discriminative knowledge. <em>Yoga:</em> Systematized by Patanjali; practical path through Ashtanga Yoga (eight limbs — Yama, Niyama, Asana, Pranayama, Pratyahara, Dharana, Dhyana, Samadhi).</p>
+                        </div>
+                        <div class="pyq-item">
+                            <p class="q">Q3. Explain the theories of conduct. (20 Marks)</p>
+                            <p class="ans"><strong>Answer:</strong> (1) Hedonism — actions driven by pleasure/pain avoidance (Epicurus); (2) Utilitarianism — greatest good for greatest number (Bentham, Mill); (3) Kantian Ethics/Deontology — duty-based, universal moral law (Kant); (4) Virtue Ethics — good character produces good conduct (Aristotle); (5) Divine Command Theory — actions guided by God's will; (6) Social Contract Theory — implicit agreement for mutual benefit (Hobbes, Locke, Rousseau).</p>
+                        </div>
+                        <div class="pyq-item">
+                            <p class="q">Q4. Explain verbal and non-verbal interaction. (20 Marks)</p>
+                            <p class="ans"><strong>Answer:</strong> Verbal interaction uses spoken/written words (conversations, speeches, emails) for direct, clear communication. Non-verbal interaction uses body language, facial expressions, gestures, eye contact, paralanguage (tone/pitch), proxemics (space), and touch to convey emotions and attitudes. Both work together — non-verbal cues reinforce or contradict verbal messages. Effective communication requires alignment of verbal and non-verbal signals.</p>
+                        </div>
+                        <div class="pyq-item">
+                            <p class="q">Q5. Who are Peers? Explain value development through peers. (20 Marks)</p>
+                            <p class="ans"><strong>Answer:</strong> Peers are individuals of similar age, status, or interests sharing a social context. Value development through peers occurs via: sharing and cooperation (group projects), teamwork (sports), honesty and loyalty (friendships), respect for diversity (interacting with different cultures), responsibility (being a reliable friend), and empathy (understanding friends' feelings). Positive peer influence reinforces constructive values; negative peer pressure must be mitigated by schools and parents.</p>
+                        </div>
+                    </div>
+                    <div class="pyq-section">
+                        <h4>📋 Assignment Questions 2025 — Solved</h4>
+                        <div class="pyq-item">
+                            <p class="q">Q. Who is a Morally Educated Person? Explain the different facets of Morality.</p>
+                            <p class="ans"><strong>Answer:</strong> A morally educated person embodies ethical principles with integrity, empathy, and reason. Five facets: (1) Personal Morality — individual sense of right/wrong shaped by family; (2) Social Morality — behavior in society, respecting laws; (3) Professional Morality — workplace ethics, honesty; (4) Environmental Morality — caring for nature; (5) Universal Morality — globally accepted values like peace and human rights.</p>
+                        </div>
+                        <div class="pyq-item">
+                            <p class="q">Q. What are the values underlying Indian Culture? Explain.</p>
+                            <p class="ans"><strong>Answer:</strong> Core values include: Respect for elders (Charan Sparsh), Family values (joint family system), Tolerance (unity in diversity), Spirituality (yoga, karma, moksha), Dharma (duty and righteousness), Truth (Satya — Satyameva Jayate), Compassion (Vasudhaiva Kutumbakam), Hospitality (Atithi Devo Bhava), Humility (simplicity), and Patience/Forgiveness (Kshama).</p>
+                        </div>
+                        <div class="pyq-item">
+                            <p class="q">Q. What are the rules and principles of Human Conduct? Explain the theories of Conduct.</p>
+                            <p class="ans"><strong>Answer:</strong> Rules are external do's/don'ts (respect rights, don't harm, speak truth). Principles are internal moral values (honesty, respect, responsibility, compassion, justice, self-control). Theories include Hedonism, Utilitarianism, Kantian Ethics, Virtue Ethics, Divine Command, and Social Contract Theory — each providing a framework for understanding ethical behavior.</p>
+                        </div>
+                        <div class="pyq-item">
+                            <p class="q">Q. What is Adjustment? What are the push and pull factors of adjustment?</p>
+                            <p class="ans"><strong>Answer:</strong> Adjustment is the process of finding/adopting behavior suitable to environmental changes. Push factors (compelling change): dissatisfaction, stress, failure, conflict, economic hardship. Pull factors (attracting change): opportunity, desire for growth, social connection, improved quality of life, inspiration, rewards.</p>
+                        </div>
+                        <div class="pyq-item">
+                            <p class="q">Q. What are the Social Malaises existing in Indian society? Why is there a need for Value-Oriented Education?</p>
+                            <p class="ans"><strong>Answer:</strong> Social malaises: poverty, caste discrimination, gender inequality, corruption, illiteracy, communalism, substance abuse, environmental degradation. Value-oriented education addresses these by promoting ethical values, fostering social responsibility, encouraging critical thinking, building emotional intelligence, promoting gender equality, and reducing social disparities through inclusive learning.</p>
+                        </div>
+                    </div>
+                    <div class="exam-box">
+                        <p><strong>💡 Solving Tip:</strong> For 20-mark questions, structure your answer with: (1) Introduction/Definition, (2) Main body with sub-points, (3) Examples where relevant, (4) Conclusion. Write approximately 300-400 words per 20-mark answer.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── FOOTER ── -->
+            <div style="text-align:center;padding:30px 10px;color:var(--text-muted);font-size:0.8rem;border-top:1px solid var(--glass-border);margin-top:30px;">
+                <p>📗 <strong>BEDSV 101 Value Education — Complete Study Notes</strong> | All 14 Units + Solved PYQs | IGNOU FYUP</p>
+                <p>Includes: Detailed theory · Mnemonics · Exam Tips · Interactive MCQs · Important Questions · Solved Previous Year Questions</p>
+                <p style="margin-top:8px;">© 2025 BEDSV 101 Study Notes | Updated for latest syllabus | For educational purposes only</p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // ── UNIT COLLAPSE TOGGLE ──
+        function toggleUnit(header) {
+            const section = header.parentElement;
+            section.classList.toggle('collapsed');
+            const unitId = section.id;
+            const collapsedUnits = JSON.parse(localStorage.getItem('bedsvCollapsedUnits') || '{}');
+            collapsedUnits[unitId] = section.classList.contains('collapsed');
+            localStorage.setItem('bedsvCollapsedUnits', JSON.stringify(collapsedUnits));
+        }
+
+        function expandAll() {
+            document.querySelectorAll('.unit-section').forEach(s => s.classList.remove('collapsed'));
+            localStorage.setItem('bedsvCollapsedUnits', '{}');
+        }
+
+        function collapseAll() {
+            document.querySelectorAll('.unit-section').forEach(s => s.classList.add('collapsed'));
+            const collapsedUnits = {};
+            document.querySelectorAll('.unit-section').forEach(s => { collapsedUnits[s.id] = true; });
+            localStorage.setItem('bedsvCollapsedUnits', JSON.stringify(collapsedUnits));
+        }
+
+        function restoreCollapseState() {
+            const collapsedUnits = JSON.parse(localStorage.getItem('bedsvCollapsedUnits') || '{}');
+            Object.keys(collapsedUnits).forEach(id => {
+                if (collapsedUnits[id]) {
+                    const el = document.getElementById(id);
+                    if (el) el.classList.add('collapsed');
+                }
+            });
+        }
+
+        // ── SEARCH ──
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase().trim();
+            document.querySelectorAll('.unit-section').forEach(section => {
+                const text = section.textContent.toLowerCase();
+                if (query === '') {
+                    section.style.display = '';
+                    section.style.opacity = '1';
+                    const collapsedUnits = JSON.parse(localStorage.getItem('bedsvCollapsedUnits') || '{}');
+                    if (collapsedUnits[section.id]) section.classList.add('collapsed');
+                    else section.classList.remove('collapsed');
+                } else if (text.includes(query)) {
+                    section.style.display = '';
+                    section.style.opacity = '1';
+                    section.classList.remove('collapsed');
+                } else {
+                    section.style.display = 'none';
+                    section.style.opacity = '0';
+                }
+            });
+            if (query === '') restoreCollapseState();
+        });
+
+        // ── SIDEBAR ──
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+        function openSidebar() {
+            sidebar.classList.add('open');
+            sidebarOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove('open');
+            sidebarOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        hamburgerBtn.addEventListener('click', () => {
+            sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
+        });
+        sidebarOverlay.addEventListener('click', closeSidebar);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && sidebar.classList.contains('open')) closeSidebar();
+        });
+
+        // ── ACTIVE SIDEBAR LINK ──
+        function updateActiveSidebarLink() {
+            const sections = document.querySelectorAll('.unit-section');
+            const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+            let currentId = '';
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 150) currentId = section.id;
+            });
+            sidebarLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentId) link.classList.add('active');
+            });
+        }
+        window.addEventListener('scroll', updateActiveSidebarLink, { passive: true });
+
+        // ── INTERACTIVE MCQ ──
+        document.querySelectorAll('.mcq-item').forEach(item => {
+            const correctOpt = item.dataset.correct;
+            const options = item.querySelectorAll('.options li');
+            const answerEl = item.querySelector('.answer');
+            let answered = false;
+
+            options.forEach(opt => {
+                opt.addEventListener('click', function() {
+                    if (answered) return;
+                    answered = true;
+                    const selectedOpt = this.dataset.opt;
+                    options.forEach(o => o.classList.remove('correct-selected', 'wrong-selected'));
+                    if (selectedOpt === correctOpt) {
+                        this.classList.add('correct-selected');
+                    } else {
+                        this.classList.add('wrong-selected');
+                        const correctLi = item.querySelector(`.options li[data-opt="${correctOpt}"]`);
+                        if (correctLi) correctLi.classList.add('correct-selected');
+                    }
+                    if (answerEl) answerEl.classList.add('show');
+                });
+            });
+        });
+
+        // ── INIT ──
+        restoreCollapseState();
+        updateActiveSidebarLink();
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && sidebar.classList.contains('open')) closeSidebar();
+        });
+
+        console.log('📗 BEDSV 101 Value Education Notes Loaded Successfully!');
+        console.log('✅ All 14 Units | Interactive MCQs | Mnemonics | Exam Tips | Solved PYQs');
+        console.log('🔒 Copy Protection Active | 📱 Mobile Responsive | 🖨️ Print Optimized');
+    </script>
+
+    <!-- Monetag Ad Script -->
+    <script>
+        (function(s) {
+            s.dataset.zone = '10976968', s.src = 'https://n6wxm.com/vignette.min.js'
+        })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement(
+            'script')))
+    </script>
+
+    <!-- Copy Protection -->
+    <script>
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('keydown', e => {
+            if (
+                (e.ctrlKey && ['c', 'u', 's', 'a', 'p'].includes(e.key.toLowerCase())) ||
+                (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(e.key.toLowerCase())) ||
+                e.key === 'F12'
+            ) {
+                e.preventDefault();
+            }
+        });
+        document.addEventListener('copy', e => e.preventDefault());
+        document.addEventListener('cut', e => e.preventDefault());
+        document.addEventListener('drag', e => e.preventDefault());
+    </script>
 </body>
-
 </html>
