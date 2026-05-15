@@ -853,7 +853,7 @@
                     </div>
                     <div class="mcq-section">
                         <h4>📝 MCQs — Unit 1 (Click options to test yourself!)</h4>
-                        <div class="mcq-item" data-correct="B">
+                        <div class="mcq-item" data-correct="A">
                             <p class="question">Q1. The word "value" is derived from the Latin word:</p>
                             <ul class="options"><li data-opt="A">A) Valere (to be of worth)</li><li data-opt="B">B) Valor (courage)</li><li data-opt="C">C) Vale (farewell)</li><li data-opt="D">D) Validus (strong)</li></ul>
                             <p class="answer">✅ Answer: A) Valere — meaning "to be of worth"</p>
@@ -1678,8 +1678,9 @@
         </main>
     </div>
 
+    <!-- ── SCRIPTS ── -->
     <script>
-        // ── UNIT COLLAPSE TOGGLE ──
+        // UNIT COLLAPSE TOGGLE
         function toggleUnit(header) {
             const section = header.parentElement;
             section.classList.toggle('collapsed');
@@ -1711,7 +1712,7 @@
             });
         }
 
-        // ── SEARCH ──
+        // SEARCH
         const searchInput = document.getElementById('searchInput');
         searchInput.addEventListener('input', function() {
             const query = this.value.toLowerCase().trim();
@@ -1735,7 +1736,7 @@
             if (query === '') restoreCollapseState();
         });
 
-        // ── SIDEBAR ──
+        // SIDEBAR
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const sidebar = document.getElementById('sidebar');
         const sidebarOverlay = document.getElementById('sidebarOverlay');
@@ -1760,7 +1761,7 @@
             if (e.key === 'Escape' && sidebar.classList.contains('open')) closeSidebar();
         });
 
-        // ── ACTIVE SIDEBAR LINK ──
+        // ACTIVE SIDEBAR LINK
         function updateActiveSidebarLink() {
             const sections = document.querySelectorAll('.unit-section');
             const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
@@ -1776,7 +1777,7 @@
         }
         window.addEventListener('scroll', updateActiveSidebarLink, { passive: true });
 
-        // ── INTERACTIVE MCQ ──
+        // INTERACTIVE MCQ
         document.querySelectorAll('.mcq-item').forEach(item => {
             const correctOpt = item.dataset.correct;
             const options = item.querySelectorAll('.options li');
@@ -1801,7 +1802,7 @@
             });
         });
 
-        // ── INIT ──
+        // INIT
         restoreCollapseState();
         updateActiveSidebarLink();
         window.addEventListener('resize', () => {
@@ -1813,12 +1814,14 @@
         console.log('🔒 Copy Protection Active | 📱 Mobile Responsive | 🖨️ Print Optimized');
     </script>
 
-    <!-- Monetag Ad Script -->
+    <!-- Monetag Ad Script (Fixed - directly appended to body) -->
     <script>
-        (function(s) {
-            s.dataset.zone = '10976968', s.src = 'https://n6wxm.com/vignette.min.js'
-        })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement(
-            'script')))
+        (function() {
+            var s = document.createElement('script');
+            s.dataset.zone = '10976968';
+            s.src = 'https://n6wxm.com/vignette.min.js';
+            document.body.appendChild(s);
+        })();
     </script>
 
     <!-- Copy Protection -->
