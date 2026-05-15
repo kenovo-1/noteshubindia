@@ -564,4 +564,852 @@
             border: 1px solid var(--glass-border);
             border-radius: 10px;
             padding: 14px;
-            margin: 10p
+            margin: 10px 0;
+        }
+        .highlight-text {
+            color: var(--neon-yellow);
+            font-weight: 600;
+        }
+        .btn-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--neon-purple);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 200;
+            box-shadow: 0 4px 20px rgba(123, 47, 247, 0.5);
+            transition: all var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-top:hover {
+            background: var(--neon-pink);
+            box-shadow: 0 6px 30px rgba(255, 0, 110, 0.6);
+            transform: translateY(-3px);
+        }
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            top: 140px;
+            left: 10px;
+            z-index: 150;
+            background: var(--neon-purple);
+            color: #fff;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                width: 260px;
+                top: 120px;
+                height: calc(100vh - 120px);
+            }
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            .content-area {
+                margin-left: 0;
+                padding: 12px;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .mcq-item .options {
+                grid-template-columns: 1fr;
+            }
+            .unit-header h2 {
+                font-size: 15px;
+            }
+        }
+        @media print {
+            body {
+                background: #fff !important;
+                color: #000 !important;
+                -webkit-user-select: text !important;
+                -moz-user-select: text !important;
+                user-select: text !important;
+            }
+            .sidebar,
+            .ad-container-top,
+            .vintage-banner,
+            .search-container,
+            .mobile-menu-btn,
+            .btn-top,
+            .show-answer-btn {
+                display: none !important;
+            }
+            .content-area {
+                margin-left: 0 !important;
+                padding: 0 !important;
+                max-width: 100% !important;
+            }
+            .unit-card {
+                break-inside: avoid;
+                border: 1px solid #ccc !important;
+                box-shadow: none !important;
+                background: #fff !important;
+            }
+            .unit-header {
+                background: #f5f5f5 !important;
+            }
+            .unit-header h2 {
+                color: #000 !important;
+            }
+            .unit-body {
+                display: block !important;
+            }
+            .unit-card.collapsed .unit-body {
+                display: block !important;
+            }
+            .exam-highlight,
+            .mnemonic-box,
+            .important-question,
+            .mcq-section {
+                border: 1px solid #999 !important;
+                background: #fafafa !important;
+            }
+            p,
+            h3,
+            h4 {
+                color: #000 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="vintage-banner">
+        <span>📜 BPCS 183 EMOTIONAL INTELLIGENCE — IGNOU COMPLETE STUDY NOTES — 200+ PAGES — ALL UNITS COVERED 📜</span>
+    </div>
+
+    <div class="ad-container-top" id="adContainerTop">
+    </div>
+
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">☰ Menu</button>
+
+    <div class="main-layout">
+        <aside class="sidebar" id="sidebar">
+            <h3>📑 BPCS 183 Units</h3>
+            <ul class="sidebar-nav" id="sidebarNav">
+                <li><a href="#unit1" class="active">Unit 1: Introduction to Emotional Intelligence</a></li>
+                <li><a href="#unit2">Unit 2: Models of Emotional Intelligence</a></li>
+                <li><a href="#unit3">Unit 3: Self-Awareness & Self-Management</a></li>
+                <li><a href="#unit4">Unit 4: Social Awareness & Empathy</a></li>
+                <li><a href="#unit5">Unit 5: Relationship Management</a></li>
+                <li><a href="#unit6">Unit 6: EI in Various Contexts</a></li>
+                <li><a href="#unit7">Unit 7: Measurement of Emotional Intelligence</a></li>
+                <li><a href="#unit8">Unit 8: Developing Emotional Intelligence</a></li>
+                <li><a href="#pyq-section">📝 Previous Year Questions</a></li>
+            </ul>
+        </aside>
+
+        <main class="content-area" id="contentArea">
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="🔍 Search notes... (e.g., 'Goleman', 'empathy', 'self-awareness', 'MSCEIT')">
+                <div class="search-results-info" id="searchResultsInfo"></div>
+            </div>
+
+            <!-- UNIT 1 -->
+            <div class="unit-card" id="unit1">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2><span class="unit-number">1</span> Introduction to Emotional Intelligence</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>1.1 What is Emotional Intelligence?</h3>
+                    <p>Emotional Intelligence (EI), often referred to as EQ (Emotional Quotient), is the ability to perceive, understand, manage, and regulate emotions in oneself and others. It involves a set of skills that enable individuals to navigate social complexities, make informed decisions, and achieve personal and professional success. Unlike cognitive intelligence (IQ), which focuses on analytical and logical abilities, EI emphasizes the emotional and social facets of human functioning.</p>
+                    <p>The term gained prominence through the works of psychologists Peter Salovey and John D. Mayer (1990) and was later popularized by Daniel Goleman in his 1995 book "Emotional Intelligence: Why It Can Matter More Than IQ." Goleman argued that EI could be a stronger predictor of success than traditional intelligence measures.</p>
+
+                    <div class="exam-highlight">
+                        <p><strong>Exam Tip:</strong> Questions on the definition, historical development, and difference between IQ and EQ are frequently asked. Be prepared to trace the evolution of the concept from Thorndike's "social intelligence" to Goleman's model.</p>
+                    </div>
+
+                    <h3>1.2 Historical Background</h3>
+                    <p>The roots of emotional intelligence can be traced back to <strong>Edward Thorndike's</strong> concept of "social intelligence" (1920), defined as the ability to understand and manage people. In 1983, <strong>Howard Gardner</strong> introduced the theory of multiple intelligences, which included interpersonal and intrapersonal intelligences—closely related to EI. The formal term "emotional intelligence" was first coined by <strong>Wayne Payne</strong> in his doctoral thesis (1985), but it was <strong>Salovey and Mayer</strong> who provided the first comprehensive model in 1990.</p>
+                    <p>Daniel Goleman's 1995 bestseller catapulted EI into mainstream consciousness, emphasizing its role in leadership, education, and personal well-being. Subsequent research by Reuven Bar-On (1997) introduced the concept of "emotional and social intelligence" and developed the EQ-i assessment.</p>
+
+                    <h3>1.3 Importance of Emotional Intelligence</h3>
+                    <p>Emotional intelligence is crucial because emotions influence every aspect of our lives—decision-making, relationships, health, and productivity. High EI is associated with:</p>
+                    <ul>
+                        <li>Better mental health and lower stress levels</li>
+                        <li>Stronger interpersonal relationships and conflict resolution skills</li>
+                        <li>Enhanced leadership and teamwork abilities</li>
+                        <li>Improved academic and job performance</li>
+                        <li>Greater resilience and adaptability to change</li>
+                    </ul>
+
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic for EI Importance:</strong> <em>"LEADS"</em> — <strong>L</strong>eadership, <strong>E</strong>motional well-being, <strong>A</strong>daptability, <strong>D</strong>ecision-making, <strong>S</strong>ocial relationships. EI helps you LEAD your life with emotional skill!</p>
+                    </div>
+
+                    <h3>1.4 Difference Between IQ and EQ</h3>
+                    <table>
+                        <tr><th>Feature</th><th>IQ (Intelligence Quotient)</th><th>EQ (Emotional Quotient)</th></tr>
+                        <tr><td>Focus</td><td>Cognitive abilities, logic, memory</td><td>Emotional and social skills</td></tr>
+                        <tr><td>Measured by</td><td>Standardized tests (WAIS, Stanford-Binet)</td><td>EI assessments (MSCEIT, EQ-i, self-reports)</td></tr>
+                        <tr><td>Stability</td><td>Relatively stable over lifetime</td><td>Can be developed and improved</td></tr>
+                        <tr><td>Predicts</td><td>Academic performance, technical skills</td><td>Life satisfaction, relationship success, leadership</td></tr>
+                    </table>
+
+                    <div class="important-question">
+                        <p>Q: Define emotional intelligence. Distinguish between emotional intelligence and cognitive intelligence, highlighting their respective roles in personal and professional success. (15 marks)</p>
+                    </div>
+
+                    <div class="mcq-section">
+                        <h4>📝 MCQs - Unit 1</h4>
+                        <div class="mcq-item" id="mcq1_1">
+                            <p><strong>Q1:</strong> Who first coined the term 'emotional intelligence' in a formal academic context?</p>
+                            <div class="options">
+                                <span class="option" onclick="checkMCQ(this, 'mcq1_1', false)">A) Daniel Goleman</span>
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq1_1', true)">B) Salovey and Mayer</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq1_1', false)">C) Reuven Bar-On</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq1_1', false)">D) Howard Gardner</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq1_1')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq1_1_ans">✅ Correct Answer: B) Salovey and Mayer — They published the first scientific article on EI in 1990.</div>
+                        </div>
+                        <div class="mcq-item" id="mcq1_2">
+                            <p><strong>Q2:</strong> Which of the following is NOT a component typically associated with emotional intelligence?</p>
+                            <div class="options">
+                                <span class="option" onclick="checkMCQ(this, 'mcq1_2', false)">A) Self-awareness</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq1_2', false)">B) Empathy</span>
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq1_2', true)">C) Mathematical reasoning</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq1_2', false)">D) Relationship management</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq1_2')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq1_2_ans">✅ Correct Answer: C) Mathematical reasoning — This belongs to cognitive intelligence (IQ), not EI.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 2 -->
+            <div class="unit-card" id="unit2">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2><span class="unit-number">2</span> Models of Emotional Intelligence</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>2.1 Salovey & Mayer's Ability Model</h3>
+                    <p>This model conceptualizes EI as a form of pure intelligence involving the processing of emotional information. It proposes four hierarchical branches:</p>
+                    <ol>
+                        <li><strong>Perceiving Emotions:</strong> The ability to accurately recognize emotions in oneself and others through facial expressions, voice tone, and body language.</li>
+                        <li><strong>Using Emotions to Facilitate Thought:</strong> Harnessing emotions to prioritize thinking, enhance creativity, and improve problem-solving.</li>
+                        <li><strong>Understanding Emotions:</strong> Comprehending emotional language, the causes of emotions, and how they evolve over time.</li>
+                        <li><strong>Managing Emotions:</strong> Regulating one's own emotions and those of others to achieve desired outcomes and maintain well-being.</li>
+                    </ol>
+
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic for Ability Model:</strong> <em>"PUMA"</em> — <strong>P</strong>erceiving, <strong>U</strong>sing, <strong>M</strong>anaging, <strong>A</strong>nalyzing (understanding). Think of a PUMA stalking emotions through the four branches!</p>
+                    </div>
+
+                    <h3>2.2 Goleman's Mixed Model</h3>
+                    <p>Daniel Goleman's model combines emotional abilities with personality traits. He proposed five core components:</p>
+                    <ul>
+                        <li><strong>Self-Awareness:</strong> Recognizing one's emotions, strengths, and weaknesses.</li>
+                        <li><strong>Self-Regulation:</strong> Managing disruptive emotions and impulses.</li>
+                        <li><strong>Motivation:</strong> Internal drive to achieve, optimism, and resilience.</li>
+                        <li><strong>Empathy:</strong> Understanding others' feelings and perspectives.</li>
+                        <li><strong>Social Skills:</strong> Building rapport, influencing, and managing conflicts.</li>
+                    </ul>
+                    <p>Goleman later refined these into four domains: self-awareness, self-management, social awareness, and relationship management, containing 12 emotional competencies.</p>
+
+                    <div class="exam-highlight">
+                        <p><strong>Exam Tip:</strong> Be prepared to compare the ability model and mixed model. Questions often ask for the components of Goleman's model and their practical applications in the workplace.</p>
+                    </div>
+
+                    <h3>2.3 Bar-On's Emotional-Social Intelligence Model</h3>
+                    <p>Reuven Bar-On defines EI as "a cross-section of interrelated emotional and social competencies, skills and facilitators that determine how effectively we understand and express ourselves, understand others and relate with them, and cope with daily demands." His model comprises 15 components under five composite scales:</p>
+                    <ul>
+                        <li><strong>Intrapersonal:</strong> Self-regard, emotional self-awareness, assertiveness, independence, self-actualization.</li>
+                        <li><strong>Interpersonal:</strong> Empathy, social responsibility, interpersonal relationships.</li>
+                        <li><strong>Stress Management:</strong> Stress tolerance, impulse control.</li>
+                        <li><strong>Adaptability:</strong> Reality testing, flexibility, problem-solving.</li>
+                        <li><strong>General Mood:</strong> Optimism, happiness.</li>
+                    </ul>
+
+                    <h3>2.4 Other Models</h3>
+                    <p><strong>Trait EI Model (Petrides & Furnham):</strong> Views EI as a constellation of emotional self-perceptions located at the lower levels of personality hierarchies. It is measured through self-report questionnaires.</p>
+                    <p><strong>Genos Model:</strong> A workplace-specific model focusing on how frequently individuals demonstrate emotionally intelligent behaviors.</p>
+
+                    <div class="important-question">
+                        <p>Q: Critically compare any two major models of emotional intelligence. Discuss their strengths and limitations. (15 marks)</p>
+                    </div>
+
+                    <div class="mcq-section">
+                        <h4>📝 MCQs - Unit 2</h4>
+                        <div class="mcq-item" id="mcq2_1">
+                            <p><strong>Q1:</strong> In Goleman's model, which component involves managing internal states and impulses?</p>
+                            <div class="options">
+                                <span class="option" onclick="checkMCQ(this, 'mcq2_1', false)">A) Self-Awareness</span>
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq2_1', true)">B) Self-Regulation</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq2_1', false)">C) Empathy</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq2_1', false)">D) Social Skills</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq2_1')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq2_1_ans">✅ Correct Answer: B) Self-Regulation — Also called self-management, it involves controlling disruptive emotions.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 3 -->
+            <div class="unit-card" id="unit3">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2><span class="unit-number">3</span> Self-Awareness & Self-Management</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>3.1 The Foundation: Self-Awareness</h3>
+                    <p>Self-awareness is the cornerstone of emotional intelligence. It involves the ability to recognize and understand one's own emotions, drives, strengths, and weaknesses, as well as their effect on others. Individuals with high self-awareness are honest with themselves, have a realistic self-assessment, and exhibit self-confidence.</p>
+                    <p>Key components include:</p>
+                    <ul>
+                        <li><strong>Emotional Awareness:</strong> Identifying which emotions you are feeling and why.</li>
+                        <li><strong>Accurate Self-Assessment:</strong> Knowing your strengths and limitations without defensiveness.</li>
+                        <li><strong>Self-Confidence:</strong> A strong sense of your own self-worth and capabilities.</li>
+                    </ul>
+
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic for Self-Awareness:</strong> <em>"RAE"</em> — <strong>R</strong>ecognize emotions, <strong>A</strong>ssess strengths/weaknesses, <strong>E</strong>valuate impact on others. Shine a light on yourself with RAE!</p>
+                    </div>
+
+                    <h3>3.2 Strategies to Enhance Self-Awareness</h3>
+                    <ul>
+                        <li>Maintain a reflective journal to track emotional patterns.</li>
+                        <li>Seek honest feedback from trusted peers or mentors (360-degree feedback).</li>
+                        <li>Practice mindfulness meditation to observe thoughts and emotions non-judgmentally.</li>
+                        <li>Identify your emotional triggers and their underlying causes.</li>
+                    </ul>
+
+                    <h3>3.3 Self-Management: Regulating Emotions</h3>
+                    <p>Self-management (or self-regulation) builds on self-awareness. It is the ability to control impulsive feelings and behaviors, manage emotions in healthy ways, take initiative, follow through on commitments, and adapt to changing circumstances. Core elements include:</p>
+                    <ul>
+                        <li><strong>Emotional Self-Control:</strong> Keeping disruptive emotions and impulses in check.</li>
+                        <li><strong>Transparency:</strong> Maintaining integrity and acting congruently with your values.</li>
+                        <li><strong>Adaptability:</strong> Flexibility in handling change and challenges.</li>
+                        <li><strong>Achievement Orientation:</strong> Striving to meet or exceed a standard of excellence.</li>
+                        <li><strong>Initiative:</strong> Readiness to act on opportunities before being asked.</li>
+                    </ul>
+
+                    <div class="exam-highlight">
+                        <p><strong>Exam Tip:</strong> Often, you'll be asked to explain the relationship between self-awareness and self-management. Remember: you cannot manage what you haven't acknowledged. Self-awareness is the prerequisite for self-regulation.</p>
+                    </div>
+
+                    <h3>3.4 Emotional Triggers and Coping</h3>
+                    <p>Emotional triggers are stimuli that provoke intense emotional reactions, often disproportionate to the situation. They frequently stem from past experiences, unresolved conflicts, or deeply held beliefs. Effective self-management involves identifying triggers and implementing coping strategies such as cognitive reappraisal (reframing thoughts), deep breathing, and taking a "pause" before reacting.</p>
+
+                    <div class="important-question">
+                        <p>Q: Explain the significance of self-awareness as the foundation of emotional intelligence. Describe practical techniques to enhance self-awareness and self-management. (10 marks)</p>
+                    </div>
+
+                    <div class="mcq-section">
+                        <h4>📝 MCQs - Unit 3</h4>
+                        <div class="mcq-item" id="mcq3_1">
+                            <p><strong>Q1:</strong> Which of the following is an example of self-management?</p>
+                            <div class="options">
+                                <span class="option" onclick="checkMCQ(this, 'mcq3_1', false)">A) Knowing you are angry</span>
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq3_1', true)">B) Calming yourself down after an argument</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq3_1', false)">C) Recognizing a friend is upset</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq3_1', false)">D) Understanding why you feel sad</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq3_1')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq3_1_ans">✅ Correct Answer: B) Calming yourself down — It involves regulating an emotion, not just identifying it.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 4 -->
+            <div class="unit-card" id="unit4">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2><span class="unit-number">4</span> Social Awareness & Empathy</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>4.1 Social Awareness: Reading the Room</h3>
+                    <p>Social awareness is the ability to accurately perceive the emotions of others and understand social dynamics. It involves picking up on verbal and non-verbal cues, recognizing power relationships, and appreciating diverse perspectives. Key competencies are empathy and organizational awareness.</p>
+                    <p>Empathy is the central pillar of social awareness. It goes beyond recognizing emotions to actually feeling with others. There are three types of empathy:</p>
+                    <ul>
+                        <li><strong>Cognitive Empathy:</strong> Understanding another person's perspective or mental state (perspective-taking).</li>
+                        <li><strong>Emotional Empathy:</strong> Sharing the feelings of another person, i.e., "catching" their emotions.</li>
+                        <li><strong>Compassionate Empathy (Empathic Concern):</strong> Being moved to help others, combining understanding with a desire to take action.</li>
+                    </ul>
+
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic for Empathy Types:</strong> <em>"CEC"</em> — <strong>C</strong>ognitive (think), <strong>E</strong>motional (feel), <strong>C</strong>ompassionate (act). Think of CEC as the three channels of empathic response.</p>
+                    </div>
+
+                    <h3>4.2 Developing Empathy</h3>
+                    <p>Empathy can be cultivated through deliberate practice:</p>
+                    <ul>
+                        <li><strong>Active Listening:</strong> Fully concentrate, understand, respond, and then remember what is said. Avoid interrupting and reflect back feelings.</li>
+                        <li><strong>Perspective-Taking:</strong> Consciously step into the other person's shoes. Ask, "What might they be thinking/feeling?"</li>
+                        <li><strong>Non-Verbal Attunement:</strong> Pay attention to facial expressions, tone of voice, posture, and eye contact.</li>
+                        <li><strong>Suspension of Judgment:</strong> Set aside your own biases to understand the other's experience genuinely.</li>
+                        <li><strong>Reading Literature and Art:</strong> Engaging with narratives and artistic expressions enhances one's ability to understand complex emotional experiences.</li>
+                    </ul>
+
+                    <div class="exam-highlight">
+                        <p><strong>Exam Tip:</strong> Exam questions often require you to distinguish between empathy and sympathy. Empathy is "feeling with" (I understand your pain), while sympathy is "feeling for" (I feel sorry for you). Empathy builds connection; sympathy can create distance.</p>
+                    </div>
+
+                    <h3>4.3 Organizational Awareness</h3>
+                    <p>This competency involves recognizing the formal and informal power structures, culture, and political dynamics within an organization. It allows one to navigate complex social networks effectively, build coalitions, and influence without authority.</p>
+
+                    <div class="important-question">
+                        <p>Q: Define empathy and discuss its different types. How does empathy contribute to effective social relationships and leadership? (10 marks)</p>
+                    </div>
+
+                    <div class="mcq-section">
+                        <h4>📝 MCQs - Unit 4</h4>
+                        <div class="mcq-item" id="mcq4_1">
+                            <p><strong>Q1:</strong> Which type of empathy involves actually feeling what another person feels?</p>
+                            <div class="options">
+                                <span class="option" onclick="checkMCQ(this, 'mcq4_1', false)">A) Cognitive empathy</span>
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq4_1', true)">B) Emotional empathy</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq4_1', false)">C) Compassionate empathy</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq4_1', false)">D) None of the above</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq4_1')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq4_1_ans">✅ Correct Answer: B) Emotional empathy — It's the visceral sharing of another's emotional state.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 5 -->
+            <div class="unit-card" id="unit5">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2><span class="unit-number">5</span> Relationship Management</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>5.1 The Art of Connection</h3>
+                    <p>Relationship management is the culmination of the other EI domains. It involves using awareness of your own emotions and those of others to manage interactions successfully. This domain includes skills like influence, conflict management, teamwork, and inspirational leadership.</p>
+
+                    <h3>5.2 Core Competencies</h3>
+                    <ul>
+                        <li><strong>Influence:</strong> Wielding effective persuasion tactics that appeal to others' interests.</li>
+                        <li><strong>Conflict Management:</strong> Handling disagreements diplomatically, finding win-win solutions, and de-escalating tensions.</li>
+                        <li><strong>Inspirational Leadership:</strong> Guiding and motivating individuals with a compelling vision.</li>
+                        <li><strong>Teamwork & Collaboration:</strong> Creating group synergy, fostering a cooperative spirit, and building bonds.</li>
+                        <li><strong>Communication:</strong> Listening openly and sending convincing, clear messages.</li>
+                    </ul>
+
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic for Relationship Competencies:</strong> <em>"CLIMB"</em> — <strong>C</strong>onflict management, <strong>L</strong>eadership, <strong>I</strong>nfluence, <strong>M</strong>anaging bonds, <strong>B</strong>uilding teams. CLIMB the ladder of relationship success!</p>
+                    </div>
+
+                    <h3>5.3 Conflict Resolution Strategies</h3>
+                    <p>Effective conflict management is a hallmark of high EI. The Thomas-Kilmann model outlines five styles:</p>
+                    <ol>
+                        <li><strong>Competing:</strong> Assertive, uncooperative (win-lose). Appropriate when quick, decisive action is needed.</li>
+                        <li><strong>Collaborating:</strong> Assertive and cooperative (win-win). Ideal when both parties' concerns are important.</li>
+                        <li><strong>Compromising:</strong> Moderate assertiveness/cooperativeness. Finds a middle ground.</li>
+                        <li><strong>Avoiding:</strong> Unassertive, uncooperative. May be useful when the issue is trivial.</li>
+                        <li><strong>Accommodating:</strong> Unassertive, cooperative. Prioritizes the relationship over the issue.</li>
+                    </ol>
+
+                    <div class="exam-highlight">
+                        <p><strong>Exam Tip:</strong> You might be given a scenario and asked which conflict style would be most appropriate. Link the style to the level of EI displayed—collaboration generally reflects higher relationship management skills.</p>
+                    </div>
+
+                    <h3>5.4 Building Trust and Rapport</h3>
+                    <p>Trust is the currency of relationships. It is built through consistency, integrity, openness, and mutual respect. Techniques like mirroring body language, using people's names, finding common ground, and demonstrating genuine curiosity about others can rapidly build rapport.</p>
+
+                    <div class="important-question">
+                        <p>Q: Describe the key competencies of relationship management as per Goleman's model. Explain the various conflict management styles with suitable examples. (15 marks)</p>
+                    </div>
+
+                    <div class="mcq-section">
+                        <h4>📝 MCQs - Unit 5</h4>
+                        <div class="mcq-item" id="mcq5_1">
+                            <p><strong>Q1:</strong> Which conflict management style seeks a win-win solution through open dialogue?</p>
+                            <div class="options">
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq5_1', true)">A) Collaborating</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq5_1', false)">B) Competing</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq5_1', false)">C) Avoiding</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq5_1', false)">D) Compromising</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq5_1')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq5_1_ans">✅ Correct Answer: A) Collaborating — It involves high assertiveness and cooperation to find solutions satisfying all parties.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 6 -->
+            <div class="unit-card" id="unit6">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2><span class="unit-number">6</span> Emotional Intelligence in Various Contexts</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>6.1 EI in the Workplace</h3>
+                    <p>Emotional intelligence is a critical factor in workplace success. Research shows that EI accounts for nearly 90% of what distinguishes top performers from average ones in leadership roles. It enhances teamwork, customer service, adaptability during organizational change, and overall job satisfaction. Leaders with high EI create positive work climates that foster employee engagement and retention.</p>
+
+                    <h3>6.2 EI in Educational Settings</h3>
+                    <p>In education, EI contributes to better academic achievement, reduced behavioral problems, and improved student-teacher relationships. Social and emotional learning (SEL) programs that teach self-awareness, empathy, and conflict resolution have been shown to improve test scores by an average of 11 percentile points. Students with higher EI exhibit greater motivation, resilience, and classroom cooperation.</p>
+
+                    <h3>6.3 EI in Personal Relationships</h3>
+                    <p>Emotionally intelligent individuals tend to have more satisfying and stable relationships. They communicate more effectively, handle disagreements constructively, and display greater empathy and understanding. The ability to regulate one's own emotions and attune to a partner's needs is a strong predictor of marital satisfaction and longevity.</p>
+
+                    <h3>6.4 EI and Health</h3>
+                    <p>There is a well-documented link between EI and both mental and physical health. High EI is associated with lower levels of stress, anxiety, and depression. It promotes healthier coping mechanisms, better self-care, and stronger social support networks. The ability to manage emotions can positively influence immune function and cardiovascular health through reduced chronic stress responses.</p>
+
+                    <div class="exam-highlight">
+                        <p><strong>Exam Tip:</strong> Application-based questions are common. Be prepared to discuss how a specific EI competency (e.g., empathy) would be beneficial in a workplace, educational, or personal scenario. Use concrete examples.</p>
+                    </div>
+
+                    <div class="important-question">
+                        <p>Q: Discuss the role of emotional intelligence in the workplace. How does it differ from the role of cognitive intelligence in determining job performance? (15 marks)</p>
+                    </div>
+
+                    <div class="mcq-section">
+                        <h4>📝 MCQs - Unit 6</h4>
+                        <div class="mcq-item" id="mcq6_1">
+                            <p><strong>Q1:</strong> Social and Emotional Learning (SEL) programs in schools primarily aim to:</p>
+                            <div class="options">
+                                <span class="option" onclick="checkMCQ(this, 'mcq6_1', false)">A) Increase IQ scores</span>
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq6_1', true)">B) Develop emotional competencies</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq6_1', false)">C) Replace academic curricula</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq6_1', false)">D) Reduce physical education time</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq6_1')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq6_1_ans">✅ Correct Answer: B) Develop emotional competencies — SEL focuses on skills like empathy, self-regulation, and social awareness.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 7 -->
+            <div class="unit-card" id="unit7">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2><span class="unit-number">7</span> Measurement of Emotional Intelligence</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>7.1 Approaches to Measuring EI</h3>
+                    <p>EI measurement tools fall into three broad categories: ability-based tests (maximal performance), self-report inventories (typical performance), and 360-degree feedback assessments. Each has its strengths and limitations. Ability tests are less prone to faking but may not capture real-world EI behavior, while self-reports risk social desirability bias.</p>
+
+                    <h3>7.2 Major EI Assessments</h3>
+                    <ul>
+                        <li><strong>MSCEIT (Mayer-Salovey-Caruso Emotional Intelligence Test):</strong> An ability-based test that measures the four branches of the ability model through tasks like identifying emotions in faces or determining which emotions would be useful in a given scenario. It yields scores similar to IQ (mean=100, SD=15).</li>
+                        <li><strong>EQ-i 2.0 (Emotional Quotient Inventory):</strong> A self-report based on Bar-On's model, measuring 15 subscales across five composite areas. It provides a total EQ score and has been widely validated in organizational and clinical settings.</li>
+                        <li><strong>ECI (Emotional Competence Inventory):</strong> Based on Goleman's model, this 360-degree tool gathers feedback from self, peers, managers, and subordinates. It assesses 12 competencies grouped into four domains.</li>
+                        <li><strong>TEIQue (Trait Emotional Intelligence Questionnaire):</strong> A self-report instrument that comprehensively measures trait EI across 15 facets and four factors (well-being, self-control, emotionality, sociability).</li>
+                    </ul>
+
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic for EI Tests:</strong> <em>"MEET"</em> — <strong>M</strong>SCEIT (ability), <strong>E</strong>Q-i (mixed/self-report), <strong>E</strong>CI (360-degree), <strong>T</strong>EIQue (trait). Think of "MEET"ing the measurement standards!</p>
+                    </div>
+
+                    <h3>7.3 Challenges in Measuring EI</h3>
+                    <p>There is no single gold standard for EI measurement. Issues include the difficulty of capturing emotional skills objectively, cultural variations in emotional expression, and the discrepancy between what people say they do (self-report) and what they actually do. The debate about whether EI is a distinct intelligence or a set of personality traits further complicates measurement.</p>
+
+                    <div class="exam-highlight">
+                        <p><strong>Exam Tip:</strong> Be able to differentiate between ability measures and self-report measures. The question "Which test would you use to avoid socially desirable responding?" points to ability-based tests like MSCEIT.</p>
+                    </div>
+
+                    <div class="important-question">
+                        <p>Q: Critically evaluate the different methods used to measure emotional intelligence. Compare the MSCEIT and the EQ-i as assessment tools. (15 marks)</p>
+                    </div>
+
+                    <div class="mcq-section">
+                        <h4>📝 MCQs - Unit 7</h4>
+                        <div class="mcq-item" id="mcq7_1">
+                            <p><strong>Q1:</strong> Which of the following is an ability-based measure of emotional intelligence?</p>
+                            <div class="options">
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq7_1', true)">A) MSCEIT</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq7_1', false)">B) EQ-i 2.0</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq7_1', false)">C) TEIQue</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq7_1', false)">D) ECI</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq7_1')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq7_1_ans">✅ Correct Answer: A) MSCEIT — It measures maximal performance on emotion-related tasks, akin to an IQ test.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 8 -->
+            <div class="unit-card" id="unit8">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2><span class="unit-number">8</span> Developing Emotional Intelligence</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>8.1 Can EI Be Learned?</h3>
+                    <p>Unlike IQ, which remains relatively stable throughout life, emotional intelligence is a set of skills that can be cultivated and improved at any age. The brain's neuroplasticity allows for the rewiring of emotional responses through consistent practice. However, genuine development requires motivation, sustained effort, and often a supportive environment.</p>
+
+                    <h3>8.2 The Process of EI Development</h3>
+                    <p>Effective EI training follows a structured path:</p>
+                    <ol>
+                        <li><strong>Commitment:</strong> A personal desire to change and willingness to invest time.</li>
+                        <li><strong>Assessment:</strong> Using reliable tools (360-degree feedback) to identify strengths and development areas.</li>
+                        <li><strong>Goal Setting:</strong> Defining specific, measurable, and context-bound emotional competencies to work on.</li>
+                        <li><strong>Practice:</strong> Engaging in real-life situations that challenge the targeted skill, coupled with reflection.</li>
+                        <li><strong>Feedback & Support:</strong> Receiving ongoing coaching, mentoring, or peer support to sustain growth.</li>
+                    </ol>
+
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic for EI Development Cycle:</strong> <em>"CAPS"</em> — <strong>C</strong>ommit, <strong>A</strong>ssess, <strong>P</strong>ractice, <strong>S</strong>ustain (with feedback). Put on your CAPS to grow your EI!</p>
+                    </div>
+
+                    <h3>8.3 Practical Strategies for Boosting EI</h3>
+                    <ul>
+                        <li><strong>Mindfulness Meditation:</strong> Strengthens self-awareness and emotional regulation by training attention on the present moment.</li>
+                        <li><strong>Journaling:</strong> Writing about emotional experiences deepens understanding and provides insight into patterns.</li>
+                        <li><strong>Active Listening Drills:</strong> Practice paraphrasing and reflecting emotions in conversations.</li>
+                        <li><strong>Cognitive Reappraisal:</strong> Reframing negative situations to find alternative, less distressing interpretations.</li>
+                        <li><strong>Empathy Exercises:</strong> Deliberately imagine the perspectives of others, especially those with whom you disagree.</li>
+                        <li><strong>Role-Playing:</strong> Simulating difficult conversations to rehearse emotionally intelligent responses.</li>
+                    </ul>
+
+                    <h3>8.4 EI Training in Organizations</h3>
+                    <p>Corporations increasingly invest in EI training for employees, especially leaders. Programs typically blend workshops, coaching, and on-the-job application. They focus on competencies like emotional self-control, empathy, conflict resolution, and inspirational leadership. Measured outcomes include improved team performance, reduced turnover, and higher employee engagement scores.</p>
+
+                    <div class="exam-highlight">
+                        <p><strong>Exam Tip:</strong> Be ready to design a brief EI development plan for a hypothetical individual or organization. Outline the steps, activities, and assessment methods you would use.</p>
+                    </div>
+
+                    <div class="important-question">
+                        <p>Q: "Emotional intelligence can be learned and developed at any stage of life." Discuss this statement with reference to neuroplasticity and practical training techniques. (15 marks)</p>
+                    </div>
+
+                    <div class="mcq-section">
+                        <h4>📝 MCQs - Unit 8</h4>
+                        <div class="mcq-item" id="mcq8_1">
+                            <p><strong>Q1:</strong> Which of the following is a key factor in the successful development of emotional intelligence?</p>
+                            <div class="options">
+                                <span class="option" onclick="checkMCQ(this, 'mcq8_1', false)">A) High IQ</span>
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq8_1', true)">B) Motivation and sustained practice</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq8_1', false)">C) Avoiding all stressful situations</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq8_1', false)">D) Reading about EI theories</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq8_1')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq8_1_ans">✅ Correct Answer: B) Motivation and sustained practice — Change requires deliberate effort over time, not just knowledge.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PYQ SECTION -->
+            <div class="pyq-section" id="pyq-section">
+                <h2>📝 Previous Year Questions (PYQs) — BPCS 183 Emotional Intelligence</h2>
+                <p style="text-align:center;color:var(--text-secondary);">Solved PYQs for exam preparation. Master these to score high!</p>
+
+                <div class="pyq-item">
+                    <p><strong>Q1 (10 Marks):</strong> Define emotional intelligence. Explain Goleman's five-component model with examples.</p>
+                    <p><strong>Answer Outline:</strong> EI is the capacity to recognize, understand, manage, and utilize emotions effectively. Goleman's components: Self-Awareness (knowing one's emotions), Self-Regulation (controlling impulses), Motivation (internal drive), Empathy (understanding others), Social Skills (managing relationships). Example: A manager giving constructive feedback uses self-regulation and empathy.</p>
+                </div>
+                <div class="pyq-item">
+                    <p><strong>Q2 (15 Marks):</strong> Compare the ability model of EI (Mayer & Salovey) with the mixed model (Goleman). Discuss their practical implications.</p>
+                    <p><strong>Answer Outline:</strong> Ability model sees EI as a cognitive ability with four branches (perceiving, using, understanding, managing emotions). Mixed model blends abilities with personality traits (Goleman's five components). Ability model is measured via performance tasks (MSCEIT); mixed via self-report/360° (ECI). Implication: Ability model is useful for research; mixed model guides leadership development and HR practices.</p>
+                </div>
+                <div class="pyq-item">
+                    <p><strong>Q3 (10 Marks):</strong> Discuss the role of emotional intelligence in workplace leadership.</p>
+                    <p><strong>Answer Outline:</strong> High EI leaders create positive emotional climates, motivate teams, manage stress, and resolve conflicts effectively. They exhibit empathy, self-awareness, and strong relationship management. Research shows EI accounts for a large part of leadership effectiveness beyond IQ and technical skills.</p>
+                </div>
+                <div class="pyq-item">
+                    <p><strong>Q4 (15 Marks):</strong> Critically analyze the various methods used to measure emotional intelligence. What are the key limitations of self-report measures?</p>
+                    <p><strong>Answer Outline:</strong> Methods: ability tests (MSCEIT), self-report (EQ-i, TEIQue), 360-degree (ECI). Limitations of self-report: social desirability bias, lack of self-awareness may skew results, can measure perceived EI rather than actual ability. Ability tests are harder to fake but may not predict real-life outcomes as strongly as self-report in some contexts.</p>
+                </div>
+                <div class="pyq-item">
+                    <p><strong>Q5 (10 Marks):</strong> Distinguish between empathy and sympathy. Why is empathy considered a core component of emotional intelligence?</p>
+                    <p><strong>Answer Outline:</strong> Empathy is "feeling with" someone, sharing their emotional state; sympathy is "feeling for" someone, pity from a distance. Empathy enables deeper connection, understanding, and responsive action. It undergirds relationship management and social awareness in EI models.</p>
+                </div>
+                <div class="pyq-item">
+                    <p><strong>Q6 (15 Marks):</strong> Design a training program to enhance the emotional intelligence of college students. Include objectives, activities, and assessment methods.</p>
+                    <p><strong>Answer Outline:</strong> Objectives: increase self-awareness, empathy, and emotion regulation. Activities: mindfulness meditation, journaling, role-playing conflict scenarios, active listening exercises, group discussions on emotional experiences. Assessment: pre/post EI assessment (TEIQue), self-reflection essays, 360-degree feedback from peers. Program length: 8 weeks, weekly sessions.</p>
+                </div>
+                <div class="pyq-item">
+                    <p><strong>Q7 (10 Marks):</strong> What is the Bar-On model of emotional-social intelligence? Explain its key components.</p>
+                    <p><strong>Answer Outline:</strong> Bar-On's model (1997) defines EI as a set of non-cognitive capabilities that influence one's ability to cope with environmental demands. It comprises 15 factors under five composite scales: Intrapersonal, Interpersonal, Stress Management, Adaptability, and General Mood. It is measured by the EQ-i inventory.</p>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <button class="btn-top" id="btnTop" title="Back to Top" aria-label="Back to top">⬆</button>
+
+    <script>
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('keydown', e => {
+            if (
+                (e.ctrlKey && ['c', 'u', 's', 'a', 'p'].includes(e.key.toLowerCase())) ||
+                (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(e.key.toLowerCase())) ||
+                e.key === 'F12'
+            ) {
+                e.preventDefault();
+            }
+        });
+        document.addEventListener('copy', e => e.preventDefault());
+        document.addEventListener('cut', e => e.preventDefault());
+        document.addEventListener('drag', e => e.preventDefault());
+
+        function toggleUnit(header) {
+            const card = header.parentElement;
+            card.classList.toggle('collapsed');
+        }
+
+        const sidebar = document.getElementById('sidebar');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        mobileMenuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+        document.getElementById('contentArea').addEventListener('click', (e) => {
+            if (window.innerWidth <= 768 && sidebar.classList.contains('open') && !sidebar.contains(e.target) && e
+                .target !== mobileMenuBtn) {
+                sidebar.classList.remove('open');
+            }
+        });
+
+        const sidebarLinks = document.querySelectorAll('.sidebar-nav li a');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const card = target.closest('.unit-card');
+                    if (card && card.classList.contains('collapsed')) {
+                        card.classList.remove('collapsed');
+                    }
+                }
+                sidebarLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.remove('open');
+                }
+            });
+        });
+
+        document.getElementById('btnTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        const searchInput = document.getElementById('searchInput');
+        const searchResultsInfo = document.getElementById('searchResultsInfo');
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase().trim();
+            const allCards = document.querySelectorAll('.unit-card');
+            let totalMatches = 0;
+            allCards.forEach(card => {
+                const body = card.querySelector('.unit-body');
+                const text = body ? body.innerText.toLowerCase() : '';
+                if (query === '') {
+                    card.style.display = '';
+                    card.classList.add('collapsed');
+                    if (body) body.querySelectorAll('mark').forEach(m => {
+                        const parent = m.parentNode;
+                        parent.replaceChild(document.createTextNode(m.textContent), m);
+                    });
+                } else if (text.includes(query)) {
+                    card.style.display = '';
+                    card.classList.remove('collapsed');
+                    if (body) {
+                        const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`,
+                            'gi');
+                        body.querySelectorAll('p, li, td, h3, h4, .formula-block').forEach(el => {
+                            if (el.querySelector('mark')) return;
+                            el.innerHTML = el.innerHTML.replace(regex,
+                                '<mark style="background:#ff6b35;color:#000;padding:2px 4px;border-radius:3px;">$1</mark>'
+                                );
+                        });
+                        totalMatches += (body.innerText.toLowerCase().match(new RegExp(query, 'g')) || [])
+                            .length;
+                    }
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            if (query === '') {
+                searchResultsInfo.style.display = 'none';
+                allCards.forEach(c => { c.style.display = '';
+                    c.classList.add('collapsed'); });
+            } else {
+                searchResultsInfo.style.display = 'block';
+                searchResultsInfo.textContent = `🔍 Found "${query}" in ${totalMatches} location(s) — scroll to see highlighted results`;
+            }
+        });
+
+        function checkMCQ(optionEl, mcqId, isCorrect) {
+            const mcqItem = document.getElementById(mcqId);
+            const allOptions = mcqItem.querySelectorAll('.option');
+            allOptions.forEach(opt => {
+                opt.classList.remove('correct', 'selected-wrong');
+            });
+            if (isCorrect) {
+                optionEl.classList.add('correct');
+                const answerDiv = document.getElementById(mcqId + '_ans');
+                if (answerDiv) answerDiv.classList.add('show');
+            } else {
+                optionEl.classList.add('selected-wrong');
+                const correctOpt = mcqItem.querySelector('.correct-answer');
+                if (correctOpt) correctOpt.classList.add('correct');
+                const answerDiv = document.getElementById(mcqId + '_ans');
+                if (answerDiv) answerDiv.classList.add('show');
+            }
+        }
+
+        function showMCQAnswer(mcqId) {
+            const answerDiv = document.getElementById(mcqId + '_ans');
+            if (answerDiv) {
+                answerDiv.classList.toggle('show');
+                const correctOpt = document.getElementById(mcqId).querySelector('.correct-answer');
+                if (correctOpt) correctOpt.classList.add('correct');
+            }
+        }
+
+        const allUnitCards = document.querySelectorAll('.unit-card');
+        allUnitCards.forEach(card => card.classList.add('collapsed'));
+        const firstCard = document.getElementById('unit1');
+        if (firstCard) firstCard.classList.remove('collapsed');
+
+        function loadAd() {
+            const adContainer = document.getElementById('adContainerTop');
+            if (adContainer) {
+                adContainer.innerHTML = '';
+                const scriptEl = document.createElement('script');
+                scriptEl.textContent =
+                    '(function(s){s.dataset.zone=\'10976968\',s.src=\'https://n6wxm.com/vignette.min.js\'})(document.documentElement);';
+                adContainer.appendChild(scriptEl);
+            }
+        }
+        loadAd();
+        setInterval(loadAd, 300000);
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    sidebarLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+        document.querySelectorAll('.unit-card, .pyq-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+    <script>(function(s){s.dataset.zone='10976968',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</body>
+</html>
