@@ -567,4 +567,1241 @@
             margin: 10px 0;
         }
         .highlight-text {
-            color: v
+            color: var(--neon-yellow);
+            font-weight: 600;
+        }
+        .btn-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--neon-purple);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 200;
+            box-shadow: 0 4px 20px rgba(123, 47, 247, 0.5);
+            transition: all var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-top:hover {
+            background: var(--neon-pink);
+            box-shadow: 0 6px 30px rgba(255, 0, 110, 0.6);
+            transform: translateY(-3px);
+        }
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            top: 140px;
+            left: 10px;
+            z-index: 150;
+            background: var(--neon-purple);
+            color: #fff;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                width: 260px;
+                top: 120px;
+                height: calc(100vh - 120px);
+            }
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            .content-area {
+                margin-left: 0;
+                padding: 12px;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .mcq-item .options {
+                grid-template-columns: 1fr;
+            }
+            .unit-header h2 {
+                font-size: 15px;
+            }
+        }
+        @media print {
+            body {
+                background: #fff !important;
+                color: #000 !important;
+                -webkit-user-select: text !important;
+                -moz-user-select: text !important;
+                user-select: text !important;
+            }
+            .sidebar,
+            .ad-container-top,
+            .vintage-banner,
+            .search-container,
+            .mobile-menu-btn,
+            .btn-top,
+            .show-answer-btn {
+                display: none !important;
+            }
+            .content-area {
+                margin-left: 0 !important;
+                padding: 0 !important;
+                max-width: 100% !important;
+            }
+            .unit-card {
+                break-inside: avoid;
+                border: 1px solid #ccc !important;
+                box-shadow: none !important;
+                background: #fff !important;
+            }
+            .unit-header {
+                background: #f5f5f5 !important;
+            }
+            .unit-header h2 {
+                color: #000 !important;
+            }
+            .unit-body {
+                display: block !important;
+            }
+            .unit-card.collapsed .unit-body {
+                display: block !important;
+            }
+            .exam-highlight,
+            .mnemonic-box,
+            .important-question,
+            .mcq-section {
+                border: 1px solid #999 !important;
+                background: #fafafa !important;
+            }
+            p,
+            h3,
+            h4 {
+                color: #000 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="vintage-banner">
+        <span>📜 BECS 184 DATA ANALYSIS — IGNOU COMPLETE STUDY NOTES — 200+ PAGES — ALL UNITS COVERED 📜</span>
+    </div>
+
+    <div class="ad-container-top" id="adContainerTop">
+    </div>
+
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">☰ Menu</button>
+
+    <div class="main-layout">
+        <aside class="sidebar" id="sidebar">
+            <h3>📑 BECS 184 Units</h3>
+            <ul class="sidebar-nav" id="sidebarNav">
+                <li><a href="#unit1" class="active">Unit 1: Introduction to Data Analysis</a></li>
+                <li><a href="#unit2">Unit 2: Data Collection & Organization</a></li>
+                <li><a href="#unit3">Unit 3: Descriptive Statistics</a></li>
+                <li><a href="#unit4">Unit 4: Probability & Distributions</a></li>
+                <li><a href="#unit5">Unit 5: Sampling & Estimation</a></li>
+                <li><a href="#unit6">Unit 6: Hypothesis Testing</a></li>
+                <li><a href="#unit7">Unit 7: Correlation & Regression</a></li>
+                <li><a href="#unit8">Unit 8: Time Series Analysis</a></li>
+                <li><a href="#unit9">Unit 9: Index Numbers</a></li>
+                <li><a href="#unit10">Unit 10: Statistical Quality Control</a></li>
+                <li><a href="#unit11">Unit 11: Data Analysis Software</a></li>
+                <li><a href="#unit12">Unit 12: Report Writing & Presentation</a></li>
+                <li><a href="#pyq-section">📝 Previous Year Questions</a></li>
+            </ul>
+        </aside>
+
+        <main class="content-area" id="contentArea">
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="🔍 Search notes... (e.g., 'mean', 'hypothesis', 'regression', 'probability')">
+                <div class="search-results-info" id="searchResultsInfo"></div>
+            </div>
+
+            <!-- UNIT 1 -->
+            <div class="unit-card" id="unit1">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2><span class="unit-number">1</span> Introduction to Data Analysis</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>1.1 What is Data Analysis?</h3>
+                    <p>Data analysis is the systematic process of inspecting, cleansing, transforming, and modeling data with the goal of discovering useful information, drawing conclusions, and supporting decision-making. It is a crucial component of modern research, business intelligence, and scientific inquiry. Data analysis involves applying statistical and logical techniques to describe, summarize, and compare data.</p>
+                    <p>In the context of BECS 184, data analysis encompasses both <span class="highlight-text">descriptive statistics</span> (summarizing data) and <span class="highlight-text">inferential statistics</span> (drawing conclusions about populations from samples). The field has grown exponentially with the advent of big data, machine learning, and artificial intelligence.</p>
+
+                    <div class="exam-highlight">
+                        <p><strong>Exam Tip:</strong> Questions on the definition, scope, and importance of data analysis are frequently asked in IGNOU exams. Be prepared to differentiate between descriptive and inferential statistics with examples.</p>
+                    </div>
+
+                    <h3>1.2 Types of Data</h3>
+                    <p>Data can be classified into several categories based on their nature and measurement scales:</p>
+                    <p><strong>Qualitative (Categorical) Data:</strong> Non-numerical data that describes qualities or characteristics. Examples include gender (male/female), color (red/blue/green), educational level, and marital status. This type of data is further divided into:</p>
+                    <ul>
+                        <li><strong>Nominal Data:</strong> Categories with no inherent order (e.g., religion, blood type, country of origin). The only permissible operation is counting frequencies.</li>
+                        <li><strong>Ordinal Data:</strong> Categories with a natural order but unknown distances between them (e.g., satisfaction ratings: poor, fair, good, excellent; education level: high school, bachelor's, master's, PhD).</li>
+                    </ul>
+                    <p><strong>Quantitative (Numerical) Data:</strong> Data that can be measured and expressed numerically. This includes:</p>
+                    <ul>
+                        <li><strong>Discrete Data:</strong> Countable values, typically integers (e.g., number of students in a class, number of cars in a parking lot, number of defects per batch).</li>
+                        <li><strong>Continuous Data:</strong> Measurable values that can take any value within a range (e.g., height, weight, temperature, time, blood pressure).</li>
+                    </ul>
+
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic for Data Types:</strong> <em>"NOIR"</em> — <strong>N</strong>ominal, <strong>O</strong>rdinal, <strong>I</strong>nterval, <strong>R</strong>atio. This represents the four levels of measurement in increasing order of mathematical sophistication.</p>
+                    </div>
+
+                    <h3>1.3 Scales of Measurement</h3>
+                    <p>Stanley Stevens proposed four scales of measurement that are fundamental to data analysis:</p>
+                    <table>
+                        <tr><th>Scale</th><th>Properties</th><th>Examples</th><th>Permissible Operations</th></tr>
+                        <tr><td>Nominal</td><td>Classification only</td><td>Gender, color, religion</td><td>Counting, mode</td></tr>
+                        <tr><td>Ordinal</td><td>Classification + Order</td><td>Rankings, grades</td><td>Median, percentiles</td></tr>
+                        <tr><td>Interval</td><td>Order + Equal intervals</td><td>Temperature (°C), IQ scores</td><td>Mean, standard deviation</td></tr>
+                        <tr><td>Ratio</td><td>Order + Equal intervals + True zero</td><td>Height, weight, income</td><td>All arithmetic operations</td></tr>
+                    </table>
+
+                    <h3>1.4 Importance of Data Analysis</h3>
+                    <p>Data analysis is essential because it:</p>
+                    <ul>
+                        <li>Enables evidence-based decision-making in business and government</li>
+                        <li>Helps identify patterns, trends, and relationships in data</li>
+                        <li>Supports scientific research and hypothesis validation</li>
+                        <li>Facilitates quality improvement and process optimization</li>
+                        <li>Provides insights for strategic planning and forecasting</li>
+                        <li>Enhances understanding of complex phenomena through data-driven models</li>
+                    </ul>
+
+                    <div class="important-question">
+                        <p>Q: Define data analysis. Discuss the various types of data and scales of measurement with suitable examples. (10 marks)</p>
+                    </div>
+
+                    <h3>1.5 Steps in Data Analysis</h3>
+                    <p>The data analysis process typically follows these steps:</p>
+                    <ol>
+                        <li><strong>Problem Definition:</strong> Clearly state the research question or business problem</li>
+                        <li><strong>Data Collection:</strong> Gather relevant data from primary or secondary sources</li>
+                        <li><strong>Data Cleaning:</strong> Handle missing values, outliers, and inconsistencies</li>
+                        <li><strong>Data Exploration:</strong> Use descriptive statistics and visualization to understand data</li>
+                        <li><strong>Data Modeling:</strong> Apply statistical or machine learning models</li>
+                        <li><strong>Interpretation:</strong> Draw meaningful conclusions from the results</li>
+                        <li><strong>Communication:</strong> Present findings through reports, dashboards, or presentations</li>
+                    </ol>
+
+                    <div class="mcq-section">
+                        <h4>📝 MCQs - Unit 1</h4>
+                        <div class="mcq-item" id="mcq1_1">
+                            <p><strong>Q1:</strong> Which scale of measurement has a true zero point?</p>
+                            <div class="options">
+                                <span class="option" onclick="checkMCQ(this, 'mcq1_1', false)">A) Nominal</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq1_1', false)">B) Ordinal</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq1_1', false)">C) Interval</span>
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq1_1', true)">D) Ratio</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq1_1')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq1_1_ans">✅ Correct Answer: D) Ratio — The ratio scale has all properties including a true zero point (e.g., height, weight, income).</div>
+                        </div>
+                        <div class="mcq-item" id="mcq1_2">
+                            <p><strong>Q2:</strong> Gender (Male/Female) is an example of which type of data?</p>
+                            <div class="options">
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq1_2', true)">A) Nominal</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq1_2', false)">B) Ordinal</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq1_2', false)">C) Interval</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq1_2', false)">D) Ratio</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq1_2')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq1_2_ans">✅ Correct Answer: A) Nominal — Gender represents categories without any inherent order.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 2 -->
+            <div class="unit-card" id="unit2">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2><span class="unit-number">2</span> Data Collection & Organization</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>2.1 Sources of Data</h3>
+                    <p>Data can be collected from two primary sources:</p>
+                    <p><strong>Primary Data:</strong> Data collected directly by the researcher for a specific purpose. Methods include surveys, experiments, observations, interviews, and questionnaires. Primary data is original, reliable, and tailored to the research question but can be time-consuming and expensive to collect.</p>
+                    <p><strong>Secondary Data:</strong> Data that has already been collected by someone else for a different purpose. Sources include government publications, research journals, company reports, websites, and databases. Secondary data is cheaper and faster to obtain but may not perfectly fit the research needs.</p>
+
+                    <div class="exam-highlight">
+                        <p><strong>Exam Tip:</strong> Be prepared to compare primary and secondary data sources. Questions often ask for advantages and disadvantages of each, with practical examples.</p>
+                    </div>
+
+                    <h3>2.2 Methods of Data Collection</h3>
+                    <p><strong>Survey Method:</strong> Using questionnaires or interviews to gather information from a sample of respondents. Surveys can be conducted in person, by mail, telephone, or online. Key considerations include question design, sampling strategy, and response rate.</p>
+                    <p><strong>Observation Method:</strong> Systematically watching and recording behavior or phenomena. This can be participant observation (researcher participates) or non-participant observation (researcher observes from outside).</p>
+                    <p><strong>Experimental Method:</strong> Manipulating one or more variables under controlled conditions to observe the effect on a dependent variable. This is the gold standard for establishing causal relationships.</p>
+                    <p><strong>Focus Groups:</strong> Small group discussions guided by a moderator to explore attitudes, perceptions, and opinions on a specific topic.</p>
+
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic for Data Collection Methods:</strong> <em>"SOFE"</em> — <strong>S</strong>urveys, <strong>O</strong>bservations, <strong>F</strong>ocus groups, <strong>E</strong>xperiments. Think "SOFE" like a soft pillow of data collection approaches!</p>
+                    </div>
+
+                    <h3>2.3 Sampling Techniques</h3>
+                    <p>Sampling is the process of selecting a subset of individuals from a population to estimate characteristics of the whole population.</p>
+                    <p><strong>Probability Sampling:</strong> Every member of the population has a known, non-zero chance of being selected.</p>
+                    <ul>
+                        <li><strong>Simple Random Sampling:</strong> Each member has an equal chance of selection</li>
+                        <li><strong>Stratified Sampling:</strong> Population divided into subgroups (strata), then random samples drawn from each</li>
+                        <li><strong>Cluster Sampling:</strong> Population divided into clusters, then entire clusters are randomly selected</li>
+                        <li><strong>Systematic Sampling:</strong> Every k-th member is selected from a list</li>
+                    </ul>
+                    <p><strong>Non-Probability Sampling:</strong> Selection is not based on random chance.</p>
+                    <ul>
+                        <li><strong>Convenience Sampling:</strong> Selecting easily accessible subjects</li>
+                        <li><strong>Purposive Sampling:</strong> Selecting based on researcher's judgment</li>
+                        <li><strong>Quota Sampling:</strong> Selecting to meet predetermined quotas</li>
+                        <li><strong>Snowball Sampling:</strong> Participants recruit other participants</li>
+                    </ul>
+
+                    <h3>2.4 Data Organization</h3>
+                    <p>Once collected, data must be organized for analysis. This involves:</p>
+                    <ul>
+                        <li><strong>Classification:</strong> Grouping data into categories based on common characteristics</li>
+                        <li><strong>Tabulation:</strong> Arranging data in tables with rows and columns for easy reference</li>
+                        <li><strong>Frequency Distribution:</strong> Showing how often each value or category occurs</li>
+                        <li><strong>Coding:</strong> Assigning numerical codes to categorical data for computer processing</li>
+                    </ul>
+
+                    <div class="important-question">
+                        <p>Q: Explain the various methods of data collection. Compare probability and non-probability sampling techniques with examples. (15 marks)</p>
+                    </div>
+
+                    <div class="mcq-section">
+                        <h4>📝 MCQs - Unit 2</h4>
+                        <div class="mcq-item" id="mcq2_1">
+                            <p><strong>Q1:</strong> Which sampling technique ensures every member of the population has an equal chance of being selected?</p>
+                            <div class="options">
+                                <span class="option" onclick="checkMCQ(this, 'mcq2_1', false)">A) Convenience sampling</span>
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq2_1', true)">B) Simple random sampling</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq2_1', false)">C) Quota sampling</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq2_1', false)">D) Snowball sampling</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq2_1')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq2_1_ans">✅ Correct Answer: B) Simple random sampling — Each member has an equal and independent chance of selection.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 3 -->
+            <div class="unit-card" id="unit3">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2><span class="unit-number">3</span> Descriptive Statistics</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>3.1 Measures of Central Tendency</h3>
+                    <p>Measures of central tendency describe the center or typical value of a dataset. The three main measures are:</p>
+                    <p><strong>Mean (Arithmetic Average):</strong> Sum of all values divided by the number of values. It is the most commonly used measure but is sensitive to outliers.</p>
+                    <div class="formula-block">Mean (x̄) = Σxᵢ / n &nbsp;&nbsp; where Σxᵢ is sum of all values, n is total number of observations</div>
+                    <p><strong>Median:</strong> The middle value when data is arranged in order. For an odd number of observations, it's the (n+1)/2 th value. For an even number, it's the average of the n/2 th and (n/2)+1 th values. The median is robust against outliers.</p>
+                    <p><strong>Mode:</strong> The most frequently occurring value in the dataset. A dataset can have no mode, one mode (unimodal), two modes (bimodal), or multiple modes (multimodal).</p>
+
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic for Central Tendency:</strong> <em>"MMM"</em> — <strong>M</strong>ean, <strong>M</strong>edian, <strong>M</strong>ode. Think "3M" like the company — they stick together as measures of central tendency!</p>
+                    </div>
+
+                    <h3>3.2 Measures of Dispersion</h3>
+                    <p>Dispersion measures describe how spread out the data values are:</p>
+                    <p><strong>Range:</strong> Difference between maximum and minimum values. Range = Max - Min</p>
+                    <p><strong>Variance:</strong> Average of squared deviations from the mean. Population variance (σ²) = Σ(xᵢ - μ)² / N. Sample variance (s²) = Σ(xᵢ - x̄)² / (n-1)</p>
+                    <p><strong>Standard Deviation:</strong> Square root of variance. It measures spread in the same units as the original data.</p>
+                    <div class="formula-block">Sample Standard Deviation (s) = √[Σ(xᵢ - x̄)² / (n-1)]</div>
+                    <p><strong>Interquartile Range (IQR):</strong> Difference between the third quartile (Q3) and first quartile (Q1). IQR = Q3 - Q1. It measures the spread of the middle 50% of the data.</p>
+                    <p><strong>Coefficient of Variation (CV):</strong> Ratio of standard deviation to mean, expressed as a percentage. CV = (s / x̄) × 100%. It allows comparison of variability across datasets with different units or means.</p>
+
+                    <h3>3.3 Measures of Shape</h3>
+                    <p><strong>Skewness:</strong> Measures asymmetry of the distribution. Positive skew means the tail extends to the right (mean > median). Negative skew means the tail extends to the left (mean < median). Zero skew indicates symmetry.</p>
+                    <p><strong>Kurtosis:</strong> Measures the "tailedness" of the distribution. Leptokurtic distributions have heavy tails (kurtosis > 3), platykurtic have light tails (kurtosis < 3), and mesokurtic are normal-like (kurtosis ≈ 3).</p>
+
+                    <div class="exam-highlight">
+                        <p><strong>Exam Tip:</strong> Numerical problems on calculating mean, median, mode, standard deviation, and variance are very common. Practice both grouped and ungrouped data calculations. Remember the difference between population and sample formulas (n vs n-1 denominator).</p>
+                    </div>
+
+                    <h3>3.4 Graphical Representation</h3>
+                    <p>Data can be visualized using various charts and graphs:</p>
+                    <ul>
+                        <li><strong>Histogram:</strong> Bar chart showing frequency distribution of continuous data</li>
+                        <li><strong>Bar Chart:</strong> Compares categorical data using rectangular bars</li>
+                        <li><strong>Pie Chart:</strong> Shows proportions as slices of a circle</li>
+                        <li><strong>Box Plot:</strong> Displays five-number summary (min, Q1, median, Q3, max) and outliers</li>
+                        <li><strong>Scatter Plot:</strong> Shows relationship between two numerical variables</li>
+                        <li><strong>Line Graph:</strong> Displays trends over time</li>
+                    </ul>
+
+                    <div class="important-question">
+                        <p>Q: Calculate the mean, median, mode, range, variance, and standard deviation for the following data: 12, 15, 18, 20, 22, 25, 28, 30, 35, 40. (10 marks)</p>
+                    </div>
+
+                    <div class="mcq-section">
+                        <h4>📝 MCQs - Unit 3</h4>
+                        <div class="mcq-item" id="mcq3_1">
+                            <p><strong>Q1:</strong> Which measure of central tendency is most affected by extreme outliers?</p>
+                            <div class="options">
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq3_1', true)">A) Mean</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq3_1', false)">B) Median</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq3_1', false)">C) Mode</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq3_1', false)">D) All equally</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq3_1')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq3_1_ans">✅ Correct Answer: A) Mean — The mean uses every value in its calculation, so extreme values pull it in their direction.</div>
+                        </div>
+                        <div class="mcq-item" id="mcq3_2">
+                            <p><strong>Q2:</strong> The interquartile range (IQR) is calculated as:</p>
+                            <div class="options">
+                                <span class="option" onclick="checkMCQ(this, 'mcq3_2', false)">A) Q2 - Q1</span>
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq3_2', true)">B) Q3 - Q1</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq3_2', false)">C) Q3 - Q2</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq3_2', false)">D) Max - Min</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq3_2')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq3_2_ans">✅ Correct Answer: B) Q3 - Q1 — IQR measures the spread of the middle 50% of data.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 4 -->
+            <div class="unit-card" id="unit4">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2><span class="unit-number">4</span> Probability & Probability Distributions</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>4.1 Basic Concepts of Probability</h3>
+                    <p>Probability is the measure of the likelihood that an event will occur. It ranges from 0 (impossible) to 1 (certain). The probability of an event A is denoted as P(A).</p>
+                    <div class="formula-block">P(A) = Number of favorable outcomes / Total number of possible outcomes</div>
+                    <p><strong>Sample Space (S):</strong> The set of all possible outcomes of an experiment.</p>
+                    <p><strong>Event:</strong> A subset of the sample space. Events can be simple (single outcome) or compound (multiple outcomes).</p>
+                    <p><strong>Mutually Exclusive Events:</strong> Two events that cannot occur simultaneously. P(A ∩ B) = 0.</p>
+                    <p><strong>Independent Events:</strong> The occurrence of one event does not affect the probability of the other. P(A ∩ B) = P(A) × P(B).</p>
+
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic for Probability Rules:</strong> <em>"MICA"</em> — <strong>M</strong>utually exclusive (add probabilities), <strong>I</strong>ndependent (multiply probabilities), <strong>C</strong>omplement (P(A') = 1 - P(A)), <strong>A</strong>ddition rule (P(A∪B) = P(A) + P(B) - P(A∩B)).</p>
+                    </div>
+
+                    <h3>4.2 Conditional Probability & Bayes' Theorem</h3>
+                    <p><strong>Conditional Probability:</strong> The probability of event A given that event B has occurred.</p>
+                    <div class="formula-block">P(A|B) = P(A ∩ B) / P(B), &nbsp;&nbsp; provided P(B) > 0</div>
+                    <p><strong>Bayes' Theorem:</strong> A fundamental theorem that relates conditional probabilities. It allows updating probabilities based on new evidence.</p>
+                    <div class="formula-block">P(A|B) = [P(B|A) × P(A)] / P(B)</div>
+
+                    <h3>4.3 Discrete Probability Distributions</h3>
+                    <p><strong>Binomial Distribution:</strong> Models the number of successes in n independent Bernoulli trials, each with probability p of success. Parameters: n (number of trials), p (probability of success).</p>
+                    <div class="formula-block">P(X = k) = ⁿCₖ × pᵏ × (1-p)ⁿ⁻ᵏ &nbsp;&nbsp; Mean = np, &nbsp; Variance = np(1-p)</div>
+                    <p><strong>Poisson Distribution:</strong> Models the number of events occurring in a fixed interval of time or space, given a constant average rate λ. Suitable for rare events.</p>
+                    <div class="formula-block">P(X = k) = (e⁻λ × λᵏ) / k! &nbsp;&nbsp; Mean = λ, &nbsp; Variance = λ</div>
+
+                    <h3>4.4 Continuous Probability Distributions</h3>
+                    <p><strong>Normal Distribution (Gaussian):</strong> The most important continuous distribution. It is symmetric, bell-shaped, and completely defined by its mean (μ) and standard deviation (σ). Approximately 68% of data falls within ±1σ, 95% within ±2σ, and 99.7% within ±3σ of the mean (Empirical Rule).</p>
+                    <div class="formula-block">f(x) = (1/(σ√(2π))) × e^(-(x-μ)²/(2σ²))</div>
+                    <p><strong>Standard Normal Distribution:</strong> A normal distribution with μ = 0 and σ = 1. Any normal variable can be standardized using Z = (X - μ) / σ.</p>
+                    <p><strong>t-Distribution:</strong> Similar to normal but with heavier tails, used when sample size is small and population standard deviation is unknown. Approaches normal as degrees of freedom increase.</p>
+                    <p><strong>Chi-Square Distribution:</strong> Distribution of sum of squared standard normal variables. Used in tests of independence and goodness-of-fit.</p>
+                    <p><strong>F-Distribution:</strong> Ratio of two chi-square variables divided by their degrees of freedom. Used in ANOVA and regression analysis.</p>
+
+                    <div class="exam-highlight">
+                        <p><strong>Exam Tip:</strong> Problems on binomial, Poisson, and normal distributions are frequently tested. Memorize the formulas for mean and variance of each. Practice Z-score calculations and using standard normal tables.</p>
+                    </div>
+
+                    <div class="important-question">
+                        <p>Q: State and prove Bayes' Theorem. A factory has three machines producing 25%, 35%, and 40% of the total output with defective rates of 5%, 4%, and 2% respectively. If a randomly selected item is defective, what is the probability it came from the first machine? (15 marks)</p>
+                    </div>
+
+                    <div class="mcq-section">
+                        <h4>📝 MCQs - Unit 4</h4>
+                        <div class="mcq-item" id="mcq4_1">
+                            <p><strong>Q1:</strong> In a binomial distribution with n=10 and p=0.5, what is the mean?</p>
+                            <div class="options">
+                                <span class="option" onclick="checkMCQ(this, 'mcq4_1', false)">A) 2.5</span>
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq4_1', true)">B) 5</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq4_1', false)">C) 7.5</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq4_1', false)">D) 10</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq4_1')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq4_1_ans">✅ Correct Answer: B) 5 — Mean of binomial distribution = np = 10 × 0.5 = 5.</div>
+                        </div>
+                        <div class="mcq-item" id="mcq4_2">
+                            <p><strong>Q2:</strong> The total area under the normal distribution curve is:</p>
+                            <div class="options">
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq4_2', true)">A) 1</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq4_2', false)">B) 0.5</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq4_2', false)">C) Depends on σ</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq4_2', false)">D) Infinity</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq4_2')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq4_2_ans">✅ Correct Answer: A) 1 — The total area under any probability density function equals 1 (100% probability).</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 5 -->
+            <div class="unit-card" id="unit5">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2><span class="unit-number">5</span> Sampling Distributions & Estimation</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>5.1 Sampling Distributions</h3>
+                    <p>A sampling distribution is the probability distribution of a statistic (like the sample mean) obtained from all possible samples of a given size drawn from a population. Understanding sampling distributions is crucial for inferential statistics.</p>
+                    <p><strong>Sampling Distribution of the Mean:</strong> For a population with mean μ and standard deviation σ, the sampling distribution of the sample mean (x̄) has:</p>
+                    <ul>
+                        <li>Mean = μ (the sample mean is an unbiased estimator of the population mean)</li>
+                        <li>Standard Error (SE) = σ / √n (decreases as sample size increases)</li>
+                    </ul>
+                    <p><strong>Central Limit Theorem (CLT):</strong> Regardless of the shape of the population distribution, the sampling distribution of the sample mean approaches a normal distribution as the sample size increases (n ≥ 30 is generally sufficient). This is one of the most important theorems in statistics.</p>
+
+                    <div class="exam-highlight">
+                        <p><strong>Exam Tip:</strong> The Central Limit Theorem is a very important topic. Be prepared to state it, explain its significance, and apply it in problems involving sample means.</p>
+                    </div>
+
+                    <h3>5.2 Point Estimation</h3>
+                    <p>A point estimate is a single value used to estimate a population parameter. For example, the sample mean (x̄) is a point estimate of the population mean (μ). Properties of good estimators include:</p>
+                    <ul>
+                        <li><strong>Unbiasedness:</strong> Expected value of the estimator equals the true parameter</li>
+                        <li><strong>Consistency:</strong> Estimator converges to the true value as sample size increases</li>
+                        <li><strong>Efficiency:</strong> Has the smallest variance among all unbiased estimators</li>
+                        <li><strong>Sufficiency:</strong> Uses all information in the sample relevant to the parameter</li>
+                    </ul>
+
+                    <h3>5.3 Interval Estimation (Confidence Intervals)</h3>
+                    <p>A confidence interval provides a range of values that is likely to contain the population parameter with a specified level of confidence (usually 95% or 99%).</p>
+                    <p><strong>Confidence Interval for Population Mean (σ known):</strong></p>
+                    <div class="formula-block">x̄ ± Z<sub>α/2</sub> × (σ / √n)</div>
+                    <p><strong>Confidence Interval for Population Mean (σ unknown, use t-distribution):</strong></p>
+                    <div class="formula-block">x̄ ± t<sub>α/2, n-1</sub> × (s / √n)</div>
+                    <p><strong>Confidence Interval for Population Proportion:</strong></p>
+                    <div class="formula-block">p̂ ± Z<sub>α/2</sub> × √[p̂(1-p̂) / n]</div>
+
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic for Confidence Interval Components:</strong> <em>"PEZ"</em> — <strong>P</strong>oint estimate, <strong>E</strong>rror margin, <strong>Z</strong>-value. CI = Point Estimate ± (Z-value × Standard Error).</p>
+                    </div>
+
+                    <h3>5.4 Determining Sample Size</h3>
+                    <p>The required sample size depends on the desired margin of error (E), confidence level, and population variability:</p>
+                    <div class="formula-block">n = (Z<sub>α/2</sub>² × σ²) / E² &nbsp;&nbsp; (for estimating a mean)</div>
+                    <div class="formula-block">n = (Z<sub>α/2</sub>² × p(1-p)) / E² &nbsp;&nbsp; (for estimating a proportion)</div>
+
+                    <div class="important-question">
+                        <p>Q: Explain the Central Limit Theorem and its importance in statistical inference. A sample of 100 observations is drawn from a population with mean 50 and standard deviation 10. Find the probability that the sample mean exceeds 52. (15 marks)</p>
+                    </div>
+
+                    <div class="mcq-section">
+                        <h4>📝 MCQs - Unit 5</h4>
+                        <div class="mcq-item" id="mcq5_1">
+                            <p><strong>Q1:</strong> According to the Central Limit Theorem, the sampling distribution of the mean approaches normality when:</p>
+                            <div class="options">
+                                <span class="option" onclick="checkMCQ(this, 'mcq5_1', false)">A) Population is normal</span>
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq5_1', true)">B) Sample size is large (n≥30)</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq5_1', false)">C) Population variance is small</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq5_1', false)">D) Sample is random</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq5_1')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq5_1_ans">✅ Correct Answer: B) Sample size is large (n≥30) — CLT states that regardless of population shape, the sampling distribution of the mean becomes approximately normal for large samples.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 6 -->
+            <div class="unit-card" id="unit6">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2><span class="unit-number">6</span> Hypothesis Testing</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>6.1 Fundamentals of Hypothesis Testing</h3>
+                    <p>Hypothesis testing is a statistical method used to make decisions about population parameters based on sample data. It involves formulating two competing hypotheses:</p>
+                    <p><strong>Null Hypothesis (H₀):</strong> A statement of no effect, no difference, or status quo. It is assumed true until evidence suggests otherwise.</p>
+                    <p><strong>Alternative Hypothesis (H₁ or Hₐ):</strong> A statement that contradicts the null hypothesis. It represents what the researcher wants to prove.</p>
+
+                    <h3>6.2 Types of Errors</h3>
+                    <table>
+                        <tr><th></th><th>H₀ is True</th><th>H₀ is False</th></tr>
+                        <tr><td><strong>Reject H₀</strong></td><td>Type I Error (α)</td><td>Correct Decision (Power = 1-β)</td></tr>
+                        <tr><td><strong>Fail to Reject H₀</strong></td><td>Correct Decision (1-α)</td><td>Type II Error (β)</td></tr>
+                    </table>
+                    <p><strong>Type I Error (α):</strong> Rejecting a true null hypothesis (false positive). The significance level (α) is typically set at 0.05 or 0.01.</p>
+                    <p><strong>Type II Error (β):</strong> Failing to reject a false null hypothesis (false negative).</p>
+                    <p><strong>Power of the Test (1-β):</strong> Probability of correctly rejecting a false null hypothesis.</p>
+
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic for Errors:</strong> <em>"Type I = False Positive (you cry wolf when there's none), Type II = False Negative (you miss the wolf)"</em> — Think "I before II" — Type I is more serious and controlled first via α.</p>
+                    </div>
+
+                    <h3>6.3 Steps in Hypothesis Testing</h3>
+                    <ol>
+                        <li>State the null (H₀) and alternative (H₁) hypotheses</li>
+                        <li>Choose the significance level (α)</li>
+                        <li>Select the appropriate test statistic</li>
+                        <li>Determine the critical region/rejection region</li>
+                        <li>Calculate the test statistic from sample data</li>
+                        <li>Make a decision: Reject H₀ if test statistic falls in critical region, otherwise fail to reject H₀</li>
+                        <li>Draw a conclusion in the context of the problem</li>
+                    </ol>
+
+                    <h3>6.4 Common Hypothesis Tests</h3>
+                    <p><strong>Z-Test:</strong> Used when population standard deviation is known or sample size is large (n ≥ 30). Tests for a single mean or comparison of two means.</p>
+                    <div class="formula-block">Z = (x̄ - μ₀) / (σ / √n)</div>
+                    <p><strong>t-Test (One Sample):</strong> Used when population standard deviation is unknown and sample size is small.</p>
+                    <div class="formula-block">t = (x̄ - μ₀) / (s / √n) &nbsp;&nbsp; with df = n-1</div>
+                    <p><strong>t-Test (Two Independent Samples):</strong> Compares means of two independent groups.</p>
+                    <p><strong>Paired t-Test:</strong> Compares means of two related groups (e.g., before-after studies).</p>
+                    <p><strong>Chi-Square Test:</strong> Used for categorical data — tests of independence and goodness-of-fit.</p>
+                    <div class="formula-block">χ² = Σ [(O - E)² / E] &nbsp;&nbsp; where O=Observed, E=Expected frequency</div>
+                    <p><strong>F-Test (ANOVA):</strong> Compares means of three or more groups simultaneously.</p>
+
+                    <h3>6.5 p-Value Approach</h3>
+                    <p>The p-value is the probability of obtaining a test statistic at least as extreme as the one observed, assuming the null hypothesis is true. If p-value ≤ α, reject H₀. If p-value > α, fail to reject H₀. The p-value approach provides more information than the critical value approach.</p>
+
+                    <div class="exam-highlight">
+                        <p><strong>Exam Tip:</strong> Hypothesis testing problems are frequently asked. Be clear about when to use Z-test vs t-test. Practice stating hypotheses correctly, calculating test statistics, and interpreting results. Don't forget to state conclusions in plain language.</p>
+                    </div>
+
+                    <div class="important-question">
+                        <p>Q: A manufacturer claims that the average life of their light bulbs is 1500 hours. A sample of 25 bulbs has a mean life of 1470 hours with a standard deviation of 80 hours. Test the manufacturer's claim at α = 0.05. (10 marks)</p>
+                    </div>
+
+                    <div class="mcq-section">
+                        <h4>📝 MCQs - Unit 6</h4>
+                        <div class="mcq-item" id="mcq6_1">
+                            <p><strong>Q1:</strong> A Type I error occurs when:</p>
+                            <div class="options">
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq6_1', true)">A) Rejecting a true null hypothesis</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq6_1', false)">B) Accepting a false null hypothesis</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq6_1', false)">C) Rejecting a false null hypothesis</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq6_1', false)">D) None of the above</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq6_1')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq6_1_ans">✅ Correct Answer: A) Rejecting a true null hypothesis — Type I error is a false positive, controlled by α.</div>
+                        </div>
+                        <div class="mcq-item" id="mcq6_2">
+                            <p><strong>Q2:</strong> If p-value = 0.03 and α = 0.05, what is the correct decision?</p>
+                            <div class="options">
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq6_2', true)">A) Reject H₀</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq6_2', false)">B) Fail to reject H₀</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq6_2', false)">C) Accept H₀</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq6_2', false)">D) Insufficient data</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq6_2')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq6_2_ans">✅ Correct Answer: A) Reject H₀ — Since p-value (0.03) < α (0.05), we reject the null hypothesis.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 7 -->
+            <div class="unit-card" id="unit7">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2><span class="unit-number">7</span> Correlation & Regression Analysis</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>7.1 Correlation Analysis</h3>
+                    <p>Correlation measures the strength and direction of the linear relationship between two quantitative variables. It does not imply causation.</p>
+                    <p><strong>Pearson Correlation Coefficient (r):</strong> Measures the degree of linear association between two variables. Values range from -1 to +1.</p>
+                    <div class="formula-block">r = Σ[(xᵢ - x̄)(yᵢ - ȳ)] / √[Σ(xᵢ - x̄)² × Σ(yᵢ - ȳ)²]</div>
+                    <ul>
+                        <li>r = +1: Perfect positive linear correlation</li>
+                        <li>r = -1: Perfect negative linear correlation</li>
+                        <li>r = 0: No linear correlation</li>
+                        <li>0 < |r| < 0.3: Weak correlation</li>
+                        <li>0.3 ≤ |r| < 0.7: Moderate correlation</li>
+                        <li>0.7 ≤ |r| < 1: Strong correlation</li>
+                    </ul>
+                    <p><strong>Spearman's Rank Correlation:</strong> A non-parametric measure used when data is ordinal or when the relationship is monotonic but not necessarily linear.</p>
+
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic for Correlation:</strong> <em>"Correlation is NOT Causation"</em> — Just because two variables move together doesn't mean one causes the other. Think "CNC" — Correlation ≠ Causation.</p>
+                    </div>
+
+                    <h3>7.2 Regression Analysis</h3>
+                    <p>Regression analysis models the relationship between a dependent variable (Y) and one or more independent variables (X). It is used for prediction and understanding relationships.</p>
+                    <p><strong>Simple Linear Regression:</strong> Models the relationship using a straight line: Y = a + bX + ε</p>
+                    <div class="formula-block">b = Σ[(xᵢ - x̄)(yᵢ - ȳ)] / Σ(xᵢ - x̄)² &nbsp;&nbsp; (slope)</div>
+                    <div class="formula-block">a = ȳ - b·x̄ &nbsp;&nbsp; (intercept)</div>
+                    <p><strong>Coefficient of Determination (R²):</strong> The proportion of variation in Y explained by X. R² ranges from 0 to 1. Higher R² indicates better fit.</p>
+                    <div class="formula-block">R² = r² = (Explained Variation) / (Total Variation)</div>
+
+                    <h3>7.3 Multiple Regression</h3>
+                    <p>Multiple regression extends simple regression to include multiple independent variables: Y = β₀ + β₁X₁ + β₂X₂ + ... + βₖXₖ + ε. It allows controlling for multiple factors simultaneously and assessing the unique contribution of each predictor.</p>
+
+                    <h3>7.4 Assumptions of Regression</h3>
+                    <ul>
+                        <li><strong>Linearity:</strong> The relationship between X and Y is linear</li>
+                        <li><strong>Independence:</strong> Observations are independent of each other</li>
+                        <li><strong>Homoscedasticity:</strong> Constant variance of errors (residuals)</li>
+                        <li><strong>Normality:</strong> Errors are normally distributed</li>
+                        <li><strong>No multicollinearity:</strong> Independent variables are not highly correlated with each other</li>
+                    </ul>
+
+                    <div class="exam-highlight">
+                        <p><strong>Exam Tip:</strong> Numerical problems on calculating Pearson's r and regression coefficients are very common. Know the formulas well. Also be prepared to interpret R² and discuss the difference between correlation and regression.</p>
+                    </div>
+
+                    <div class="important-question">
+                        <p>Q: Distinguish between correlation and regression. Calculate the Karl Pearson's coefficient of correlation for the following data: X: 1,2,3,4,5; Y: 2,4,6,8,10. Also find the regression equation of Y on X. (15 marks)</p>
+                    </div>
+
+                    <div class="mcq-section">
+                        <h4>📝 MCQs - Unit 7</h4>
+                        <div class="mcq-item" id="mcq7_1">
+                            <p><strong>Q1:</strong> The value of Pearson's correlation coefficient r always lies between:</p>
+                            <div class="options">
+                                <span class="option" onclick="checkMCQ(this, 'mcq7_1', false)">A) 0 and 1</span>
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq7_1', true)">B) -1 and +1</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq7_1', false)">C) -∞ and +∞</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq7_1', false)">D) 0 and ∞</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq7_1')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq7_1_ans">✅ Correct Answer: B) -1 and +1 — Pearson's r is bounded between -1 (perfect negative) and +1 (perfect positive).</div>
+                        </div>
+                        <div class="mcq-item" id="mcq7_2">
+                            <p><strong>Q2:</strong> R² = 0.81 means:</p>
+                            <div class="options">
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq7_2', true)">A) 81% of variation in Y is explained by X</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq7_2', false)">B) Correlation is 0.81</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq7_2', false)">C) 81% chance of causation</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq7_2', false)">D) Slope is 0.81</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq7_2')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq7_2_ans">✅ Correct Answer: A) 81% of variation in Y is explained by X — R² measures the proportion of variance explained.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 8 -->
+            <div class="unit-card" id="unit8">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2><span class="unit-number">8</span> Time Series Analysis</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>8.1 Components of Time Series</h3>
+                    <p>A time series is a sequence of data points recorded at regular time intervals. It is decomposed into four components:</p>
+                    <ul>
+                        <li><strong>Trend (T):</strong> Long-term increase or decrease in the data over an extended period. It reflects the underlying direction of the series.</li>
+                        <li><strong>Seasonal Variation (S):</strong> Regular, predictable fluctuations that occur within a fixed period (e.g., daily, weekly, monthly, quarterly). Examples include increased ice cream sales in summer or retail sales during holidays.</li>
+                        <li><strong>Cyclical Variation (C):</strong> Long-term oscillations or waves lasting more than one year, often related to economic cycles (boom, recession, recovery, depression). Unlike seasonal variations, cycles are not of fixed duration.</li>
+                        <li><strong>Irregular/Random Variation (I):</strong> Unpredictable, random fluctuations caused by unforeseen events like natural disasters, strikes, or pandemics. This component is essentially "noise."</li>
+                    </ul>
+
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic for Time Series Components:</strong> <em>"TSCI"</em> — <strong>T</strong>rend, <strong>S</strong>easonal, <strong>C</strong>yclical, <strong>I</strong>rregular. Think "Tea-SCI" like a scientific cup of tea!</p>
+                    </div>
+
+                    <h3>8.2 Time Series Models</h3>
+                    <p><strong>Additive Model:</strong> Y = T + S + C + I. Assumes components are independent and added together. Suitable when seasonal variations are roughly constant over time.</p>
+                    <p><strong>Multiplicative Model:</strong> Y = T × S × C × I. Assumes components interact. Suitable when seasonal variations increase or decrease with the level of the series.</p>
+
+                    <h3>8.3 Trend Measurement Methods</h3>
+                    <p><strong>Moving Average Method:</strong> Smooths out short-term fluctuations to reveal the underlying trend. A moving average of order k replaces each value with the average of k consecutive observations. For quarterly data, a 4-quarter moving average is common.</p>
+                    <p><strong>Least Squares Method:</strong> Fits a mathematical function (usually linear) to the time series data. For a linear trend: Y = a + b·t, where t represents time.</p>
+                    <div class="formula-block">b = [n·Σ(t·Y) - Σt·ΣY] / [n·Σt² - (Σt)²] &nbsp;&nbsp; a = (ΣY - b·Σt) / n</div>
+
+                    <h3>8.4 Seasonal Indices</h3>
+                    <p>Seasonal indices quantify the seasonal effect for each period (e.g., each month or quarter). They are calculated using methods like the ratio-to-moving-average method. A seasonal index above 1 (or 100%) indicates above-average values for that period.</p>
+
+                    <h3>8.5 Forecasting</h3>
+                    <p>Time series forecasting uses historical patterns to predict future values. Common methods include:</p>
+                    <ul>
+                        <li><strong>Naive Method:</strong> Uses the last observed value as the forecast</li>
+                        <li><strong>Moving Average Forecasting:</strong> Uses the average of recent observations</li>
+                        <li><strong>Exponential Smoothing:</strong> Assigns exponentially decreasing weights to older observations</li>
+                        <li><strong>ARIMA Models:</strong> AutoRegressive Integrated Moving Average — a sophisticated class of models for time series forecasting</li>
+                    </ul>
+
+                    <div class="exam-highlight">
+                        <p><strong>Exam Tip:</strong> Be able to identify the four components of a time series with examples. Practice calculating moving averages and fitting linear trends using the least squares method. Seasonal index calculation is also a common numerical problem.</p>
+                    </div>
+
+                    <div class="important-question">
+                        <p>Q: What are the components of a time series? Explain the additive and multiplicative models. Calculate the 3-year moving average for the following data: Year: 2015-2024; Values: 120,135,142,155,160,168,175,182,190,200. (15 marks)</p>
+                    </div>
+
+                    <div class="mcq-section">
+                        <h4>📝 MCQs - Unit 8</h4>
+                        <div class="mcq-item" id="mcq8_1">
+                            <p><strong>Q1:</strong> Regular fluctuations that repeat within a year are called:</p>
+                            <div class="options">
+                                <span class="option" onclick="checkMCQ(this, 'mcq8_1', false)">A) Trend</span>
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq8_1', true)">B) Seasonal variation</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq8_1', false)">C) Cyclical variation</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq8_1', false)">D) Irregular variation</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq8_1')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq8_1_ans">✅ Correct Answer: B) Seasonal variation — These are regular, predictable patterns within a fixed calendar period.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 9 -->
+            <div class="unit-card" id="unit9">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2><span class="unit-number">9</span> Index Numbers</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>9.1 Introduction to Index Numbers</h3>
+                    <p>An index number is a statistical measure designed to show changes in a variable or group of related variables over time, geographic location, or other characteristics. Index numbers are widely used in economics and business to measure price changes, cost of living, industrial production, and stock market performance.</p>
+
+                    <h3>9.2 Types of Index Numbers</h3>
+                    <p><strong>Price Index:</strong> Measures changes in prices over time. Examples: Consumer Price Index (CPI), Wholesale Price Index (WPI).</p>
+                    <p><strong>Quantity Index:</strong> Measures changes in physical quantities produced or consumed. Example: Index of Industrial Production (IIP).</p>
+                    <p><strong>Value Index:</strong> Measures changes in total value (price × quantity).</p>
+
+                    <h3>9.3 Methods of Constructing Index Numbers</h3>
+                    <p><strong>Unweighted Index Numbers:</strong></p>
+                    <ul>
+                        <li><strong>Simple Aggregative Method:</strong> P₀₁ = (ΣP₁ / ΣP₀) × 100</li>
+                        <li><strong>Simple Average of Price Relatives:</strong> P₀₁ = (Σ(P₁/P₀ × 100)) / n</li>
+                    </ul>
+                    <p><strong>Weighted Index Numbers:</strong></p>
+                    <ul>
+                        <li><strong>Laspeyres Index:</strong> Uses base period quantities as weights. P₀₁ = (ΣP₁Q₀ / ΣP₀Q₀) × 100</li>
+                        <li><strong>Paasche Index:</strong> Uses current period quantities as weights. P₀₁ = (ΣP₁Q₁ / ΣP₀Q₁) × 100</li>
+                        <li><strong>Fisher's Ideal Index:</strong> Geometric mean of Laspeyres and Paasche. P₀₁ = √(Laspeyres × Paasche)</li>
+                    </ul>
+
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic for Weighted Indices:</strong> <em>"LFP"</em> — <strong>L</strong>aspeyres (base quantities), <strong>F</strong>isher (ideal, geometric mean), <strong>P</strong>aasche (current quantities). Think "LFP" like "Left Foot Paasche" — Laspeyres uses base, Paasche uses current.</p>
+                    </div>
+
+                    <h3>9.4 Important Index Numbers in India</h3>
+                    <p><strong>Consumer Price Index (CPI):</strong> Measures changes in retail prices of goods and services consumed by households. Used for inflation measurement and wage adjustments.</p>
+                    <p><strong>Wholesale Price Index (WPI):</strong> Measures changes in wholesale prices. Used as an indicator of inflation at the wholesale level.</p>
+                    <p><strong>Index of Industrial Production (IIP):</strong> Measures changes in the volume of industrial production.</p>
+
+                    <div class="important-question">
+                        <p>Q: Explain the Laspeyres, Paasche, and Fisher's ideal index numbers. Why is Fisher's index called 'ideal'? Calculate all three from given price and quantity data. (15 marks)</p>
+                    </div>
+
+                    <div class="mcq-section">
+                        <h4>📝 MCQs - Unit 9</h4>
+                        <div class="mcq-item" id="mcq9_1">
+                            <p><strong>Q1:</strong> Laspeyres price index uses which quantities as weights?</p>
+                            <div class="options">
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq9_1', true)">A) Base period quantities</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq9_1', false)">B) Current period quantities</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq9_1', false)">C) Average quantities</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq9_1', false)">D) No weights</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq9_1')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq9_1_ans">✅ Correct Answer: A) Base period quantities — Laspeyres uses base period weights (Q₀).</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 10 -->
+            <div class="unit-card" id="unit10">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2><span class="unit-number">10</span> Statistical Quality Control</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>10.1 Introduction to SQC</h3>
+                    <p>Statistical Quality Control (SQC) involves using statistical methods to monitor and control the quality of products and processes. It ensures that processes operate efficiently, producing products that meet specifications with minimal variation.</p>
+
+                    <h3>10.2 Control Charts</h3>
+                    <p>Control charts are graphical tools used to monitor process variation over time. They consist of a center line (CL), an upper control limit (UCL), and a lower control limit (LCL).</p>
+                    <p><strong>Control Charts for Variables:</strong></p>
+                    <ul>
+                        <li><strong>X̄-Chart (Mean Chart):</strong> Monitors the central tendency of a process. CL = x̄̄ (grand mean), UCL/LCL = x̄̄ ± A₂R̄</li>
+                        <li><strong>R-Chart (Range Chart):</strong> Monitors process variability. CL = R̄, UCL = D₄R̄, LCL = D₃R̄</li>
+                    </ul>
+                    <p><strong>Control Charts for Attributes:</strong></p>
+                    <ul>
+                        <li><strong>p-Chart:</strong> Monitors the proportion of defective items in a sample</li>
+                        <li><strong>c-Chart:</strong> Monitors the number of defects per unit</li>
+                    </ul>
+
+                    <div class="formula-block">UCL = x̄̄ + A₂R̄ &nbsp;&nbsp; LCL = x̄̄ - A₂R̄ &nbsp;&nbsp; (for X̄-Chart)</div>
+                    <div class="formula-block">UCL = D₄R̄ &nbsp;&nbsp; LCL = D₃R̄ &nbsp;&nbsp; (for R-Chart)</div>
+
+                    <h3>10.3 Process Capability</h3>
+                    <p>Process capability measures how well a process can meet specifications. The process capability index (Cp) compares the specification width to the process spread:</p>
+                    <div class="formula-block">Cp = (USL - LSL) / (6σ) &nbsp;&nbsp; where USL=Upper Specification Limit, LSL=Lower Specification Limit</div>
+                    <p>Cp ≥ 1.33 indicates a capable process. Cp < 1 indicates the process is not capable of meeting specifications.</p>
+
+                    <h3>10.4 Acceptance Sampling</h3>
+                    <p>Acceptance sampling involves inspecting a random sample from a lot and deciding whether to accept or reject the entire lot based on the number of defectives found. Key concepts include Acceptable Quality Level (AQL), Lot Tolerance Percent Defective (LTPD), and Operating Characteristic (OC) curves.</p>
+
+                    <div class="exam-highlight">
+                        <p><strong>Exam Tip:</strong> Numerical problems on constructing X̄ and R charts are common. Know the formulas and how to use control chart constants (A₂, D₃, D₄). Understand the interpretation of control charts — points outside limits, runs, trends, and cycles.</p>
+                    </div>
+
+                    <div class="important-question">
+                        <p>Q: Explain the purpose of control charts in quality control. Construct X̄ and R charts from given sample data and interpret the results. (15 marks)</p>
+                    </div>
+
+                    <div class="mcq-section">
+                        <h4>📝 MCQs - Unit 10</h4>
+                        <div class="mcq-item" id="mcq10_1">
+                            <p><strong>Q1:</strong> The R-chart is used to monitor:</p>
+                            <div class="options">
+                                <span class="option" onclick="checkMCQ(this, 'mcq10_1', false)">A) Process mean</span>
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq10_1', true)">B) Process variability</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq10_1', false)">C) Defect count</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq10_1', false)">D) Proportion defective</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq10_1')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq10_1_ans">✅ Correct Answer: B) Process variability — The R-chart monitors the range (variation) within samples.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 11 -->
+            <div class="unit-card" id="unit11">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2><span class="unit-number">11</span> Data Analysis Using Software</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>11.1 Introduction to Statistical Software</h3>
+                    <p>Modern data analysis relies heavily on statistical software packages that automate calculations, generate visualizations, and perform complex analyses efficiently. Key software tools include:</p>
+                    <ul>
+                        <li><strong>SPSS (Statistical Package for Social Sciences):</strong> User-friendly, menu-driven software widely used in social sciences, market research, and health sciences. Excellent for descriptive statistics, t-tests, ANOVA, regression, and factor analysis.</li>
+                        <li><strong>R:</strong> A free, open-source programming language and environment for statistical computing. Extremely powerful with thousands of packages (libraries) for virtually every statistical technique. Steeper learning curve but highly flexible.</li>
+                        <li><strong>Microsoft Excel:</strong> Widely accessible spreadsheet software with built-in statistical functions and the Analysis ToolPak add-in. Suitable for basic to intermediate analyses.</li>
+                        <li><strong>Python (with pandas, NumPy, SciPy, statsmodels):</strong> A versatile programming language increasingly popular for data science and statistical analysis. Combines statistical capabilities with machine learning and data manipulation.</li>
+                        <li><strong>SAS:</strong> A comprehensive statistical software suite used extensively in pharmaceutical, banking, and government sectors.</li>
+                    </ul>
+
+                    <h3>11.2 Data Entry and Management</h3>
+                    <p>Proper data entry is critical. Key principles include:</p>
+                    <ul>
+                        <li>Use consistent coding for categorical variables</li>
+                        <li>Document variable names, labels, and value codes in a codebook</li>
+                        <li>Handle missing values systematically (use consistent codes like 999 or NA)</li>
+                        <li>Validate data through double-entry or range checks</li>
+                        <li>Organize data in a rectangular format (rows = observations, columns = variables)</li>
+                    </ul>
+
+                    <h3>11.3 Basic Operations in SPSS/R</h3>
+                    <p>Common operations include importing data from CSV/Excel files, computing descriptive statistics, creating frequency tables, generating cross-tabulations, performing t-tests and ANOVA, running correlation and regression analyses, and creating graphs (histograms, bar charts, scatter plots, box plots).</p>
+
+                    <div class="mnemonic-box">
+                        <p><strong>Mnemonic for Software Choice:</strong> <em>"SPREE"</em> — <strong>S</strong>PSS (social sciences), <strong>P</strong>ython (data science), <strong>R</strong> (academic research), <strong>E</strong>xcel (business basic), <strong>E</strong>Views (econometrics). Choose based on your field and analysis needs!</p>
+                    </div>
+
+                    <div class="important-question">
+                        <p>Q: Discuss the role of statistical software in data analysis. Compare any two popular statistical software packages in terms of features, ease of use, and applications. (10 marks)</p>
+                    </div>
+
+                    <div class="mcq-section">
+                        <h4>📝 MCQs - Unit 11</h4>
+                        <div class="mcq-item" id="mcq11_1">
+                            <p><strong>Q1:</strong> Which of the following is an open-source statistical programming language?</p>
+                            <div class="options">
+                                <span class="option" onclick="checkMCQ(this, 'mcq11_1', false)">A) SPSS</span>
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq11_1', true)">B) R</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq11_1', false)">C) SAS</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq11_1', false)">D) Stata</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq11_1')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq11_1_ans">✅ Correct Answer: B) R — R is free and open-source, with a vast ecosystem of packages.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 12 -->
+            <div class="unit-card" id="unit12">
+                <div class="unit-header" onclick="toggleUnit(this)">
+                    <h2><span class="unit-number">12</span> Report Writing & Presentation</h2>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="unit-body">
+                    <h3>12.1 Structure of a Data Analysis Report</h3>
+                    <p>A well-structured report communicates findings effectively. The standard structure includes:</p>
+                    <ol>
+                        <li><strong>Title Page:</strong> Report title, author, date, organization</li>
+                        <li><strong>Executive Summary/Abstract:</strong> Brief overview of objectives, methods, key findings, and recommendations</li>
+                        <li><strong>Introduction:</strong> Background, problem statement, objectives, scope</li>
+                        <li><strong>Methodology:</strong> Data sources, sampling methods, analytical techniques used</li>
+                        <li><strong>Results/Findings:</strong> Presentation of analyzed data with tables, charts, and interpretations</li>
+                        <li><strong>Discussion:</strong> Interpretation of results, comparison with previous studies, implications</li>
+                        <li><strong>Conclusions & Recommendations:</strong> Summary of key takeaways and actionable suggestions</li>
+                        <li><strong>References/Bibliography:</strong> Citations of all sources used</li>
+                        <li><strong>Appendices:</strong> Supplementary material (raw data, detailed calculations, questionnaires)</li>
+                    </ol>
+
+                    <h3>12.2 Data Visualization Best Practices</h3>
+                    <p>Effective visualizations enhance understanding:</p>
+                    <ul>
+                        <li>Choose the right chart type for your data and message</li>
+                        <li>Keep it simple — avoid unnecessary decorations (chartjunk)</li>
+                        <li>Label axes clearly and include units</li>
+                        <li>Use consistent color schemes</li>
+                        <li>Include titles and captions that tell the story</li>
+                        <li>Avoid 3D effects that distort perception</li>
+                        <li>Ensure accessibility (color-blind friendly palettes)</li>
+                    </ul>
+
+                    <h3>12.3 Common Pitfalls in Data Analysis Reports</h3>
+                    <ul>
+                        <li>Confusing correlation with causation</li>
+                        <li>Cherry-picking data to support a predetermined conclusion</li>
+                        <li>Ignoring confounding variables</li>
+                        <li>Overgeneralizing results beyond the sample</li>
+                        <li>Using misleading scales on graphs</li>
+                        <li>Reporting only point estimates without confidence intervals</li>
+                    </ul>
+
+                    <div class="exam-highlight">
+                        <p><strong>Exam Tip:</strong> Questions on report structure, data visualization principles, and ethical considerations in data analysis are often asked. Be prepared to discuss best practices and common errors.</p>
+                    </div>
+
+                    <div class="important-question">
+                        <p>Q: Describe the essential components of a data analysis report. Discuss the ethical considerations that should be kept in mind while presenting data analysis findings. (10 marks)</p>
+                    </div>
+
+                    <div class="mcq-section">
+                        <h4>📝 MCQs - Unit 12</h4>
+                        <div class="mcq-item" id="mcq12_1">
+                            <p><strong>Q1:</strong> The executive summary of a report should be:</p>
+                            <div class="options">
+                                <span class="option correct-answer" onclick="checkMCQ(this, 'mcq12_1', true)">A) Brief overview of the entire report</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq12_1', false)">B) Detailed methodology section</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq12_1', false)">C) Raw data tables</span>
+                                <span class="option" onclick="checkMCQ(this, 'mcq12_1', false)">D) List of references</span>
+                            </div>
+                            <button class="show-answer-btn" onclick="showMCQAnswer('mcq12_1')">Show Answer</button>
+                            <div class="mcq-answer" id="mcq12_1_ans">✅ Correct Answer: A) Brief overview of the entire report — The executive summary provides a concise summary of objectives, methods, findings, and recommendations.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PYQ SECTION -->
+            <div class="pyq-section" id="pyq-section">
+                <h2>📝 Previous Year Questions (PYQs) — BECS 184 Data Analysis</h2>
+                <p style="text-align:center;color:var(--text-secondary);">Solved PYQs for exam preparation. Practice these thoroughly!</p>
+
+                <div class="pyq-item">
+                    <p><strong>Q1 (10 Marks):</strong> Define data analysis. Distinguish between descriptive and inferential statistics with suitable examples.</p>
+                    <p><strong>Answer Outline:</strong> Data analysis is the systematic process of inspecting, cleaning, transforming, and modeling data to discover useful information. Descriptive statistics summarizes data (mean, median, SD, charts) while inferential statistics draws conclusions about populations from samples (hypothesis testing, confidence intervals, regression). Example: Descriptive — average height of 100 students; Inferential — using that sample to estimate the average height of all students in the university.</p>
+                </div>
+                <div class="pyq-item">
+                    <p><strong>Q2 (15 Marks):</strong> Explain the Central Limit Theorem and discuss its importance in statistical inference. Provide a numerical illustration.</p>
+                    <p><strong>Answer Outline:</strong> CLT states that for a sufficiently large sample size (n≥30), the sampling distribution of the sample mean approaches a normal distribution regardless of the population's distribution, with mean μ and standard error σ/√n. Importance: It enables us to use normal distribution-based methods (Z-tests, confidence intervals) even when the population is not normal. Numerical: Given μ=100, σ=15, n=36, find P(x̄ > 105). SE=15/√36=2.5, Z=(105-100)/2.5=2, P(Z>2)=0.0228.</p>
+                </div>
+                <div class="pyq-item">
+                    <p><strong>Q3 (10 Marks):</strong> Calculate Pearson's correlation coefficient and interpret the result. Data: X: 10,12,14,16,18; Y: 20,22,24,26,28.</p>
+                    <p><strong>Answer Outline:</strong> Since Y increases perfectly with X (Y = X + 10), r = +1 indicating a perfect positive linear correlation. Calculation: x̄=14, ȳ=24, Σ(x-x̄)(y-ȳ)=40, Σ(x-x̄)²=40, Σ(y-ȳ)²=40, r=40/√(40×40)=1.</p>
+                </div>
+                <div class="pyq-item">
+                    <p><strong>Q4 (15 Marks):</strong> A company claims its light bulbs last 1500 hours on average. A sample of 49 bulbs has a mean of 1470 hours and SD of 105 hours. Test the claim at α=0.05.</p>
+                    <p><strong>Answer Outline:</strong> H₀: μ=1500, H₁: μ≠1500 (two-tailed). SE=105/√49=15. Z=(1470-1500)/15=-2.0. Critical Z at α=0.05 is ±1.96. Since |-2.0| > 1.96, reject H₀. Conclusion: There is sufficient evidence to reject the company's claim. The average life is significantly different from 1500 hours.</p>
+                </div>
+                <div class="pyq-item">
+                    <p><strong>Q5 (10 Marks):</strong> Explain the components of a time series. What is the difference between seasonal and cyclical variations?</p>
+                    <p><strong>Answer Outline:</strong> Four components: Trend (long-term direction), Seasonal (regular patterns within a year, e.g., ice cream sales peak in summer), Cyclical (long-term waves of >1 year, e.g., economic boom-recession cycles), Irregular (random/unpredictable). Seasonal variations have fixed periodicity (e.g., 12 months), while cyclical variations have variable duration (3-10+ years).</p>
+                </div>
+                <div class="pyq-item">
+                    <p><strong>Q6 (15 Marks):</strong> Construct X̄ and R charts from the following data and comment on process control. [Data table with 10 samples of size 5 each]</p>
+                    <p><strong>Answer Outline:</strong> Calculate X̄ and R for each sample. Compute grand mean (x̄̄) and average range (R̄). For n=5, A₂=0.577, D₃=0, D₄=2.114. X̄ chart: UCL=x̄̄+0.577R̄, LCL=x̄̄-0.577R̄. R chart: UCL=2.114R̄, LCL=0. Plot points and check if any fall outside limits or show non-random patterns.</p>
+                </div>
+                <div class="pyq-item">
+                    <p><strong>Q7 (10 Marks):</strong> What are index numbers? Explain Laspeyres and Paasche price index numbers with formulas and examples.</p>
+                    <p><strong>Answer Outline:</strong> Index numbers measure relative changes over time. Laspeyres uses base period quantities: P₀₁=(ΣP₁Q₀/ΣP₀Q₀)×100. Paasche uses current period quantities: P₀₁=(ΣP₁Q₁/ΣP₀Q₁)×100. Laspeyres tends to overstate price increases (doesn't account for substitution), Paasche understates them. Fisher's Ideal Index (geometric mean of both) addresses this issue.</p>
+                </div>
+                <div class="pyq-item">
+                    <p><strong>Q8 (15 Marks):</strong> Discuss the steps involved in hypothesis testing. A researcher wants to test if a new teaching method improves scores. Design the hypothesis test with proper hypotheses, test statistic, and decision rule.</p>
+                    <p><strong>Answer Outline:</strong> Steps: 1) State H₀ and H₁, 2) Choose α, 3) Select test statistic, 4) Define rejection region, 5) Calculate statistic, 6) Make decision, 7) Conclude. For teaching method: H₀: μ_new ≤ μ_old, H₁: μ_new > μ_old (one-tailed). Use independent t-test. If t_calculated > t_critical, reject H₀, concluding the new method improves scores.</p>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <button class="btn-top" id="btnTop" title="Back to Top" aria-label="Back to top">⬆</button>
+
+    <script>
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('keydown', e => {
+            if (
+                (e.ctrlKey && ['c', 'u', 's', 'a', 'p'].includes(e.key.toLowerCase())) ||
+                (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(e.key.toLowerCase())) ||
+                e.key === 'F12'
+            ) {
+                e.preventDefault();
+            }
+        });
+        document.addEventListener('copy', e => e.preventDefault());
+        document.addEventListener('cut', e => e.preventDefault());
+        document.addEventListener('drag', e => e.preventDefault());
+
+        function toggleUnit(header) {
+            const card = header.parentElement;
+            card.classList.toggle('collapsed');
+        }
+
+        const sidebar = document.getElementById('sidebar');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        mobileMenuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+        document.getElementById('contentArea').addEventListener('click', (e) => {
+            if (window.innerWidth <= 768 && sidebar.classList.contains('open') && !sidebar.contains(e.target) && e
+                .target !== mobileMenuBtn) {
+                sidebar.classList.remove('open');
+            }
+        });
+
+        const sidebarLinks = document.querySelectorAll('.sidebar-nav li a');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const card = target.closest('.unit-card');
+                    if (card && card.classList.contains('collapsed')) {
+                        card.classList.remove('collapsed');
+                    }
+                }
+                sidebarLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.remove('open');
+                }
+            });
+        });
+
+        document.getElementById('btnTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        const searchInput = document.getElementById('searchInput');
+        const searchResultsInfo = document.getElementById('searchResultsInfo');
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase().trim();
+            const allCards = document.querySelectorAll('.unit-card');
+            let totalMatches = 0;
+            allCards.forEach(card => {
+                const body = card.querySelector('.unit-body');
+                const text = body ? body.innerText.toLowerCase() : '';
+                if (query === '') {
+                    card.style.display = '';
+                    card.classList.add('collapsed');
+                    if (body) body.querySelectorAll('mark').forEach(m => {
+                        const parent = m.parentNode;
+                        parent.replaceChild(document.createTextNode(m.textContent), m);
+                    });
+                } else if (text.includes(query)) {
+                    card.style.display = '';
+                    card.classList.remove('collapsed');
+                    if (body) {
+                        const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`,
+                            'gi');
+                        body.querySelectorAll('p, li, td, h3, h4, .formula-block').forEach(el => {
+                            if (el.querySelector('mark')) return;
+                            el.innerHTML = el.innerHTML.replace(regex,
+                                '<mark style="background:#ff6b35;color:#000;padding:2px 4px;border-radius:3px;">$1</mark>'
+                                );
+                        });
+                        totalMatches += (body.innerText.toLowerCase().match(new RegExp(query, 'g')) || [])
+                            .length;
+                    }
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            if (query === '') {
+                searchResultsInfo.style.display = 'none';
+                allCards.forEach(c => { c.style.display = '';
+                    c.classList.add('collapsed'); });
+            } else {
+                searchResultsInfo.style.display = 'block';
+                searchResultsInfo.textContent = `🔍 Found "${query}" in ${totalMatches} location(s) — scroll to see highlighted results`;
+            }
+        });
+
+        function checkMCQ(optionEl, mcqId, isCorrect) {
+            const mcqItem = document.getElementById(mcqId);
+            const allOptions = mcqItem.querySelectorAll('.option');
+            allOptions.forEach(opt => {
+                opt.classList.remove('correct', 'selected-wrong');
+            });
+            if (isCorrect) {
+                optionEl.classList.add('correct');
+                const answerDiv = document.getElementById(mcqId + '_ans');
+                if (answerDiv) answerDiv.classList.add('show');
+            } else {
+                optionEl.classList.add('selected-wrong');
+                const correctOpt = mcqItem.querySelector('.correct-answer');
+                if (correctOpt) correctOpt.classList.add('correct');
+                const answerDiv = document.getElementById(mcqId + '_ans');
+                if (answerDiv) answerDiv.classList.add('show');
+            }
+        }
+
+        function showMCQAnswer(mcqId) {
+            const answerDiv = document.getElementById(mcqId + '_ans');
+            if (answerDiv) {
+                answerDiv.classList.toggle('show');
+                const correctOpt = document.getElementById(mcqId).querySelector('.correct-answer');
+                if (correctOpt) correctOpt.classList.add('correct');
+            }
+        }
+
+        const allUnitCards = document.querySelectorAll('.unit-card');
+        allUnitCards.forEach(card => card.classList.add('collapsed'));
+        const firstCard = document.getElementById('unit1');
+        if (firstCard) firstCard.classList.remove('collapsed');
+
+        function loadAd() {
+            const adContainer = document.getElementById('adContainerTop');
+            if (adContainer) {
+                adContainer.innerHTML = '';
+                const scriptEl = document.createElement('script');
+                scriptEl.textContent =
+                    '(function(s){s.dataset.zone=\'10976968\',s.src=\'https://n6wxm.com/vignette.min.js\'})(document.documentElement);';
+                adContainer.appendChild(scriptEl);
+            }
+        }
+        loadAd();
+        setInterval(loadAd, 300000);
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    sidebarLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+        document.querySelectorAll('.unit-card, .pyq-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+    <script>
+        (function(s) { s.dataset.zone = '10976968', s.src = 'https://n6wxm.com/vignette.min.js' })([document
+            .documentElement, document.body
+        ].filter(Boolean).pop().appendChild(document.createElement('script')))
+    </script>
+</body>
+</html>
